@@ -50,3 +50,23 @@ gulp
 ```
 
 5. Open `localhost:1985/cms` from your browser
+
+### UI Migration Checklist
+
+```
+Page: Tuition
+Components:
+– Root HTML: mvp-cms/src/template/_layout/cms.html (status: UI DONE)
+– Footer JS: mvp-cms/src/template/_include/cms/footer-script.html (status: UI DONE)
+– Navbar: mvp-cms/src/template/_include/cms/navbar.html (status: UI DONE)
+– Sidenav: mvp-cms/src/template/_include/cms/sidenav.html (status: UI DONE)
+– Filter Bar: mvp-cms/src/template/_include/cms/tuition/filter-bar.html (status: UI DONE)
+– Tuition Table: N/A (status: UI ON PROGRESS)
+– Popups & Modal: N/A (status: UI BACKLOG)
+
+Page: Home
+– Timeline: N/A (status: UI BACKLOG)
+
+Page: Login
+– Form: N/A (status: UI BACKLOG)
+```
