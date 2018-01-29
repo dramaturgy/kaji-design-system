@@ -1,0 +1,45 @@
+.has-navbar-fixed {
+  padding-top: 3.5rem;
+}
+
+.cms-sidenav {
+  &:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 1px;
+    background-color: $border-color-solid;
+  }
+
+  .nav-link {
+    position: relative;
+    color: $theme-gray-6;
+
+    &.active {
+      color: map-get(theme-color('primary'), color);
+
+      &:after {
+        content: " ";
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: 4px;
+        background-color: map-get(theme-color('primary'), color);
+      }
+
+      &:hover {
+        cursor: default;
+      }
+    }
+
+    &:hover:not(.active) {
+      background-color: $theme-gray-2;
+      color: $theme-gray-8;
+    }
+  }
+}

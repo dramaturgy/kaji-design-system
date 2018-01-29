@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta content="initial-scale=1, shrink-to-fit=no, width=device-width" name="viewport">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/kaji-material.css">
+    <link rel="stylesheet" href="../css/product-cms.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://use.fontawesome.com/ebb6ee31d7.js"></script>
+    <!-- Add Material CSS, replace Bootstrap CSS -->
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-white faux-border-bottom">
+      <a class="navbar-brand" href="#">Edukaji</a>
+
+      <ul class="navbar-nav ml-md-auto">
+        <li class="nav-item">
+          <a class="nav-link py-1 px-2 dropdown-toggle"
+            data-toggle="dropdown"
+            id="js_cms_navbar_user_dropdown"
+            href="javascript:void(0);"><span
+              class="d-inline-block align-bottom lh-4">My Name</span><span
+                class="d-inline-block align-bottom ml-1" data-feather="chevron-down"></span></a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Action 1</a>
+            <a class="dropdown-item" href="#">Action 2</a>
+            <a class="dropdown-item" href="#">Settings</a>
+            <a class="dropdown-item" href="#">Logout</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link p-0 mx-2"
+            style="border-radius: 50%; overflow: hidden; opacity: 1;" 
+            href="javascript:void(0);"><img height="32" src="../copy/sample/avatar/admin.png" alt=""></a>
+        </li>
+      </ul>
+    </nav>
+    <div class="container-fluid px-0">
+      <div class="row no-gutters">
+        <nav class="cms-sidenav col-3 col-md-2 d-none d-md-block bg-white">
+          <div class="cms-sidenav-sticky has-navbar-fixed">
+            <ul class="nav flex-column">
+              <li class="nav-item" id="js_sidenav_parent_item_school" data-children=".js-sidenav-child-item-school">
+                <div class="js-sidenav-child-item-school">
+                  <a class="nav-link d-flex justify-content-between py-3" data-toggle="collapse" data-parent="#js_sidenav_parent_item_school" href="#js_sidenav_accordion_item_school">
+                    <div>
+                      <span class="d-inline-block align-bottom" data-feather="home"></span><span class="d-inline-block lh-lg align-bottom ml-3">School</span>
+                    </div>
+                    <span data-feather="plus-circle" style="width: 16px;"></span>
+                  </a>
+                  <ul class="nav flex-column collapse" id="js_sidenav_accordion_item_school" role="tabpanel">
+                    <li class="nav-item">
+                      <a class="nav-link py-3" href="#"><span class="d-inline-block align-bottom" data-feather="check"></span><span class="d-inline-block lh-lg align-bottom ml-3">School X1</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link py-3" href="#"><span class="d-inline-block align-bottom" data-feather="arrow-up-right"></span><span class="d-inline-block lh-lg align-bottom ml-3">School X2</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link py-3" href="#"><span class="d-inline-block align-bottom" data-feather="arrow-up-right"></span><span class="d-inline-block lh-lg align-bottom ml-3">School X3</span></a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-item faux-border-top">
+                <a class="nav-link py-3" href="#"><span class="d-inline-block align-bottom" data-feather="layout"></span><span class="d-inline-block lh-lg align-bottom ml-3">Dashboard</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link py-3 active" href="#"><span class="d-inline-block align-bottom" data-feather="align-justify"></span><span class="d-inline-block lh-lg align-bottom ml-3">Tuition Fee</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link py-3" href="#"><span class="d-inline-block align-bottom" data-feather="monitor"></span><span class="d-inline-block lh-lg align-bottom ml-3">Entry Fee</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link py-3" href="#"><span class="d-inline-block align-bottom" data-feather="users"></span><span class="d-inline-block lh-lg align-bottom ml-3">Students</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link py-3" href="#"><span class="d-inline-block align-bottom" data-feather="award"></span><span class="d-inline-block lh-lg align-bottom ml-3">Scores</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link py-3" href="#"><span class="d-inline-block align-bottom" data-feather="book-open"></span><span class="d-inline-block lh-lg align-bottom ml-3">Programmes</span></a>
+              </li>
+              <li class="nav-item faux-border-top">
+                <a class="nav-link py-3" href="#"><span class="d-inline-block align-bottom" data-feather="send"></span><span class="d-inline-block lh-lg align-bottom ml-3">Posting</span></a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <main role="main" class="dashboard-main col-12 col-md-10 bg-light-2 py-3" style="min-height: 100vh">
+          <div class="container-fluid has-navbar-fixed">
+            <section class="row hero-tuition">
+              <div class="col-12">
+                <div class="card border-black-divider-solid">
+                  <div class="card-body">
+                    <div class="card-title">
+                      <h4>Tuition</h4>
+                    </div>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam porro, iusto libero.</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="row py-3 filter-bar-tuition">
+              <div class="col-12">
+                <p class="subheading-black d-block">FILTER</p>
+                <div class="button-toolbar py-2">
+                  <div class="btn-group">
+                    <button class="btn btn-white btn-fw-regular" type="button" style="text-transform: capitalize;">Status</button>
+                    <button class="btn btn-white text-primary dropdown-toggle border-light" type="button" id="js_dropdown_filter_tuition_status" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span>All</span><span class="fa fa-caret-down ml-2"></span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                      <button class="dropdown-item" type="button">All</button>
+                      <button class="dropdown-item" type="button">Paid</button>
+                      <button class="dropdown-item" type="button">Unpaid</button>
+                    </div>
+                  </div>
+                  <div class="btn-group">
+                    <button class="btn btn-white btn-fw-regular" type="button" style="text-transform: capitalize;">Grade</button>
+                    <button class="btn btn-white text-primary dropdown-toggle border-light" type="button" id="js_dropdown_filter_tuition_grade" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span>All</span><span class="fa fa-caret-down ml-2"></span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                      <button class="dropdown-item" type="button">All</button>
+                      <div class="dropdown-divider"></div>
+                      <button class="dropdown-item" type="button">9</button>
+                      <button class="dropdown-item" type="button">8</button>
+                      <button class="dropdown-item" type="button">7</button>
+                      <div class="dropdown-divider"></div>
+                      <button class="dropdown-item" type="button">6</button>
+                      <button class="dropdown-item" type="button">5</button>
+                      <button class="dropdown-item" type="button">4</button>
+                    </div>
+                  </div>
+                  <div class="btn-group">
+                    <button class="btn btn-white btn-fw-regular" type="button" style="text-transform: capitalize;">Class</button>
+                    <button class="btn btn-white text-primary dropdown-toggle border-light" type="button" id="js_dropdown_filter_tuition_class" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span>All</span><span class="fa fa-caret-down ml-2"></span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                      <button class="dropdown-item" type="button">All</button>
+                      <div class="dropdown-divider"></div>
+                      <button class="dropdown-item" type="button">A</button>
+                      <button class="dropdown-item" type="button">B</button>
+                      <button class="dropdown-item" type="button">C</button>
+                      <button class="dropdown-item" type="button">D</button>
+                    </div>
+                  </div>
+                  <div class="btn-group">
+                    <button class="btn btn-white btn-fw-regular" type="button" style="text-transform: capitalize;">Year</button>
+                    <button class="btn btn-white text-primary dropdown-toggle border-light" type="button" id="js_dropdown_filter_tuition_status" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span>Now</span><span class="fa fa-caret-down ml-2"></span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                      <button class="dropdown-item" type="button">Now</button>
+                      <div class="dropdown-divider"></div>
+                      <button class="dropdown-item" type="button">2018</button>
+                      <button class="dropdown-item" type="button">2017</button>
+                      <button class="dropdown-item" type="button">2016</button>
+                      <button class="dropdown-item" type="button">2015</button>
+                    </div>
+                  </div>
+                  <div class="btn-group">
+                    <button class="btn btn-white btn-fw-regular" type="button" style="text-transform: capitalize;">Since</button>
+                    <button class="btn btn-white text-primary dropdown-toggle border-light" type="button" id="js_dropdown_filter_tuition_month_start" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span>Now</span><span class="fa fa-caret-down ml-2"></span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                      <button class="dropdown-item" type="button">Now</button>
+                      <div class="dropdown-divider"></div>
+                      <button class="dropdown-item" type="button">Jan</button>
+                      <button class="dropdown-item" type="button">Feb</button>
+                      <button class="dropdown-item" type="button">Mar</button>
+                      <button class="dropdown-item" type="button">Apr</button>
+                      <button class="dropdown-item" type="button">Jun</button>
+                      <button class="dropdown-item" type="button">Jul</button>
+                      <button class="dropdown-item" type="button">Aug</button>
+                      <button class="dropdown-item" type="button">Sep</button>
+                      <button class="dropdown-item" type="button">Oct</button>
+                      <button class="dropdown-item" type="button">Nov</button>
+                      <button class="dropdown-item" type="button">Dec</button>
+                    </div>
+                    <button class="btn btn-white btn-fw-regular border-light" type="button" style="text-transform: lowercase;">to</button>
+                    <button class="btn btn-white text-primary dropdown-toggle border-light" type="button" id="js_dropdown_filter_tuition_month_end" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span>Now</span><span class="fa fa-caret-down ml-2"></span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                      <button class="dropdown-item" type="button">Now</button>
+                      <div class="dropdown-divider"></div>
+                      <button class="dropdown-item" type="button">Jan</button>
+                      <button class="dropdown-item" type="button">Feb</button>
+                      <button class="dropdown-item" type="button">Mar</button>
+                      <button class="dropdown-item" type="button">Apr</button>
+                      <button class="dropdown-item" type="button">Jun</button>
+                      <button class="dropdown-item" type="button">Jul</button>
+                      <button class="dropdown-item" type="button">Aug</button>
+                      <button class="dropdown-item" type="button">Sep</button>
+                      <button class="dropdown-item" type="button">Oct</button>
+                      <button class="dropdown-item" type="button">Nov</button>
+                      <button class="dropdown-item" type="button">Dec</button>
+                    </div>
+                  </div>
+                  <button class="btn btn-primary" type="submit">FILTER</button>
+                </div>
+              </div>
+            </section>
+            <section class="row">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-body py-0">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th scope="col">#</th>
+                          <th scope="col">Name</th>
+                          <th scope="col">Monthly</th>
+                          <th scope="col">Jun</th>
+                          <th scope="col">Jul</th>
+                          <th scope="col">Aug</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">001</th>
+                          <td>Albert Camus</td>
+                          <td>Rp 750.000.000</td>
+                          <td>Rp 500.000.000</td>
+                          <td>Rp 500.000.000</td>
+                          <td>Rp 500.000.000</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">002</th>
+                          <td>Franz Kafka</td>
+                          <td>Rp 750.000.000</td>
+                          <td>Rp 500.000.000</td>
+                          <td>Rp 500.000.000</td>
+                          <td>Rp 500.000.000</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">003</th>
+                          <td>Jean-Paul Sartre</td>
+                          <td>Rp 750.000.000</td>
+                          <td>Rp 500.000.000</td>
+                          <td>Rp 500.000.000</td>
+                          <td>Rp 500.000.000</td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <div class="btn-toolbar my-3" role="toolbar" aria-label="Toolbar with button groups">
+                      <div class="btn-group mr-2" role="group" aria-label="First group">
+                        <button type="button" class="btn btn-light text-primary"><span class="fa fa-angle-left"></span></button>
+                        <button type="button" class="btn btn-light text-primary"><span class="fa fa-angle-double-left"></span></button>
+                      </div>
+                      <div class="btn-group mr-2" role="group" aria-label="Second group">
+                        <button type="button" class="btn btn-light text-primary">1</button>
+                        <button type="button" class="btn btn-light text-primary">2</button>
+                        <button type="button" class="btn btn-light text-primary">3</button>
+                      </div>
+                      <div class="btn-group mr-2" role="group" aria-label="First group">
+                        <button type="button" class="btn btn-light text-primary"><span class="fa fa-angle-right"></span></button>
+                        <button type="button" class="btn btn-light text-primary"><span class="fa fa-angle-double-right"></span></button>
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script src="../copy/vendor/jquery.min.js"></script>
+    <script src="../copy/vendor/popper.min.js"></script>
+    <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+    <script src="../copy/vendor/bootstrap.min.js"></script>
+    <script src="../copy/vendor/material.min.js"></script>
+    <script>
+      feather.replace();
+    </script>
+  </body>
+</html>
