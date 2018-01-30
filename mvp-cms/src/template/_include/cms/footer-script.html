@@ -6,3 +6,11 @@
     <script>
       feather.replace();
     </script>
+    <script>
+      $(function () {
+        var $t = $('.js-cms-tuition-student-collapse-toggle');
+        $t.on('click', function(e) {
+          $t.closest('td').toggleClass('bg-light');
+        });
+      });
+    </script>

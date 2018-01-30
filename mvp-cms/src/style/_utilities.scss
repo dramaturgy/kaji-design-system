@@ -20,3 +20,8 @@
 
 @import 'utilities/material-icons';
 @import 'utilities/waves';
+
+// @todo: make dedicated scss file
+.no-elevation {
+  box-shadow: none !important;
+}

@@ -361,7 +361,7 @@ $nav-tab-border-width:     $border-width !default;
 $nav-tab-color:            $black-primary !default;
 $nav-tab-color-active:     map-get(theme-color(secondary), color) !default;
 $nav-tab-color-disabled:   $black-hint !default;
-$nav-tab-font-size:        .875rem !default;
+$nav-tab-font-size:        .75rem !default;
 $nav-tab-font-weight:      $font-weight-medium !default;
 $nav-tab-height:           3rem !default;
 $nav-tab-indicator-bg:     map-get(theme-color(secondary), color) !default;

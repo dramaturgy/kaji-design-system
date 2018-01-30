@@ -1524,4 +1524,42 @@ hr {
     background-color: #e3dfe6;
     color: #75667f; }
 
+.kaji-table-wrapper {
+  width: 100%;
+  position: relative; }
+
+.kaji-table-scroller {
+  overflow-x: scroll;
+  overflow-y: visible; }
+
+.kaji-table {
+  table-layout: fixed;
+  width: 100%; }
+
+.kaji-table td {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; }
+
+.kaji-table .col-w-xs {
+  width: 2rem; }
+
+.kaji-table .col-w-s {
+  width: 4rem; }
+
+.kaji-table .col-w-m {
+  width: 10rem; }
+
+.kaji-table .col-w-l {
+  width: 12rem; }
+
+.kaji-table .col-w-xl {
+  width: 16rem; }
+
+.kaji-table.cloned-col {
+  position: absolute;
+  left: auto;
+  top: 0;
+  width: auto; }
+
 /*# sourceMappingURL=../maps/product-cms.css.map */

@@ -1,3 +1,9 @@
+$positions: static, relative, absolute, fixed, sticky;
+
+@each $position in $positions {
+  .position-#{$position} { position: $position !important; }
+}
+
 .fixed-bottom {
   position: fixed;
   right: 0;

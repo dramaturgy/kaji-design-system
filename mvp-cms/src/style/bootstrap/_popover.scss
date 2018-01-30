@@ -12,7 +12,7 @@
   display: block;
   font-size: $font-size-base;
   margin: $tooltip-margin;
-  max-width: $dialog-width-sm;
+  // max-width: $dialog-width-sm;
   position: absolute;
   top: 0;
   left: 0;
@@ -20,7 +20,8 @@
 }
 
 .popover-body {
-  padding: $dialog-padding-y $dialog-padding-x;
+  // padding: $dialog-padding-y $dialog-padding-x;
+  padding: 0;
 
   > :last-child {
     margin-bottom: 0;

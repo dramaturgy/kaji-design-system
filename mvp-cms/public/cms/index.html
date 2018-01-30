@@ -209,59 +209,134 @@
               <div class="col-12">
                 <div class="card">
                   <div class="card-body py-0">
-                    <table class="table">
-                      <thead>
-                        <tr>
-                          <th scope="col">#</th>
-                          <th scope="col">Name</th>
-                          <th scope="col">Monthly</th>
-                          <th scope="col">Jun</th>
-                          <th scope="col">Jul</th>
-                          <th scope="col">Aug</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <th scope="row">001</th>
-                          <td>Albert Camus</td>
-                          <td>Rp 750.000.000</td>
-                          <td>Rp 500.000.000</td>
-                          <td>Rp 500.000.000</td>
-                          <td>Rp 500.000.000</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">002</th>
-                          <td>Franz Kafka</td>
-                          <td>Rp 750.000.000</td>
-                          <td>Rp 500.000.000</td>
-                          <td>Rp 500.000.000</td>
-                          <td>Rp 500.000.000</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">003</th>
-                          <td>Jean-Paul Sartre</td>
-                          <td>Rp 750.000.000</td>
-                          <td>Rp 500.000.000</td>
-                          <td>Rp 500.000.000</td>
-                          <td>Rp 500.000.000</td>
-                        </tr>
-                      </tbody>
-                    </table>
+                    <div class="kaji-table-wrapper">
+                      <div class="kaji-table-scroller">
+                        <table class="table kaji-table" id="js_cms_tuition_table">
+                          <thead>
+                            <tr>
+                              <th class="col-w-s" scope="col">#</th>
+                              <th class="col-w-m" scope="col">Name</th>
+                              <th class="col-w-m" scope="col">Monthly</th>
+                              <th class="col-w-m" scope="col">Jun</th>
+                              <th class="col-w-m" scope="col">Jul</th>
+                              <th class="col-w-m" scope="col">Aug</th>
+                              <th class="col-w-m" scope="col">Sep</th>
+                              <th class="col-w-m" scope="col">Oct</th>
+                              <th class="col-w-m" scope="col">Nov</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>001</td>
+                              <td class="d-block col-w-m position-relative">
+                                <a href="#js_cms_tuition_student_collapse_content" class="text-dark d-block js-cms-tuition-student-collapse-toggle" data-toggle="collapse"><span class="fa fa-cog mr-2"></span><span>Albert Camus</span></a>
+                              </td>
+                              <td>Rp 750.000.000</td>
+                              <td>Rp 500.000.000</td>
+                              <td>Rp 500.000.000</td>
+                              <td>Rp 500.000.000</td>
+                              <td>Rp 500.000.000</td>
+                              <td>Rp 500.000.000</td>
+                              <td>Rp 500.000.000</td>
+                            </tr>
+                            <tr>
+                              <td class="p-0 border-top-0" colspan="9" style="height: auto;">
+                                <div class="collapse" id="js_cms_tuition_student_collapse_content">
+                                  <div class="card text-black bg-light rounded-0 no-elevation">
+                                    <div class="card-body py-0">
+                                      <ul class="nav nav-tabs">
+                                        <li class="nav-item">
+                                          <a class="nav-link active" href="#js_cms_tuition_student_tab_pane_email" data-toggle="tab">Email</a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" href="#js_cms_tuition_student_tab_pane_sms" data-toggle="tab">SMS</a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" href="#js_cms_tuition_student_tab_pane_edit" data-toggle="tab">Edit</a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" href="#js_cms_tuition_student_tab_pane_delete" data-toggle="tab">Delete</a>
+                                        </li>
+                                      </ul>
+                                      <div class="tab-content">
+                                        <div class="tab-pane py-3 active" id="js_cms_tuition_student_tab_pane_email" role="tabpanel">
+                                          <div class="card" style="width: 40rem;">
+                                            <div class="card-header"><span class="text-muted">Albert Camus</span></div>
+                                            <div class="card-body">
+                                              <h4 class="card-title">Email Form</h4>
+                                              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                              <a href="#" class="btn btn-primary">SEND</a>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="tab-pane py-3" id="js_cms_tuition_student_tab_pane_sms" role="tabpanel">
+                                         <div class="card" style="width: 40rem;">
+                                            <div class="card-header"><span class="text-muted">Albert Camus</span></div>
+                                            <div class="card-body">
+                                              <h4 class="card-title">SMS Form</h4>
+                                              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                              <a href="#" class="btn btn-primary">SEND</a>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="tab-pane py-3" id="js_cms_tuition_student_tab_pane_edit" role="tabpanel">
+                                         <div class="card" style="width: 40rem;">
+                                            <div class="card-header"><span class="text-muted">Albert Camus</span></div>
+                                            <div class="card-body">
+                                              <h4 class="card-title">Edit Form</h4>
+                                              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                              <a href="#" class="btn btn-primary">SUBMIT</a>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="tab-pane py-3" id="js_cms_tuition_student_tab_pane_delete" role="tabpanel">
+                                         <div class="card" style="width: 40rem;">
+                                            <div class="card-body text-center">
+                                              <p class="text-black">Are you sure you want to delete tuition data for <strong class="text-danger">Albert Camus</strong> ?</p>
+                                              <a href="#" class="btn btn-danger">DELETE</a>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>002</td>
+                              <td class="d-block col-w-m position-relative">
+                                <a href="javascript:void(0);" class="text-dark d-block"><span class="fa fa-cog mr-2"></span><span>Franz Kafka</span></a>
+                              </td>
+                              <td>Rp 750.000.000</td>
+                              <td>Rp 500.000.000</td>
+                              <td>Rp 500.000.000</td>
+                              <td>Rp 500.000.000</td>
+                              <td>Rp 500.000.000</td>
+                              <td>Rp 500.000.000</td>
+                              <td>Rp 500.000.000</td>
+                            </tr>
 
-                    <div class="btn-toolbar my-3" role="toolbar" aria-label="Toolbar with button groups">
-                      <div class="btn-group mr-2" role="group" aria-label="First group">
+                          </tbody>
+                        </table>
+
+                        
+                      </div>
+                    </div>
+
+                    <div class="btn-toolbar no-elevation my-3" role="toolbar" aria-label="Toolbar with button groups">
+                      <div class="btn-group no-elevation mr-2" role="group" aria-label="First group">
                         <button type="button" class="btn btn-light text-primary"><span class="fa fa-angle-left"></span></button>
                         <button type="button" class="btn btn-light text-primary"><span class="fa fa-angle-double-left"></span></button>
                       </div>
-                      <div class="btn-group mr-2" role="group" aria-label="Second group">
+                      <div class="btn-group no-elevation mr-2" role="group" aria-label="Second group">
                         <button type="button" class="btn btn-light text-primary">1</button>
                         <button type="button" class="btn btn-light text-primary">2</button>
                         <button type="button" class="btn btn-light text-primary">3</button>
                       </div>
-                      <div class="btn-group mr-2" role="group" aria-label="First group">
+                      <div class="btn-group no-elevation mr-2" role="group" aria-label="First group">
                         <button type="button" class="btn btn-light text-primary"><span class="fa fa-angle-right"></span></button>
                         <button type="button" class="btn btn-light text-primary"><span class="fa fa-angle-double-right"></span></button>
-                      </div>
                       </div>
                     </div>
                   </div>
@@ -273,6 +348,16 @@
         </main>
       </div>
     </div>
+    <div id="js_cms_tuition_template_contents" class="d-none">
+      <div class="js-cms-tuition-name-popover-content">
+        <div class="p-2 border rounded">
+          <a href="javascript:void(0);" class="btn btn-light text-left"><span class="fa fa-envelope mr-2 text-primary"></span>Email</a>
+          <a href="javascript:void(0);" class="btn btn-light text-left"><span class="fa fa-comment mr-2 text-primary"></span>SMS</a>
+          <a href="javascript:void(0);" class="btn btn-light text-left"><span class="fa fa-pencil mr-2 text-primary"></span>Edit</a>
+          <a href="javascript:void(0);" class="btn btn-light text-left"><span class="fa fa-trash mr-2 text-danger"></span>Delete</a>
+        </div>
+      </div>
+    </div>
 
     <script src="../copy/vendor/jquery.min.js"></script>
     <script src="../copy/vendor/popper.min.js"></script>
@@ -281,6 +366,14 @@
     <script src="../copy/vendor/material.min.js"></script>
     <script>
       feather.replace();
+    </script>
+    <script>
+      $(function () {
+        var $t = $('.js-cms-tuition-student-collapse-toggle');
+        $t.on('click', function(e) {
+          $t.closest('td').toggleClass('bg-light');
+        });
+      });
     </script>
   </body>
 </html>

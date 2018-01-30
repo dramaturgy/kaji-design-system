@@ -1,0 +1,34 @@
+.kaji-table-wrapper {
+  width: 100%;
+  position: relative;
+}
+
+.kaji-table-scroller {
+  overflow-x: scroll;
+  overflow-y: visible;
+}
+
+.kaji-table {
+  table-layout: fixed;
+  width: 100%;
+}
+.kaji-table td {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.kaji-table {
+  .col-w-xs { width: 2rem; }
+  .col-w-s { width: 4rem; }
+  .col-w-m { width: 10rem; }
+  .col-w-l { width: 12rem; }
+  .col-w-xl { width: 16rem; }
+}
+
+.kaji-table.cloned-col {
+  position: absolute;
+  left: auto;
+  top: 0;
+  width: auto;
+}

@@ -19,9 +19,9 @@
     position: relative;
     text-transform: uppercase;
 
-    @include active-focus-hover {
-      background-color: $nav-tab-bg-hover;
-    }
+    // @include active-focus-hover {
+    //   background-color: $nav-tab-bg-hover;
+    // }
 
     &::before {
       @include transition-standard(opacity);
