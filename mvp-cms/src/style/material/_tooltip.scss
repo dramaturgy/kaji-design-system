@@ -1,3 +1,5 @@
+$tooltip-opacity: 1;
+
 .tooltip {
   @include reset-text;
 
@@ -29,8 +31,6 @@
   text-align: center;
   transform: scale($tooltip-scale);
 }
-
-
 
 // Desktop
 

@@ -228,16 +228,86 @@
                           <tbody>
                             <tr>
                               <td>001</td>
-                              <td class="d-block col-w-m position-relative">
-                                <a href="#js_cms_tuition_student_collapse_content" class="text-dark d-block js-cms-tuition-student-collapse-toggle" data-toggle="collapse"><span class="fa fa-cog mr-2"></span><span>Albert Camus</span></a>
+                              <td class="d-block col-w-m overflow-ellipsis">
+                                <a href="#js_cms_tuition_student_collapse_content" class="text-dark d-block js-cms-tuition-table-col" data-toggle="collapse"><span class="fa fa-cog mr-2"></span><span>Albert Camus</span></a>
                               </td>
-                              <td>Rp 750.000.000</td>
-                              <td>Rp 500.000.000</td>
-                              <td>Rp 500.000.000</td>
-                              <td>Rp 500.000.000</td>
-                              <td>Rp 500.000.000</td>
-                              <td>Rp 500.000.000</td>
-                              <td>Rp 500.000.000</td>
+                              <td>
+                                <div class="dropdown">
+                                  <a class="js-cms-tuition-table-col text-dark"
+                                    href="javascript:void(0);"
+                                    data-toggle="tooltip"
+                                    data-placement="bottom"
+                                    data-html="true"
+                                    title="<div>Paid at Jul 2017<br/>For Jul 2017 - Aug 2017</div>"
+                                  >Rp 500.000.000</a>
+                                </div>
+                              </td>
+                              <td>
+                                <div class="dropdown">
+                                  <a class="js-cms-tuition-table-col text-dark"
+                                    href="javascript:void(0);"
+                                    data-toggle="tooltip"
+                                    data-placement="bottom"
+                                    data-html="true"
+                                    title="<div>Paid at Jul 2017<br/>For Jul 2017 - Aug 2017</div>"
+                                  >Rp 500.000.000</a>
+                                </div>
+                              </td>
+                              <td>
+                                <div class="dropdown">
+                                  <a class="js-cms-tuition-table-col text-dark"
+                                    href="javascript:void(0);"
+                                    data-toggle="tooltip"
+                                    data-placement="bottom"
+                                    data-html="true"
+                                    title="<div>Paid at Jul 2017<br/>For Jul 2017 - Aug 2017</div>"
+                                  >Rp 500.000.000</a>
+                                </div>
+                              </td>
+                              <td>
+                                <div class="dropdown">
+                                  <a class="js-cms-tuition-table-col text-dark"
+                                    href="javascript:void(0);"
+                                    data-toggle="tooltip"
+                                    data-placement="bottom"
+                                    data-html="true"
+                                    title="<div>Paid at Jul 2017<br/>For Jul 2017 - Aug 2017</div>"
+                                  >Rp 500.000.000</a>
+                                </div>
+                              </td>
+                              <td>
+                                <div class="dropdown">
+                                  <a class="js-cms-tuition-table-col text-dark"
+                                    href="javascript:void(0);"
+                                    data-toggle="tooltip"
+                                    data-placement="bottom"
+                                    data-html="true"
+                                    title="<div>Paid at Jul 2017<br/>For Jul 2017 - Aug 2017</div>"
+                                  >Rp 0</a>
+                                </div>
+                              </td>
+                              <td>
+                                <div class="dropdown">
+                                  <a class="js-cms-tuition-table-col text-dark"
+                                    href="javascript:void(0);"
+                                    data-toggle="tooltip"
+                                    data-placement="bottom"
+                                    data-html="true"
+                                    title="<div>Paid at Jul 2017<br/>For Jul 2017 - Aug 2017</div>"
+                                  >Rp 500.000.000</a>
+                                </div>
+                              </td>
+                              <td>
+                                <div class="dropdown">
+                                  <a class="js-cms-tuition-table-col text-dark"
+                                    href="javascript:void(0);"
+                                    data-toggle="tooltip"
+                                    data-placement="bottom"
+                                    data-html="true"
+                                    title="<div>Paid at Jul 2017<br/>For Jul 2017 - Aug 2017</div>"
+                                  >Rp 500.000.000</a>
+                                </div>
+                              </td>
                             </tr>
                             <tr>
                               <td class="p-0 border-top-0" colspan="9" style="height: auto;">
@@ -303,19 +373,6 @@
                                 </div>
                               </td>
                             </tr>
-                            <tr>
-                              <td>002</td>
-                              <td class="d-block col-w-m position-relative">
-                                <a href="javascript:void(0);" class="text-dark d-block"><span class="fa fa-cog mr-2"></span><span>Franz Kafka</span></a>
-                              </td>
-                              <td>Rp 750.000.000</td>
-                              <td>Rp 500.000.000</td>
-                              <td>Rp 500.000.000</td>
-                              <td>Rp 500.000.000</td>
-                              <td>Rp 500.000.000</td>
-                              <td>Rp 500.000.000</td>
-                              <td>Rp 500.000.000</td>
-                            </tr>
 
                           </tbody>
                         </table>
@@ -343,7 +400,6 @@
                 </div>
               </div>
             </section>
-
           </div>
         </main>
       </div>
@@ -369,9 +425,11 @@
     </script>
     <script>
       $(function () {
-        var $t = $('.js-cms-tuition-student-collapse-toggle');
-        $t.on('click', function(e) {
-          $t.closest('td').toggleClass('bg-light');
+
+        $('[data-toggle="tooltip"]').tooltip();
+
+        $('.js-cms-tuition-table-col').on('click', function(e) {
+          $(this).closest('td').toggleClass('bg-light');
         });
       });
     </script>

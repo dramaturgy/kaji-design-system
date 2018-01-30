@@ -1537,9 +1537,11 @@ hr {
   width: 100%; }
 
 .kaji-table td {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis; }
+  position: relative; }
+  .kaji-table td.overflow-ellipsis {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden; }
 
 .kaji-table .col-w-xs {
   width: 2rem; }
@@ -1561,5 +1563,9 @@ hr {
   left: auto;
   top: 0;
   width: auto; }
+
+.kaji-table .tuition-col-info {
+  position: absolute;
+  top: 0; }
 
 /*# sourceMappingURL=../maps/product-cms.css.map */

@@ -7461,7 +7461,7 @@ textarea.textarea-autosize {
     text-align: right;
     text-align: start; }
   .tooltip.show {
-    opacity: 0.9; }
+    opacity: 1; }
     .tooltip.show .tooltip-inner {
       -webkit-transform: scale(1);
               transform: scale(1); }

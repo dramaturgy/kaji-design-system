@@ -8,9 +8,11 @@
     </script>
     <script>
       $(function () {
-        var $t = $('.js-cms-tuition-student-collapse-toggle');
-        $t.on('click', function(e) {
-          $t.closest('td').toggleClass('bg-light');
+
+        $('[data-toggle="tooltip"]').tooltip();
+
+        $('.js-cms-tuition-table-col').on('click', function(e) {
+          $(this).closest('td').toggleClass('bg-light');
         });
       });
     </script>
