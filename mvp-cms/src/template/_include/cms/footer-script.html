@@ -11,12 +11,13 @@
       feather.replace();
     </script>
 
+    {# Babel Standalone #}
+    <script src="../copy/vendor/babel.min.js"></script>
+    
     {# Faker #}
     <script src="../copy/vendor/faker.min.js"></script>
 
-    {# Babel Standalone #}
-    <script src="../copy/vendor/babel.min.js"></script>
-
+    {# Fake Tuition Data #}
     <script type="text/babel">
       faker.locale = "en_IND";
       const generateFakeTuition = () => {
@@ -55,55 +56,48 @@
     <script>
       $(function () {
 
-        function formatRupiah(value) {
-          function format(value, places, symbol, thousand, decimal) {
-            value = value || 0;
-            places = !isNaN(places = Math.abs(places)) ? places : 2;
-            symbol = symbol !== undefined ? symbol : "Rp";
-            thousand = thousand || ".";
-            decimal = decimal || ",";
-            var negative = value < 0 ? "-" : "",
-                i = parseInt(value = Math.abs(+value || 0).toFixed(places), 10) + "",
-                j = (j = i.length) > 3 ? j % 3 : 0;
-            return symbol + negative + (j ? i.substr(0, j) + thousand : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + thousand) + (places ? decimal + Math.abs(value - i).toFixed(places).slice(2) : "");
-          }
+        var $tuitionTable = $('#js_cms_tuition_table');
 
-          return format(value, 0, "Rp ", ".", ",");
+        function appendRowAction(elRow) {
+          var $elTrigger = elRow.find('.js-cms-tuition-col-name')
+          var templateFn = _.template($('#js_tuition_row_action_template').html());
+          var templateHTML = templateFn({
+            index: $elTrigger.attr('data-row-index'),
+            name: $elTrigger.attr('data-record-name'),
+            email: $elTrigger.attr('data-record-email'),
+            phone: $elTrigger.attr('data-record-phone')
+          });
+
+          elRow.after(templateHTML);
+          $elTrigger
+            .attr('data-toggle', 'collapse')
+            .collapse();
         }
 
-        function tuitionRowWriter(rowIndex, record, columns, cellWriter) {
+        $tuitionTable.bind('dynatable:afterUpdate', function(e, dynatable) {
+          var $table = $(this);
+          $table.find('tbody').find('tr').each(function(i) {
+            var $row = $(this);
+            appendRowAction($row);
+          });
+        });
 
-          var data = {rowIndex: rowIndex, record:record};
+        function generateTuitionRow(rowIndex, record, columns, cellWriter) {
 
-          function generateIdCell( rowIndex, record ) {
-            var idTemplate = $('#js_tuition_cell_id_template').html();
-            var templateFn = _.template(idTemplate);
-            var templateHTML = templateFn({rowIndex: rowIndex, record: record});
-            return templateHTML;
-          }
-
-          function generateNameCell( rowIndex, record ) {
-            var idTemplate = $('#js_tuition_cell_name_template').html();
-            var templateFn = _.template(idTemplate);
-            var templateHTML = templateFn({rowIndex: rowIndex, record: record});
-            return templateHTML;
-          }
-
-          function generatePaymentCells( templateIn, rowIndex, record ) {
-
+          function generateCell( templateIn, rowIndex, record ) {
             var templateFn = _.template(templateIn.html());
             var templateOut = templateFn({rowIndex: rowIndex, record: record});
             return templateOut;
           }
 
           return '<tr>' +
-            generateIdCell( rowIndex, record ) +
-            generateNameCell( rowIndex, record ) +
-            generatePaymentCells( $('#js_tuition_cell_payments_template'), rowIndex, record ) +
+            generateCell( $('#js_tuition_cell_id_template'), rowIndex, record ) +
+            generateCell( $('#js_tuition_cell_name_template'), rowIndex, record ) +
+            generateCell( $('#js_tuition_cell_payments_template'), rowIndex, record ) +
             '</tr>';
         }
 
-        $('#js_cms_tuition_table').dynatable({
+        $tuitionTable.dynatable({
           features: {
             paginate: false,
             sort: false,
@@ -116,15 +110,11 @@
             records: fakeTuition
           },
           writers: {
-            _rowWriter: tuitionRowWriter
+            _rowWriter: generateTuitionRow
           }
         });
 
         $('[data-toggle="tooltip"]').tooltip();
-
-        $('.js-cms-tuition-table-col').on('click', function(e) {
-          $(this).closest('td').toggleClass('bg-light');
-        });
 
       });
     </script>

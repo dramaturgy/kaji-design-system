@@ -239,10 +239,13 @@
 
             <script id="js_tuition_cell_name_template" type="text/x-lodash-template">
               <td class="d-block col-w-m overflow-ellipsis">
-                <a class="text-dark d-block js-cms-tuition-table-col"
-                  href="#js_cms_tuition_student_collapse_content"
-                  data-toggle="collapse"
-                ><span class="fa fa-cog mr-2"></span><span class="js-cms-tuition-table-col-name"><%= record.name %></span></a>
+                <a class="text-dark d-block js-cms-tuition-col-name"
+                  href="#js_cms_tuition_student_collapse_content_<%= rowIndex %>"
+                  data-row-index="<%= rowIndex %>"
+                  data-record-name="<%= record.name %>"
+                  data-record-phone="<%= record.phone %>"
+                  data-record-email="<%= record.email %>"
+                ><span class="fa fa-cog mr-2"></span><span class="js-cms-tuition-table-cell-name"><%= record.name %></span></a>
               </td>
             </script>
 
@@ -260,6 +263,73 @@
                 </div>
               </td>
               <% } %>
+            </script>
+
+            <script id="js_tuition_row_action_template" type="text/x-lodash-template">
+              <tr class="js-tuition-row-action">
+                <td class="p-0 border-top-0" colspan="9" style="height: auto;">
+                  <div class="collapse" id="js_cms_tuition_student_collapse_content_<%= index %>">
+                    <div class="card text-black bg-light rounded-0 no-elevation">
+                      <div class="card-body py-0">
+                        <ul class="nav nav-tabs">
+                          <li class="nav-item">
+                            <a class="nav-link active" href="#js_cms_tuition_student_tab_pane_email_<%= index %>" data-toggle="tab">Email</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#js_cms_tuition_student_tab_pane_sms_<%= index %>" data-toggle="tab">SMS</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#js_cms_tuition_student_tab_pane_edit_<%= index %>" data-toggle="tab">Edit</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#js_cms_tuition_student_tab_pane_delete_<%= index %>" data-toggle="tab">Delete</a>
+                          </li>
+                        </ul>
+                        <div class="tab-content">
+                          <div class="tab-pane py-3 active" id="js_cms_tuition_student_tab_pane_email_<%= index %>" role="tabpanel">
+                            <div class="card" style="width: 40rem;">
+                              <div class="card-header"><span class="text-muted"><%= name %></span></div>
+                              <div class="card-body">
+                                <h4 class="card-title">Email Form</h4>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                <a href="#" class="btn btn-primary">SEND</a>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="tab-pane py-3" id="js_cms_tuition_student_tab_pane_sms_<%= index %>" role="tabpanel">
+                           <div class="card" style="width: 40rem;">
+                              <div class="card-header"><span class="text-muted"><%= name %></span></div>
+                              <div class="card-body">
+                                <h4 class="card-title">SMS Form</h4>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                <a href="#" class="btn btn-primary">SEND</a>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="tab-pane py-3" id="js_cms_tuition_student_tab_pane_edit_<%= index %>" role="tabpanel">
+                           <div class="card" style="width: 40rem;">
+                              <div class="card-header"><span class="text-muted"><%= name %></span></div>
+                              <div class="card-body">
+                                <h4 class="card-title">Edit Form</h4>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                <a href="#" class="btn btn-primary">SUBMIT</a>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="tab-pane py-3" id="js_cms_tuition_student_tab_pane_delete_<%= index %>" role="tabpanel">
+                           <div class="card" style="width: 40rem;">
+                              <div class="card-body text-center">
+                                <p class="text-black">Are you sure you want to delete tuition data for <strong class="text-danger"><%= name %></strong> ?</p>
+                                <a href="#" class="btn btn-danger">DELETE</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
             </script>
           </div>
         </main>
@@ -290,11 +360,12 @@
     </script>
 
     
+    <script src="../copy/vendor/babel.min.js"></script>
+    
+    
     <script src="../copy/vendor/faker.min.js"></script>
 
     
-    <script src="../copy/vendor/babel.min.js"></script>
-
     <script type="text/babel">
       faker.locale = "en_IND";
       const generateFakeTuition = () => {
@@ -333,55 +404,48 @@
     <script>
       $(function () {
 
-        function formatRupiah(value) {
-          function format(value, places, symbol, thousand, decimal) {
-            value = value || 0;
-            places = !isNaN(places = Math.abs(places)) ? places : 2;
-            symbol = symbol !== undefined ? symbol : "Rp";
-            thousand = thousand || ".";
-            decimal = decimal || ",";
-            var negative = value < 0 ? "-" : "",
-                i = parseInt(value = Math.abs(+value || 0).toFixed(places), 10) + "",
-                j = (j = i.length) > 3 ? j % 3 : 0;
-            return symbol + negative + (j ? i.substr(0, j) + thousand : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + thousand) + (places ? decimal + Math.abs(value - i).toFixed(places).slice(2) : "");
-          }
+        var $tuitionTable = $('#js_cms_tuition_table');
 
-          return format(value, 0, "Rp ", ".", ",");
+        function appendRowAction(elRow) {
+          var $elTrigger = elRow.find('.js-cms-tuition-col-name')
+          var templateFn = _.template($('#js_tuition_row_action_template').html());
+          var templateHTML = templateFn({
+            index: $elTrigger.attr('data-row-index'),
+            name: $elTrigger.attr('data-record-name'),
+            email: $elTrigger.attr('data-record-email'),
+            phone: $elTrigger.attr('data-record-phone')
+          });
+
+          elRow.after(templateHTML);
+          $elTrigger
+            .attr('data-toggle', 'collapse')
+            .collapse();
         }
 
-        function tuitionRowWriter(rowIndex, record, columns, cellWriter) {
+        $tuitionTable.bind('dynatable:afterUpdate', function(e, dynatable) {
+          var $table = $(this);
+          $table.find('tbody').find('tr').each(function(i) {
+            var $row = $(this);
+            appendRowAction($row);
+          });
+        });
 
-          var data = {rowIndex: rowIndex, record:record};
+        function generateTuitionRow(rowIndex, record, columns, cellWriter) {
 
-          function generateIdCell( rowIndex, record ) {
-            var idTemplate = $('#js_tuition_cell_id_template').html();
-            var templateFn = _.template(idTemplate);
-            var templateHTML = templateFn({rowIndex: rowIndex, record: record});
-            return templateHTML;
-          }
-
-          function generateNameCell( rowIndex, record ) {
-            var idTemplate = $('#js_tuition_cell_name_template').html();
-            var templateFn = _.template(idTemplate);
-            var templateHTML = templateFn({rowIndex: rowIndex, record: record});
-            return templateHTML;
-          }
-
-          function generatePaymentCells( templateIn, rowIndex, record ) {
-
+          function generateCell( templateIn, rowIndex, record ) {
             var templateFn = _.template(templateIn.html());
             var templateOut = templateFn({rowIndex: rowIndex, record: record});
             return templateOut;
           }
 
           return '<tr>' +
-            generateIdCell( rowIndex, record ) +
-            generateNameCell( rowIndex, record ) +
-            generatePaymentCells( $('#js_tuition_cell_payments_template'), rowIndex, record ) +
+            generateCell( $('#js_tuition_cell_id_template'), rowIndex, record ) +
+            generateCell( $('#js_tuition_cell_name_template'), rowIndex, record ) +
+            generateCell( $('#js_tuition_cell_payments_template'), rowIndex, record ) +
             '</tr>';
         }
 
-        $('#js_cms_tuition_table').dynatable({
+        $tuitionTable.dynatable({
           features: {
             paginate: false,
             sort: false,
@@ -394,15 +458,11 @@
             records: fakeTuition
           },
           writers: {
-            _rowWriter: tuitionRowWriter
+            _rowWriter: generateTuitionRow
           }
         });
 
         $('[data-toggle="tooltip"]').tooltip();
-
-        $('.js-cms-tuition-table-col').on('click', function(e) {
-          $(this).closest('td').toggleClass('bg-light');
-        });
 
       });
     </script>
