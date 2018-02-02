@@ -361,7 +361,7 @@
 
     
     <script src="../copy/vendor/babel.min.js"></script>
-    
+
     
     <script src="../copy/vendor/faker.min.js"></script>
 
@@ -425,7 +425,14 @@
         $tuitionTable.bind('dynatable:afterUpdate', function(e, dynatable) {
           var $table = $(this);
           $table.find('tbody').find('tr').each(function(i) {
-            var $row = $(this);
+            var $row = $(this)
+            ,   $elTrigger = $row.find('.js-cms-tuition-col-name')
+            ,   $elCell = $elTrigger.closest('td');
+            
+            $elTrigger.on('click', function(e) {
+              $elCell.toggleClass('bg-light');
+            });
+
             appendRowAction($row);
           });
         });
