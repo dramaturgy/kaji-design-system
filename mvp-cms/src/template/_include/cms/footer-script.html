@@ -55,6 +55,11 @@
     {# Tuition UI Script #}
     <script>
       $(function () {
+        
+        _.templateSettings = {
+            interpolate: /\<\@\=(.+?)\@\>/g,
+            evaluate: /\<\@(.+?)\@\>/g
+        };
 
         var $tuitionTable = $('#js_cms_tuition_table');
 

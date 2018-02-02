@@ -89,18 +89,8 @@
         </nav>
         <main role="main" class="dashboard-main col-12 col-md-10 bg-light-2 py-3" style="min-height: 100vh">
           <div class="container-fluid has-navbar-fixed">
-            <section class="row hero-tuition">
-              <div class="col-12">
-                <div class="card border-black-divider-solid">
-                  <div class="card-body">
-                    <div class="card-title">
-                      <h4>Tuition</h4>
-                    </div>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam porro, iusto libero.</p>
-                  </div>
-                </div>
-              </div>
-            </section>
+            
+
             <section class="row py-3 filter-bar-tuition">
               <div class="col-12">
                 <p class="subheading-black d-block">FILTER</p>
@@ -145,20 +135,6 @@
                       <button class="dropdown-item" type="button">B</button>
                       <button class="dropdown-item" type="button">C</button>
                       <button class="dropdown-item" type="button">D</button>
-                    </div>
-                  </div>
-                  <div class="btn-group">
-                    <button class="btn btn-white btn-fw-regular" type="button" style="text-transform: capitalize;">Year</button>
-                    <button class="btn btn-white text-primary dropdown-toggle border-light" type="button" id="js_dropdown_filter_tuition_status" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <span>Now</span><span class="fa fa-caret-down ml-2"></span>
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-right">
-                      <button class="dropdown-item" type="button">Now</button>
-                      <div class="dropdown-divider"></div>
-                      <button class="dropdown-item" type="button">2018</button>
-                      <button class="dropdown-item" type="button">2017</button>
-                      <button class="dropdown-item" type="button">2016</button>
-                      <button class="dropdown-item" type="button">2015</button>
                     </div>
                   </div>
                   <div class="btn-group">
@@ -208,7 +184,7 @@
             <section class="row">
               <div class="col-12">
                 <div class="card">
-                  <div class="card-body py-0">
+                  <div class="card-body pt-0 pb-3">
                     <div class="kaji-table-wrapper">
                       <div class="kaji-table-scroller">
                         <table class="table kaji-table" id="js_cms_tuition_table">
@@ -234,23 +210,23 @@
             </section>
 
             <script id="js_tuition_cell_id_template" type="text/x-lodash-template">
-              <td><%= rowIndex %></td>
+              <td><@= rowIndex @></td>
             </script>
 
             <script id="js_tuition_cell_name_template" type="text/x-lodash-template">
               <td class="d-block col-w-m overflow-ellipsis">
                 <a class="text-dark d-block js-cms-tuition-col-name"
-                  href="#js_cms_tuition_student_collapse_content_<%= rowIndex %>"
-                  data-row-index="<%= rowIndex %>"
-                  data-record-name="<%= record.name %>"
-                  data-record-phone="<%= record.phone %>"
-                  data-record-email="<%= record.email %>"
-                ><span class="fa fa-cog mr-2"></span><span class="js-cms-tuition-table-cell-name"><%= record.name %></span></a>
+                  href="#js_cms_tuition_student_collapse_content_<@= rowIndex @>"
+                  data-row-index="<@= rowIndex @>"
+                  data-record-name="<@= record.name @>"
+                  data-record-phone="<@= record.phone @>"
+                  data-record-email="<@= record.email @>"
+                ><span class="fa fa-cog mr-2"></span><span class="js-cms-tuition-table-cell-name"><@= record.name @></span></a>
               </td>
             </script>
 
             <script id="js_tuition_cell_payments_template" type="text/x-lodash-template">
-              <% for( var d = 0; d < record.payments.length; d ++ ) { %>
+              <@ for( var d = 0; d < record.payments.length; d ++ ) { @>
               <td>
                 <div class="dropdown">
                   <a class="js-cms-tuition-table-col text-dark"
@@ -258,68 +234,133 @@
                     data-toggle="tooltip"
                     data-placement="bottom"
                     data-html="true"
-                    title="<div>Paid at <%= record.payments[d].month %><br/>For <%= record.payments[d].periodStart %> - <%= record.payments[d].periodEnd %></div>"
-                  ><%= record.payments[d].paid %></a>
+                    title="<div>Paid at <@= record.payments[d].month @><br/>For <@= record.payments[d].periodStart @> - <@= record.payments[d].periodEnd @></div>"
+                  ><@= record.payments[d].paid @></a>
                 </div>
               </td>
-              <% } %>
+              <@ } @>
             </script>
 
             <script id="js_tuition_row_action_template" type="text/x-lodash-template">
               <tr class="js-tuition-row-action">
                 <td class="p-0 border-top-0" colspan="9" style="height: auto;">
-                  <div class="collapse" id="js_cms_tuition_student_collapse_content_<%= index %>">
+                  <div class="collapse" id="js_cms_tuition_student_collapse_content_<@= index @>">
                     <div class="card text-black bg-light rounded-0 no-elevation">
                       <div class="card-body py-0">
                         <ul class="nav nav-tabs">
                           <li class="nav-item">
-                            <a class="nav-link active" href="#js_cms_tuition_student_tab_pane_email_<%= index %>" data-toggle="tab">Email</a>
+                            <a class="nav-link active" href="#js_cms_tuition_student_tab_pane_email_<@= index @>" data-toggle="tab">Email</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href="#js_cms_tuition_student_tab_pane_sms_<%= index %>" data-toggle="tab">SMS</a>
+                            <a class="nav-link" href="#js_cms_tuition_student_tab_pane_sms_<@= index @>" data-toggle="tab">SMS</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href="#js_cms_tuition_student_tab_pane_edit_<%= index %>" data-toggle="tab">Edit</a>
+                            <a class="nav-link" href="#js_cms_tuition_student_tab_pane_edit_<@= index @>" data-toggle="tab">Edit</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href="#js_cms_tuition_student_tab_pane_delete_<%= index %>" data-toggle="tab">Delete</a>
+                            <a class="nav-link" href="#js_cms_tuition_student_tab_pane_delete_<@= index @>" data-toggle="tab">Delete</a>
                           </li>
                         </ul>
                         <div class="tab-content">
-                          <div class="tab-pane py-3 active" id="js_cms_tuition_student_tab_pane_email_<%= index %>" role="tabpanel">
+                          <div class="tab-pane py-3 active" id="js_cms_tuition_student_tab_pane_email_<@= index @>" role="tabpanel">
                             <div class="card" style="width: 40rem;">
-                              <div class="card-header"><span class="text-muted"><%= name %></span></div>
+                              <div class="card-header"><span class="text-muted"><@= name @></span></div>
                               <div class="card-body">
                                 <h4 class="card-title">Email Form</h4>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                <a href="#" class="btn btn-primary">SEND</a>
+                                <form>
+                                  <div class="form-group">
+                                    <label for="tuition_email_address_field_<@= index @>">Email address</label>
+                                    <input type="email" class="form-control" id="tuition_email_address_field_<@= index @>" value="<@= email @>">
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="tuition_email_message_field_<@= index @>">Message</label>
+                                    <textarea class="form-control" id="tuition_email_message_field_<@= index @>" rows="3"></textarea>
+                                  </div>
+                                  <btn href="javascript:void(0);" class="btn btn-primary">SEND</btn>
+                                </form>                                
                               </div>
                             </div>
                           </div>
-                          <div class="tab-pane py-3" id="js_cms_tuition_student_tab_pane_sms_<%= index %>" role="tabpanel">
+                          <div class="tab-pane py-3" id="js_cms_tuition_student_tab_pane_sms_<@= index @>" role="tabpanel">
                            <div class="card" style="width: 40rem;">
-                              <div class="card-header"><span class="text-muted"><%= name %></span></div>
+                              <div class="card-header"><span class="text-muted"><@= name @></span></div>
                               <div class="card-body">
                                 <h4 class="card-title">SMS Form</h4>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                <a href="#" class="btn btn-primary">SEND</a>
+                                <form>
+                                  <fieldset class="form-group">
+                                    <label for="tuition_phone_field_<@= index @>">Phone Number</label>
+                                    <input type="email" class="form-control" id="tuition_phone_field_<@= index @>" value="<@= phone @>">
+                                  </fieldset>
+                                  <fieldset class="form-group">
+                                    <label for="tuition_sms_message_field_<@= index @>">Message</label>
+                                    <textarea class="form-control" id="tuition_sms_message_field_<@= index @>" rows="3"></textarea>
+                                  </fieldset>
+                                  <btn href="javascript:void(0);" class="btn btn-primary">SEND</btn>
+                                </form>
                               </div>
                             </div>
                           </div>
-                          <div class="tab-pane py-3" id="js_cms_tuition_student_tab_pane_edit_<%= index %>" role="tabpanel">
+                          <div class="tab-pane py-3" id="js_cms_tuition_student_tab_pane_edit_<@= index @>" role="tabpanel">
                            <div class="card" style="width: 40rem;">
-                              <div class="card-header"><span class="text-muted"><%= name %></span></div>
+                              <div class="card-header"><span class="text-muted"><@= name @></span></div>
                               <div class="card-body">
                                 <h4 class="card-title">Edit Form</h4>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                <a href="#" class="btn btn-primary">SUBMIT</a>
+                                <form>
+                                  <fieldset class="form-group">
+                                    <label for="tuition_payment_amount_field_<@= index @>">Amount</label>
+                                    <div class="input-group"> 
+                                        
+                                        <input type="number"
+                                          value
+                                          min="0"
+                                          step="1"
+                                          data-number-to-fixed="2"
+                                          data-number-stepfactor="1"
+                                          class="form-control"
+                                          id="tuition_payment_amount_field_<@= index @>"
+                                          placeholder="0"
+                                        />
+                                    </div> 
+                                  </fieldset>
+                                  <fieldset class="form-group">
+                                    <label for="tuition_payment_paid_at_field_<@= index @>">Paid at</label>
+                                    <div class="input-group"> 
+                                        
+                                        <input type="date"
+                                          class="form-control"
+                                          id="tuition_payment_paid_at_field_<@= index @>"
+                                        />
+                                    </div> 
+                                  </fieldset>
+                                  <fieldset class="form-group">
+                                    <label for="tuition_payment_period_start_field_<@= index @>">Start period</label>
+                                    <div class="input-group"> 
+                                        
+                                        <input type="date"
+                                          class="form-control"
+                                          id="tuition_payment_period_start_field_<@= index @>"
+                                        />
+                                    </div> 
+                                  </fieldset>
+                                  <fieldset class="form-group">
+                                    <label for="tuition_payment_period_end_field_<@= index @>">End period</label>
+                                    <div class="input-group"> 
+                                        
+                                        <input type="date"
+                                          class="form-control"
+                                          id="tuition_payment_period_end_field_<@= index @>"
+                                        />
+                                    </div> 
+                                  </fieldset>
+                                  <btn href="javascript:void(0);" class="btn btn-success">SUBMIT</btn>
+                                </form>
                               </div>
                             </div>
                           </div>
-                          <div class="tab-pane py-3" id="js_cms_tuition_student_tab_pane_delete_<%= index %>" role="tabpanel">
+                          <div class="tab-pane py-3" id="js_cms_tuition_student_tab_pane_delete_<@= index @>" role="tabpanel">
                            <div class="card" style="width: 40rem;">
                               <div class="card-body text-center">
-                                <p class="text-black">Are you sure you want to delete tuition data for <strong class="text-danger"><%= name %></strong> ?</p>
+                                <p class="text-black">Are you sure you want to delete tuition data for <strong class="text-danger"><@= name @></strong> ?</p>
                                 <a href="#" class="btn btn-danger">DELETE</a>
                               </div>
                             </div>
@@ -403,6 +444,11 @@
     
     <script>
       $(function () {
+        
+        _.templateSettings = {
+            interpolate: /\<\@\=(.+?)\@\>/g,
+            evaluate: /\<\@(.+?)\@\>/g
+        };
 
         var $tuitionTable = $('#js_cms_tuition_table');
 

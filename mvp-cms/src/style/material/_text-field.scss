@@ -104,7 +104,9 @@
   border-radius: $textfield-box-border-radius;
   border-width: $textfield-border-width;
   height: auto;
-  padding: $textfield-box-padding-y $textfield-box-padding-x;
+  padding: $textfield-box-padding-y $textfield-box-padding-x-sm;
+  background-color: $theme-violet-0;
+  margin-top: .5rem;
 
   @include hover {
     box-shadow: inset $textfield-border-width-hover $textfield-border-width-hover 0 ($textfield-border-width * -1) $textfield-border-color-hover, inset ($textfield-border-width-hover * -1) ($textfield-border-width-hover * -1) 0 ($textfield-border-width * -1) $textfield-border-color-hover;

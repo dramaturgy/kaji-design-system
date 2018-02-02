@@ -137,7 +137,7 @@ label {
   font-weight: 400;
   letter-spacing: 0;
   line-height: 1.5;
-  color: rgba(68, 60, 74, 0.38);
+  color: rgba(68, 60, 74, 0.54);
   display: inline-block; }
 
 legend {
@@ -224,7 +224,7 @@ caption {
   letter-spacing: 0;
   line-height: 1.5;
   caption-side: bottom;
-  color: rgba(68, 60, 74, 0.38);
+  color: rgba(68, 60, 74, 0.54);
   min-height: 3rem;
   padding: decimal-round(0.96429rem) 1rem; }
   [dir='rtl'] caption {
@@ -1294,7 +1294,7 @@ sup {
   font-weight: 400;
   letter-spacing: 0;
   line-height: 1.5;
-  color: rgba(68, 60, 74, 0.38);
+  color: rgba(68, 60, 74, 0.54);
   display: block;
   margin-top: 0.25rem; }
   .blockquote-footer::before {

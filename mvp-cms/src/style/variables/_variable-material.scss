@@ -376,12 +376,12 @@ $nav-tab-link-padding-y:   (($nav-tab-height - $nav-tab-font-size * $nav-tab-lin
 // Text field (Bootstrap form control)
 // Based on https://material.io/guidelines/components/text-fields.html#text-fields-states
 
-$textfield-border-color:       rgba(0, 0, 0, .42) !default;
+$textfield-border-color:       rgba($material-color-grey-500, .42) !default;
 $textfield-border-color-focus: map-get(theme-color(primary), color) !default;
-$textfield-border-color-hover: rgba(0, 0, 0, .87) !default;
+$textfield-border-color-hover: rgba($material-color-grey-500, .87) !default;
 $textfield-border-width:       $border-width !default;
-$textfield-border-width-focus: ($textfield-border-width * 2) !default;
-$textfield-border-width-hover: ($textfield-border-width * 2) !default;
+$textfield-border-width-focus: ($textfield-border-width * 1) !default;
+$textfield-border-width-hover: ($textfield-border-width * 1) !default;
 $textfield-color:              $black-primary !default;
 $textfield-color-disabled:     $black-hint !default;
 $textfield-hint-color:         $black-hint !default;
@@ -422,11 +422,11 @@ $textfield-box-height-lg:      4.25rem !default;
 $textfield-box-height-sm:      2.75rem !default;
 $textfield-box-label-spacer-y: .5rem !default;
 $textfield-box-padding-x:      1rem !default;
-$textfield-box-padding-x-lg:   1rem !default;
-$textfield-box-padding-x-sm:   .75rem !default;
-$textfield-box-padding-y:      (($textfield-box-height - $textfield-font-size * $textfield-line-height) / 2) !default;
-$textfield-box-padding-y-lg:   (($textfield-box-height-lg - $textfield-font-size-lg * $textfield-line-height-lg) / 2) !default;
-$textfield-box-padding-y-sm:   (($textfield-box-height-sm - $textfield-font-size-sm * $textfield-line-height-sm) / 2) !default;
+$textfield-box-padding-x-lg:   1.25rem !default;
+$textfield-box-padding-x-sm:   .5rem !default;
+$textfield-box-padding-y:      (($textfield-box-height - $textfield-font-size * $textfield-line-height) / 4) !default;
+$textfield-box-padding-y-lg:   (($textfield-box-height-lg - $textfield-font-size-lg * $textfield-line-height-lg) / 4) !default;
+$textfield-box-padding-y-sm:   (($textfield-box-height-sm - $textfield-font-size-sm * $textfield-line-height-sm) / 4) !default;
 
 
 
