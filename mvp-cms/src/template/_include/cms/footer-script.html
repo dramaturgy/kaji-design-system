@@ -3,16 +3,128 @@
     <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
     <script src="../copy/vendor/bootstrap.min.js"></script>
     <script src="../copy/vendor/material.min.js"></script>
+    <script src="../copy/vendor/lodash.min.js"></script>
+    <script src="../copy/vendor/jquery.dynatable.js"></script>
+
+    {# Feather Icons #}
     <script>
       feather.replace();
     </script>
+
+    {# Faker #}
+    <script src="../copy/vendor/faker.min.js"></script>
+
+    {# Babel Standalone #}
+    <script src="../copy/vendor/babel.min.js"></script>
+
+    <script type="text/babel">
+      faker.locale = "en_IND";
+      const generateFakeTuition = () => {
+        return [
+          'Albert Camus',
+          'Franz Kafka',
+          'George Orwell',
+          'Jean-Paul Sartre',
+          'Paulo Coelho'
+        ].map((studentName, i) => ({
+          'name': studentName,
+          'email': (studentName.split(' ').join('.') + '@mail.com').toLowerCase(),
+          'phone': faker.phone.phoneNumber(),
+          'payments': (() => {
+                      return [
+                        'Jul 2017',
+                        'Aug 2017',
+                        'Sep 2017',
+                        'Oct 2017',
+                        'Nov 2017',
+                        'Dec 2017'
+                      ].map((month, i) => ({
+                        'month': month,
+                        'paid': `Rp ${faker.random.number( { min: 5, max: 9 } ) * 100}.000`,
+                        'periodStart': `${faker.random.arrayElement(['Jul', 'Aug', 'Sep'])} 2017`,
+                        'periodEnd': `${faker.random.arrayElement(['Jul', 'Aug', 'Sep'])} 2017`
+                      }))
+                    })()
+        }));
+      };
+
+      const fakeTuition = generateFakeTuition();
+    </script>
+
+    {# Tuition UI Script #}
     <script>
       $(function () {
+
+        function formatRupiah(value) {
+          function format(value, places, symbol, thousand, decimal) {
+            value = value || 0;
+            places = !isNaN(places = Math.abs(places)) ? places : 2;
+            symbol = symbol !== undefined ? symbol : "Rp";
+            thousand = thousand || ".";
+            decimal = decimal || ",";
+            var negative = value < 0 ? "-" : "",
+                i = parseInt(value = Math.abs(+value || 0).toFixed(places), 10) + "",
+                j = (j = i.length) > 3 ? j % 3 : 0;
+            return symbol + negative + (j ? i.substr(0, j) + thousand : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + thousand) + (places ? decimal + Math.abs(value - i).toFixed(places).slice(2) : "");
+          }
+
+          return format(value, 0, "Rp ", ".", ",");
+        }
+
+        function tuitionRowWriter(rowIndex, record, columns, cellWriter) {
+
+          var data = {rowIndex: rowIndex, record:record};
+
+          function generateIdCell( rowIndex, record ) {
+            var idTemplate = $('#js_tuition_cell_id_template').html();
+            var templateFn = _.template(idTemplate);
+            var templateHTML = templateFn({rowIndex: rowIndex, record: record});
+            return templateHTML;
+          }
+
+          function generateNameCell( rowIndex, record ) {
+            var idTemplate = $('#js_tuition_cell_name_template').html();
+            var templateFn = _.template(idTemplate);
+            var templateHTML = templateFn({rowIndex: rowIndex, record: record});
+            return templateHTML;
+          }
+
+          function generatePaymentCells( templateIn, rowIndex, record ) {
+
+            var templateFn = _.template(templateIn.html());
+            var templateOut = templateFn({rowIndex: rowIndex, record: record});
+            return templateOut;
+          }
+
+          return '<tr>' +
+            generateIdCell( rowIndex, record ) +
+            generateNameCell( rowIndex, record ) +
+            generatePaymentCells( $('#js_tuition_cell_payments_template'), rowIndex, record ) +
+            '</tr>';
+        }
+
+        $('#js_cms_tuition_table').dynatable({
+          features: {
+            paginate: false,
+            sort: false,
+            pushState: false,
+            search: false,
+            recordCount: false,
+            perPageSelect: false
+          },
+          dataset: {
+            records: fakeTuition
+          },
+          writers: {
+            _rowWriter: tuitionRowWriter
+          }
+        });
 
         $('[data-toggle="tooltip"]').tooltip();
 
         $('.js-cms-tuition-table-col').on('click', function(e) {
           $(this).closest('td').toggleClass('bg-light');
         });
+
       });
     </script>
