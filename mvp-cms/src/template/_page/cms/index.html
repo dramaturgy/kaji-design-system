@@ -9,13 +9,16 @@
 
         <main role="main" class="dashboard-main col-12 col-md-10 bg-light-2 py-3" style="min-height: 100vh">
           <div class="container-fluid has-navbar-fixed">
-            {# {% include '_include/cms/tuition/hero.html' %} #}
+            {% include '_include/cms/tuition/hero.html' %}
 
             {% include '_include/cms/tuition/filter-bar.html' %}
 
             {% include '_include/cms/tuition/table.html' %}
 
           </div>
+
+          {% include '_include/cms/tuition/fab.html' %}
+
         </main>
       </div>
     </div>

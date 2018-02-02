@@ -12,58 +12,62 @@
     <!-- Add Material CSS, replace Bootstrap CSS -->
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-white faux-border-bottom">
-      <a class="navbar-brand" href="#">Edukaji</a>
-
-      <ul class="navbar-nav ml-md-auto">
-        <li class="nav-item">
-          <a class="nav-link py-1 px-2 dropdown-toggle"
-            data-toggle="dropdown"
-            id="js_cms_navbar_user_dropdown"
-            href="javascript:void(0);"><span
-              class="d-inline-block align-bottom lh-4">My Name</span><span
-                class="d-inline-block align-bottom ml-1" data-feather="chevron-down"></span></a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Action 1</a>
-            <a class="dropdown-item" href="#">Action 2</a>
-            <a class="dropdown-item" href="#">Settings</a>
-            <a class="dropdown-item" href="#">Logout</a>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-white faux-border-bottom p-0">
+      <div class="container-fluid px-0">
+        <div class="row no-gutters">
+          <div class="col-3 col-md-2">
+            <a class="navbar-brand w-100 border-right" href="#"><span class="d-block w-100 text-center text-primary">K</span></a>
           </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link p-0 mx-2"
-            style="border-radius: 50%; overflow: hidden; opacity: 1;" 
-            href="javascript:void(0);"><img height="32" src="../copy/sample/avatar/admin.png" alt=""></a>
-        </li>
-      </ul>
+
+          <div class="col-3 col-md-4 px-3">
+            <div class="d-flex flex-row">
+              <div class="dropdown">
+                <button class="btn btn-success dropdown-toggle no-elevation" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="fa fa-arrow-right text-white"></span>
+                </button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="javascript:void(0);">School Name X123</a>
+                  <a class="dropdown-item" href="javascript:void(0);">School Name X456</a>
+                  <a class="dropdown-item" href="javascript:void(0);">School Name X789</a>
+                </div>
+              </div>
+              <div class="align-self-center">
+                <h5 class="m-0 px-3 text-bold text-dark">The School Name at Some Place</h5>
+              </div>
+            </div>
+          </div>
+          
+          <ul class="navbar-nav ml-md-auto border-left px-3">
+            <li class="nav-item">
+              <a class="nav-link py-1 px-2 dropdown-toggle"
+                data-toggle="dropdown"
+                id="js_cms_navbar_user_dropdown"
+                href="javascript:void(0);"><span
+                  class="d-inline-block align-bottom lh-4">My Name</span><span
+                    class="d-inline-block align-bottom ml-1" data-feather="chevron-down"></span></a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Action 1</a>
+                <a class="dropdown-item" href="#">Action 2</a>
+                <a class="dropdown-item" href="#">Settings</a>
+                <a class="dropdown-item" href="#">Logout</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link p-0 mx-2"
+                style="border-radius: 50%; overflow: hidden; opacity: 1;" 
+                href="javascript:void(0);"><img height="32" src="../copy/sample/avatar/admin.png" alt=""></a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </nav>
     <div class="container-fluid px-0">
       <div class="row no-gutters">
         <nav class="cms-sidenav col-3 col-md-2 d-none d-md-block bg-white">
           <div class="cms-sidenav-sticky has-navbar-fixed">
             <ul class="nav flex-column">
-              <li class="nav-item" id="js_sidenav_parent_item_school" data-children=".js-sidenav-child-item-school">
-                <div class="js-sidenav-child-item-school">
-                  <a class="nav-link d-flex justify-content-between py-3" data-toggle="collapse" data-parent="#js_sidenav_parent_item_school" href="#js_sidenav_accordion_item_school">
-                    <div>
-                      <span class="d-inline-block align-bottom" data-feather="home"></span><span class="d-inline-block lh-lg align-bottom ml-3">School</span>
-                    </div>
-                    <span data-feather="plus-circle" style="width: 16px;"></span>
-                  </a>
-                  <ul class="nav flex-column collapse" id="js_sidenav_accordion_item_school" role="tabpanel">
-                    <li class="nav-item">
-                      <a class="nav-link py-3" href="#"><span class="d-inline-block align-bottom" data-feather="check"></span><span class="d-inline-block lh-lg align-bottom ml-3">School X1</span></a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link py-3" href="#"><span class="d-inline-block align-bottom" data-feather="arrow-up-right"></span><span class="d-inline-block lh-lg align-bottom ml-3">School X2</span></a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link py-3" href="#"><span class="d-inline-block align-bottom" data-feather="arrow-up-right"></span><span class="d-inline-block lh-lg align-bottom ml-3">School X3</span></a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class="nav-item faux-border-top">
+              
+              <li class="nav-item">
                 <a class="nav-link py-3" href="#"><span class="d-inline-block align-bottom" data-feather="layout"></span><span class="d-inline-block lh-lg align-bottom ml-3">Dashboard</span></a>
               </li>
               <li class="nav-item">
@@ -89,10 +93,20 @@
         </nav>
         <main role="main" class="dashboard-main col-12 col-md-10 bg-light-2 py-3" style="min-height: 100vh">
           <div class="container-fluid has-navbar-fixed">
-            
-
-            <section class="row py-3 filter-bar-tuition">
+            <section class="row hero-tuition">
               <div class="col-12">
+                <div class="card border-black-divider-solid">
+                  <div class="card-body position-relative">
+                    <div class="card-title">
+                      <h4>Tuition</h4>
+                    </div>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam porro, iusto libero.</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="row py-3 filter-bar-tuition">
+              <div class="col-9 my-1">
                 <p class="subheading-black d-block">FILTER</p>
                 <div class="button-toolbar py-2">
                   <div class="btn-group">
@@ -180,6 +194,7 @@
                   <button class="btn btn-primary" type="submit">FILTER</button>
                 </div>
               </div>
+              
             </section>
             <section class="row">
               <div class="col-12">
@@ -372,6 +387,48 @@
                 </td>
               </tr>
             </script>
+          </div>
+
+          <button
+            class="btn btn-float waves-attach waves-circle btn-primary position-fixed"
+            type="button"
+            data-toggle="modal"
+            data-target="#js_tuition_new_row_modal"
+            style="right: 2rem; bottom: 2rem;"
+          ><span class="fa fa-plus"></span></button>
+
+          <div class="modal fade" id="js_tuition_new_row_modal" tabindex="-1">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">New Row</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="form-group">
+                      <label for="js_tuition_new_name">Name</label>
+                      <input type="text" class="form-control" id="js_tuition_new_name" placeholder="Enter Name">
+                    </div>
+                    <div class="form-group">
+                      <label for="js_tuition_new_id">NIS</label>
+                      <input type="text" class="form-control" id="js_tuition_new_name" placeholder="Enter ID">
+                    </div>
+                    <div class="form-group">
+                      <label for="js_tuition_new_id">Email</label>
+                      <input type="email" class="form-control" id="js_tuition_new_email" placeholder="Enter Email">
+                    </div>
+                    <div class="form-group">
+                      <label for="js_tuition_new_id">Phone Number</label>
+                      <input type="email" class="form-control" id="js_tuition_new_phone_number" placeholder="Enter Phone Number">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </form>
+                </div>
+              </div>
+            </div>
           </div>
         </main>
       </div>
