@@ -6329,7 +6329,7 @@ select.form-control[multiple], select.form-control[size], textarea.form-control:
   border-width: 1px;
   height: auto;
   padding: 0.51786rem 0.5rem;
-  background-color: #f3ecf8;
+  background-color: #eeecf0;
   margin-top: .5rem; }
   select.form-control[multiple]:hover, select.form-control[size]:hover, textarea.form-control:hover:not(.textarea-autosize) {
     -webkit-box-shadow: inset 1px 1px 0 -1px rgba(185, 175, 192, 0.87), inset -1px -1px 0 -1px rgba(185, 175, 192, 0.87);
