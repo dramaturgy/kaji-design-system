@@ -333,7 +333,8 @@
 
 // Divider
 
-.dropdown-divider {
+.dropdown-divider,
+.dropdown-menu .divider {
   @include nav-divider($menu-divider-bg);
 }
 

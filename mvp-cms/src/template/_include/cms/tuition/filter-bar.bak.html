@@ -1,0 +1,112 @@
+            <section class="row py-3 filter-bar-tuition">
+              {# <div class="col-3 my-1">
+                <p class="subheading-black d-block">SEARCH</p>
+                <form class="form-inline py-2">
+                  <div class="btn-toolbar" role="toolbar">
+                    <div class="input-group">
+                      <input type="text" class="form-control bg-white px-2">
+                    </div>
+                    <div class="btn-group" role="group">
+                      <button type="button" class="btn btn-primary"><span class="fa fa-caret-down"></span></button>
+                      <button type="button" class="btn btn-primary dropdown-toggle border-light"><span class="fa fa-search"></span></button>
+                    </div>
+                  </div>
+                </form>
+              </div> #}
+              <div class="col-9 my-1">
+                <p class="subheading-black d-block">FILTER</p>
+                <div class="button-toolbar py-2">
+                  <div class="btn-group">
+                    <button class="btn btn-white btn-fw-regular px-2" type="button" style="text-transform: capitalize;">Status</button>
+                    <button class="btn btn-white text-primary dropdown-toggle border-light" type="button" id="js_dropdown_filter_tuition_status" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span>All</span><span class="fa fa-caret-down ml-2"></span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                      <button class="dropdown-item" type="button">All</button>
+                      <button class="dropdown-item" type="button">Paid</button>
+                      <button class="dropdown-item" type="button">Unpaid</button>
+                    </div>
+                  </div>
+                  <select class="selectpicker" title="GRADE">
+                    <option>9</option>
+                    <option>8</option>
+                    <option>7</option>
+                    <option>6</option>
+                    <option>5</option>
+                    <option>4</option>
+                  </select>
+                  {# <div class="btn-group">
+                    <button class="btn btn-white btn-fw-regular px-2" type="button" style="text-transform: capitalize;">Grade</button>
+                    <button class="btn btn-white text-primary dropdown-toggle border-light" type="button" id="js_dropdown_filter_tuition_grade" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span>All</span><span class="fa fa-caret-down ml-2"></span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                      <button class="dropdown-item" type="button">All</button>
+                      <div class="dropdown-divider"></div>
+                      <button class="dropdown-item" type="button">9</button>
+                      <button class="dropdown-item" type="button">8</button>
+                      <button class="dropdown-item" type="button">7</button>
+                      <div class="dropdown-divider"></div>
+                      <button class="dropdown-item" type="button">6</button>
+                      <button class="dropdown-item" type="button">5</button>
+                      <button class="dropdown-item" type="button">4</button>
+                    </div>
+                  </div> #}
+                  <div class="btn-group">
+                    <button class="btn btn-white btn-fw-regular px-2" type="button" style="text-transform: capitalize;">Class</button>
+                    <button class="btn btn-white text-primary dropdown-toggle border-light" type="button" id="js_dropdown_filter_tuition_class" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span>All</span><span class="fa fa-caret-down ml-2"></span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                      <button class="dropdown-item" type="button">All</button>
+                      <div class="dropdown-divider"></div>
+                      <button class="dropdown-item" type="button">A</button>
+                      <button class="dropdown-item" type="button">B</button>
+                      <button class="dropdown-item" type="button">C</button>
+                      <button class="dropdown-item" type="button">D</button>
+                    </div>
+                  </div>
+                  <div class="btn-group">
+                    <button class="btn btn-white btn-fw-regular px-2" type="button" style="text-transform: capitalize;">Since</button>
+                    <button class="btn btn-white text-primary dropdown-toggle border-light" type="button" id="js_dropdown_filter_tuition_month_start" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span>Now</span><span class="fa fa-caret-down ml-2"></span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                      <button class="dropdown-item" type="button">Now</button>
+                      <div class="dropdown-divider"></div>
+                      <button class="dropdown-item" type="button">Jan</button>
+                      <button class="dropdown-item" type="button">Feb</button>
+                      <button class="dropdown-item" type="button">Mar</button>
+                      <button class="dropdown-item" type="button">Apr</button>
+                      <button class="dropdown-item" type="button">Jun</button>
+                      <button class="dropdown-item" type="button">Jul</button>
+                      <button class="dropdown-item" type="button">Aug</button>
+                      <button class="dropdown-item" type="button">Sep</button>
+                      <button class="dropdown-item" type="button">Oct</button>
+                      <button class="dropdown-item" type="button">Nov</button>
+                      <button class="dropdown-item" type="button">Dec</button>
+                    </div>
+                    <button class="btn btn-white btn-fw-regular border-light px-2" type="button" style="text-transform: lowercase;">to</button>
+                    <button class="btn btn-white text-primary dropdown-toggle border-light" type="button" id="js_dropdown_filter_tuition_month_end" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span>Now</span><span class="fa fa-caret-down ml-2"></span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                      <button class="dropdown-item" type="button">Now</button>
+                      <div class="dropdown-divider"></div>
+                      <button class="dropdown-item" type="button">Jan</button>
+                      <button class="dropdown-item" type="button">Feb</button>
+                      <button class="dropdown-item" type="button">Mar</button>
+                      <button class="dropdown-item" type="button">Apr</button>
+                      <button class="dropdown-item" type="button">Jun</button>
+                      <button class="dropdown-item" type="button">Jul</button>
+                      <button class="dropdown-item" type="button">Aug</button>
+                      <button class="dropdown-item" type="button">Sep</button>
+                      <button class="dropdown-item" type="button">Oct</button>
+                      <button class="dropdown-item" type="button">Nov</button>
+                      <button class="dropdown-item" type="button">Dec</button>
+                    </div>
+                  </div>
+                  <button class="btn btn-primary" type="submit">FILTER</button>
+                </div>
+              </div>
+            </section>

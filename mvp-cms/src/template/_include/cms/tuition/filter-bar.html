@@ -1,112 +1,98 @@
-            <section class="row py-3 filter-bar-tuition">
-              {# <div class="col-3 my-1">
-                <p class="subheading-black d-block">SEARCH</p>
-                <form class="form-inline py-2">
-                  <div class="btn-toolbar" role="toolbar">
-                    <div class="input-group">
-                      <input type="text" class="form-control bg-white px-2">
-                    </div>
-                    <div class="btn-group" role="group">
-                      <button type="button" class="btn btn-primary"><span class="fa fa-caret-down"></span></button>
-                      <button type="button" class="btn btn-primary dropdown-toggle border-light"><span class="fa fa-search"></span></button>
-                    </div>
-                  </div>
-                </form>
-              </div> #}
-              <div class="col-9 my-1">
-                <p class="subheading-black d-block">FILTER</p>
-                <div class="button-toolbar py-2">
-                  <div class="btn-group">
-                    <button class="btn btn-white btn-fw-regular px-2" type="button" style="text-transform: capitalize;">Status</button>
-                    <button class="btn btn-white text-primary dropdown-toggle border-light" type="button" id="js_dropdown_filter_tuition_status" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <span>All</span><span class="fa fa-caret-down ml-2"></span>
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-right">
-                      <button class="dropdown-item" type="button">All</button>
-                      <button class="dropdown-item" type="button">Paid</button>
-                      <button class="dropdown-item" type="button">Unpaid</button>
-                    </div>
-                  </div>
-                  <select class="selectpicker" title="GRADE">
-                    <option>9</option>
-                    <option>8</option>
-                    <option>7</option>
-                    <option>6</option>
-                    <option>5</option>
-                    <option>4</option>
-                  </select>
-                  {# <div class="btn-group">
-                    <button class="btn btn-white btn-fw-regular px-2" type="button" style="text-transform: capitalize;">Grade</button>
-                    <button class="btn btn-white text-primary dropdown-toggle border-light" type="button" id="js_dropdown_filter_tuition_grade" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <span>All</span><span class="fa fa-caret-down ml-2"></span>
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-right">
-                      <button class="dropdown-item" type="button">All</button>
-                      <div class="dropdown-divider"></div>
-                      <button class="dropdown-item" type="button">9</button>
-                      <button class="dropdown-item" type="button">8</button>
-                      <button class="dropdown-item" type="button">7</button>
-                      <div class="dropdown-divider"></div>
-                      <button class="dropdown-item" type="button">6</button>
-                      <button class="dropdown-item" type="button">5</button>
-                      <button class="dropdown-item" type="button">4</button>
-                    </div>
-                  </div> #}
-                  <div class="btn-group">
-                    <button class="btn btn-white btn-fw-regular px-2" type="button" style="text-transform: capitalize;">Class</button>
-                    <button class="btn btn-white text-primary dropdown-toggle border-light" type="button" id="js_dropdown_filter_tuition_class" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <span>All</span><span class="fa fa-caret-down ml-2"></span>
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-right">
-                      <button class="dropdown-item" type="button">All</button>
-                      <div class="dropdown-divider"></div>
-                      <button class="dropdown-item" type="button">A</button>
-                      <button class="dropdown-item" type="button">B</button>
-                      <button class="dropdown-item" type="button">C</button>
-                      <button class="dropdown-item" type="button">D</button>
-                    </div>
-                  </div>
-                  <div class="btn-group">
-                    <button class="btn btn-white btn-fw-regular px-2" type="button" style="text-transform: capitalize;">Since</button>
-                    <button class="btn btn-white text-primary dropdown-toggle border-light" type="button" id="js_dropdown_filter_tuition_month_start" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <span>Now</span><span class="fa fa-caret-down ml-2"></span>
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-right">
-                      <button class="dropdown-item" type="button">Now</button>
-                      <div class="dropdown-divider"></div>
-                      <button class="dropdown-item" type="button">Jan</button>
-                      <button class="dropdown-item" type="button">Feb</button>
-                      <button class="dropdown-item" type="button">Mar</button>
-                      <button class="dropdown-item" type="button">Apr</button>
-                      <button class="dropdown-item" type="button">Jun</button>
-                      <button class="dropdown-item" type="button">Jul</button>
-                      <button class="dropdown-item" type="button">Aug</button>
-                      <button class="dropdown-item" type="button">Sep</button>
-                      <button class="dropdown-item" type="button">Oct</button>
-                      <button class="dropdown-item" type="button">Nov</button>
-                      <button class="dropdown-item" type="button">Dec</button>
-                    </div>
-                    <button class="btn btn-white btn-fw-regular border-light px-2" type="button" style="text-transform: lowercase;">to</button>
-                    <button class="btn btn-white text-primary dropdown-toggle border-light" type="button" id="js_dropdown_filter_tuition_month_end" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <span>Now</span><span class="fa fa-caret-down ml-2"></span>
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-right">
-                      <button class="dropdown-item" type="button">Now</button>
-                      <div class="dropdown-divider"></div>
-                      <button class="dropdown-item" type="button">Jan</button>
-                      <button class="dropdown-item" type="button">Feb</button>
-                      <button class="dropdown-item" type="button">Mar</button>
-                      <button class="dropdown-item" type="button">Apr</button>
-                      <button class="dropdown-item" type="button">Jun</button>
-                      <button class="dropdown-item" type="button">Jul</button>
-                      <button class="dropdown-item" type="button">Aug</button>
-                      <button class="dropdown-item" type="button">Sep</button>
-                      <button class="dropdown-item" type="button">Oct</button>
-                      <button class="dropdown-item" type="button">Nov</button>
-                      <button class="dropdown-item" type="button">Dec</button>
+            <section class="row" id="js_cms_tuition_filter_bar">
+              <div class="col-6">
+                <div class="card my-3" id="js_cms_tuition_filter_bar_container">
+                  <div class="card-body p-2">
+                    <form id="js_cms_tuition_form" method="POST">
+                      <div class="form-row">
+                        <div class="form-group col-3 my-0">
+                          <div class="input-group">
+                            <button class="btn btn-block btn-primary" id="js_cms_tuition_filter_trigger" type="button"><span class="fa fa-filter mr-2"></span>FILTER</button>
+                          </div>
+                        </div>
+                        <div class="form-group col-9 my-0 pl-0">
+                          <div class="input-group">
+                            <input type="text" class="form-control bg-light px-2" placeholder="Search for...">
+                            <div class="input-group-btn mx-0">
+                              <select class="selectpicker" title="All" data-style="btn-primary rounded-0">
+                                <option>All</option>
+                                <option>Name</option>
+                                <option>NIS</option>
+                                <option>Email</option>
+                                <option>Phone</option>
+                              </select>
+                              <button class="btn btn-primary mx-0" type="submit" style="border-left: 1px solid #FFF;">SEARCH</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div id="js_cms_tuition_filter_hidden_fields" class="d-none">
+                        <input type="text" id="js_cms_tuition_filter_grade_hidden">
+                        <input type="text" id="js_cms_tuition_filter_class_hidden">
+                        <input type="text" id="js_cms_tuition_filter_start_period_hidden">
+                        <input type="text" id="js_cms_tuition_filter_end_period_hidden">
+                      </div>
+                    </form>
+
+                    <div class="d-none" id="js_cms_tuition_filter_popover">
+                      <div class="card border-light">
+                        <div class="card-body p-3">
+                          <div class="form-group row no-gutters">
+                            <label for="js_cms_tuition_filter_grade" class="form-control-label text-dark col-4" style="padding: 0 0.5rem;font-size: 0.875rem;line-height: 2rem;">Grade</label>
+                            <select class="selectpicker col-8 p-0 no-elevation" id="js_cms_tuition_filter_grade" data-style="btn-light" title="Select">
+                              <option>All</option>
+                              <option data-divider="true"></option>
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                            </select>
+                          </div>
+                          <div class="form-group row no-gutters">
+                            <label for="js_cms_tuition_filter_class" class="form-control-label text-dark col-4" style="padding: 0 0.5rem;font-size: 0.875rem;line-height: 2rem;">Class</label>
+                            <select class="selectpicker col-8 p-0 no-elevation" id="js_cms_tuition_filter_class" data-style="btn-light" title="Select">
+                              <option>All</option>
+                              <option data-divider="true"></option>
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                            </select>
+                          </div>
+                          <div class="form-group row no-gutters">
+                            <label for="js_cms_tuition_filter_start_date" class="form-control-label text-dark col-4" style="padding: 0 0.5rem;font-size: 0.875rem;line-height: 2rem;">Since</label>
+                            <input type="text"
+                              class="form-control col-8 px-3 bg-light js-datepicker"
+                              id="js_cms_tuition_filter_start_period"
+                              placeholder="Select month"
+                            >
+                          </div>
+                          <div class="form-group row no-gutters">
+                            <label for="js_cms_tuition_filter_end_date" class="form-control-label text-dark col-4" style="padding: 0 0.5rem;font-size: 0.875rem;line-height: 2rem;">Until</label>
+                            <input type="text"
+                              class="form-control col-8 px-3 bg-light js-datepicker"
+                              id="js_cms_tuition_filter_end_period"
+                              placeholder="Select month"
+                            >
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <button class="btn btn-primary" type="submit">FILTER</button>
+                </div>
+              </div>
+
+              <div class="col-2 ml-auto">
+                <div class="card my-3" id="js_cms_tuition_filter_bar_container">
+                  <div class="card-body p-2">
+                    <button
+                      class="btn btn-success btn-block"
+                      data-toggle="modal"
+                      data-target="#js_tuition_new_row_modal"
+                    ><span class="fa fa-plus mr-2"></span><span>New row</span></button>
+                  </div>
                 </div>
               </div>
             </section>

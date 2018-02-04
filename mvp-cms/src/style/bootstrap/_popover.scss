@@ -52,3 +52,9 @@
     margin: $tooltip-margin-desktop;
   }
 }
+
+
+// Helpers
+.popover.no-translate {
+  transform: translate3d(0, 0, 0) !important;
+}
