@@ -1,0 +1,9 @@
+$bss-color-red-error: map-get(theme-color('danger'), color) !default;
+$bss-color-grey-arrow: map-get(theme-color('light'), color) !default;
+
+$bss-width-default: 220px !default; // 3 960px-grid columns
+
+$bss-zindex-select-dropdown: 1060 !default; // must be higher than a modal background (1050)
+
+//** Placeholder text color
+$bss-input-color-placeholder: map-get(theme-color('dark'), light) !default;

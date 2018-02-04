@@ -107,7 +107,7 @@
             </section>
             <section class="row py-3 filter-bar-tuition">
               
-              <div class="col-8 my-1">
+              <div class="col-9 my-1">
                 <p class="subheading-black d-block">FILTER</p>
                 <div class="button-toolbar py-2">
                   <div class="btn-group">
@@ -121,23 +121,15 @@
                       <button class="dropdown-item" type="button">Unpaid</button>
                     </div>
                   </div>
-                  <div class="btn-group">
-                    <button class="btn btn-white btn-fw-regular px-2" type="button" style="text-transform: capitalize;">Grade</button>
-                    <button class="btn btn-white text-primary dropdown-toggle border-light" type="button" id="js_dropdown_filter_tuition_grade" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <span>All</span><span class="fa fa-caret-down ml-2"></span>
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-right">
-                      <button class="dropdown-item" type="button">All</button>
-                      <div class="dropdown-divider"></div>
-                      <button class="dropdown-item" type="button">9</button>
-                      <button class="dropdown-item" type="button">8</button>
-                      <button class="dropdown-item" type="button">7</button>
-                      <div class="dropdown-divider"></div>
-                      <button class="dropdown-item" type="button">6</button>
-                      <button class="dropdown-item" type="button">5</button>
-                      <button class="dropdown-item" type="button">4</button>
-                    </div>
-                  </div>
+                  <select class="selectpicker" title="GRADE">
+                    <option>9</option>
+                    <option>8</option>
+                    <option>7</option>
+                    <option>6</option>
+                    <option>5</option>
+                    <option>4</option>
+                  </select>
+                  
                   <div class="btn-group">
                     <button class="btn btn-white btn-fw-regular px-2" type="button" style="text-transform: capitalize;">Class</button>
                     <button class="btn btn-white text-primary dropdown-toggle border-light" type="button" id="js_dropdown_filter_tuition_class" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -451,6 +443,7 @@
     <script src="../copy/vendor/material.min.js"></script>
     <script src="../copy/vendor/lodash.min.js"></script>
     <script src="../copy/vendor/jquery.dynatable.js"></script>
+    <script src="../copy/vendor/bootstrap-select.min.js"></script>
 
     
     <script>

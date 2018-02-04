@@ -20,12 +20,13 @@
   position: absolute;
   z-index: map-get($menu-elevation-shadow, elevation);
 
-  &::before {
+  &:not(.inner)::before {
     @include border-bottom-radius($menu-border-radius);
 
     background-clip: padding-box;
     background-color: $menu-bg;
     box-shadow: map-get($menu-elevation-shadow, shadow);
+    border: $border-width solid $menu-link-bg-hover;
     content: '';
     display: block;
     position: absolute;
@@ -80,6 +81,12 @@
   }
 }
 
+.show {
+  > .dropdown-menu {
+    display: block;
+  }
+}
+
 .menu {
   @include border-radius($menu-border-radius);
 
@@ -92,7 +99,7 @@
   }
 }
 
-.show > a {
+.open a {
   outline: 0;
 }
 
@@ -352,7 +359,17 @@
   }
 }
 
-
+.caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  vertical-align: middle;
+  border-top: 4px dashed;
+  border-top: 4px solid\9;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+}
 
 // Toggle
 
