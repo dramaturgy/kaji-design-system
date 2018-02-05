@@ -16,25 +16,34 @@
       <div class="container-fluid px-0">
         <div class="row no-gutters">
           <div class="col-3 col-md-2">
-            <a class="navbar-brand w-100 border-right" href="#"><span class="d-block w-100 text-center text-primary">K</span></a>
+            <a class="navbar-brand w-100 border-right" href="#"><span class="d-block w-100 text-center text-primary">Edukaji</span></a>
           </div>
 
-          <div class="col-3 col-md-4 px-3">
-            <div class="d-flex flex-row">
-              <div class="dropdown">
-                <button class="btn btn-dark dropdown-toggle no-elevation" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <span class="fa fa-arrow-right text-white"></span>
-                </button>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="javascript:void(0);">School Name X123</a>
-                  <a class="dropdown-item" href="javascript:void(0);">School Name X456</a>
-                  <a class="dropdown-item" href="javascript:void(0);">School Name X789</a>
-                </div>
-              </div>
-              <div class="align-self-center">
-                <h5 class="m-0 px-3 text-bold text-dark">The School Name at Some Place</h5>
-              </div>
+          <div class="col-3 col-md-3 px-3">
+            <div class="h-100 d-flex flex-row">
+              <span class="align-center h-100 text-primary mr-2" data-feather="home"></span>
+                <a class="h5 m-0 p-0 text-bold text-dark h-100 lh-5" href="javascript:void(0);"
+                  title="The Very Long School Name at some place"
+                  data-toggle="modal"
+                  data-target="#js_cms_school_list_modal"
+                  style="
+                    max-width: 100%;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;">
+                  <h6 class="d-inline-block m-0 font-weight-normal">The Very Very Long School Name at some place</h6>
+                </a>
+                <span class="fa fa-caret-down ml-auto px-2 align-self-center text-primary"></span>
             </div>
+            <div class="navbar-ornament-a"
+              style="
+                position: absolute;
+                display: block;
+                bottom: -0.75rem;
+                left: 1rem;
+                right: 1rem;
+                background-color: rgba(147, 78, 197, 1);
+                height: 1px;"></div>
           </div>
           
           <ul class="navbar-nav ml-md-auto border-left px-3">

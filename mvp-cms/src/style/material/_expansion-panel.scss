@@ -51,6 +51,14 @@
   }
 }
 
+.list-group-bordered {
+  border: 1px solid $border-color-solid;
+  border-radius: $expansion-panel-border-radius;
+  .list-group-item:not(:last-child) {
+    border-bottom: 1px solid $border-color-solid;
+  }
+}
+
 .list-group-item-action {
   color: $expansion-panel-color;
   text-align: inherit;

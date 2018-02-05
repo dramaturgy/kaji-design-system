@@ -22,9 +22,9 @@ $btn-overlay:                 $black-divider !default;
 $btn-overlay-inverse:         $white-divider !default;
 
 // Size
-$btn-font-size:               .875rem !default;
+$btn-font-size:               .75rem !default;
 $btn-font-size-lg:            .9375rem !default;
-$btn-font-size-sm:            .8125rem !default;
+$btn-font-size-sm:            .5rem !default;
 $btn-height:                  2rem !default;
 $btn-height-lg:               2.5rem !default;
 $btn-height-sm:               2rem !default;
@@ -389,13 +389,13 @@ $textfield-line-height:        $line-height-base !default;
 $textfield-margin-x:           $spacer !default;
 
 // Size
-$textfield-font-size:          1rem !default;
+$textfield-font-size:          .875rem !default;
 $textfield-font-size-lg:       2.125rem !default;
 $textfield-font-size-sm:       .8125rem !default;
 $textfield-height:             2rem !default;
 $textfield-height-lg:          3.75rem !default;
 $textfield-height-sm:          $textfield-height !default;
-$textfield-line-height:        1.5 !default;
+$textfield-line-height:        2rem !default;
 $textfield-line-height-lg:     1.176471 !default;
 $textfield-line-height-sm:     1.384615 !default;
 $textfield-margin-y:           .5rem !default;

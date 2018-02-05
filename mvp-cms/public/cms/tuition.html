@@ -16,25 +16,34 @@
       <div class="container-fluid px-0">
         <div class="row no-gutters">
           <div class="col-3 col-md-2">
-            <a class="navbar-brand w-100 border-right" href="#"><span class="d-block w-100 text-center text-primary">K</span></a>
+            <a class="navbar-brand w-100 border-right" href="#"><span class="d-block w-100 text-center text-primary">Edukaji</span></a>
           </div>
 
-          <div class="col-3 col-md-4 px-3">
-            <div class="d-flex flex-row">
-              <div class="dropdown">
-                <button class="btn btn-dark dropdown-toggle no-elevation" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <span class="fa fa-arrow-right text-white"></span>
-                </button>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="javascript:void(0);">School Name X123</a>
-                  <a class="dropdown-item" href="javascript:void(0);">School Name X456</a>
-                  <a class="dropdown-item" href="javascript:void(0);">School Name X789</a>
-                </div>
-              </div>
-              <div class="align-self-center">
-                <h5 class="m-0 px-3 text-bold text-dark">The School Name at Some Place</h5>
-              </div>
+          <div class="col-3 col-md-3 px-3">
+            <div class="h-100 d-flex flex-row">
+              <span class="align-center h-100 text-primary mr-2" data-feather="home"></span>
+                <a class="h5 m-0 p-0 text-bold text-dark h-100 lh-5" href="javascript:void(0);"
+                  title="The Very Long School Name at some place"
+                  data-toggle="modal"
+                  data-target="#js_cms_school_list_modal"
+                  style="
+                    max-width: 100%;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;">
+                  <h6 class="d-inline-block m-0 font-weight-normal">The Very Very Long School Name at some place</h6>
+                </a>
+                <span class="fa fa-caret-down ml-auto px-2 align-self-center text-primary"></span>
             </div>
+            <div class="navbar-ornament-a"
+              style="
+                position: absolute;
+                display: block;
+                bottom: -0.75rem;
+                left: 1rem;
+                right: 1rem;
+                background-color: rgba(147, 78, 197, 1);
+                height: 1px;"></div>
           </div>
           
           <ul class="navbar-nav ml-md-auto border-left px-3">
@@ -113,21 +122,21 @@
                       <div class="form-row">
                         <div class="form-group col-3 my-0">
                           <div class="input-group">
-                            <button class="btn btn-block btn-primary" id="js_cms_tuition_filter_trigger" type="button"><span class="fa fa-filter mr-2"></span>FILTER</button>
+                            <button class="btn btn-block btn-primary font-weight-normal" id="js_cms_tuition_filter_trigger" type="button"><span class="fa fa-filter mr-2"></span>FILTER</button>
                           </div>
                         </div>
                         <div class="form-group col-9 my-0 pl-0">
                           <div class="input-group">
                             <input type="text" class="form-control bg-light px-2" placeholder="Search for...">
                             <div class="input-group-btn mx-0">
-                              <select class="selectpicker" title="All" data-style="btn-primary rounded-0">
+                              <select class="selectpicker" title="All" data-style="btn-primary rounded-0 font-weight-normal">
                                 <option>All</option>
                                 <option>Name</option>
                                 <option>NIS</option>
                                 <option>Email</option>
                                 <option>Phone</option>
                               </select>
-                              <button class="btn btn-primary mx-0" type="submit" style="border-left: 1px solid #FFF;">SEARCH</button>
+                              <button class="btn btn-primary font-weight-normal mx-0" type="submit" style="border-left: 1px solid rgba(68, 60, 74, 0.24);">SEARCH</button>
                             </div>
                           </div>
                         </div>
@@ -195,7 +204,7 @@
                 <div class="card my-3" id="js_cms_tuition_filter_bar_container">
                   <div class="card-body p-2">
                     <button
-                      class="btn btn-success btn-block"
+                      class="btn btn-success btn-block font-weight-normal"
                       data-toggle="modal"
                       data-target="#js_tuition_new_row_modal"
                     ><span class="fa fa-plus mr-2"></span><span>New row</span></button>
@@ -243,7 +252,7 @@
                   data-record-name="<@= record.name @>"
                   data-record-phone="<@= record.phone @>"
                   data-record-email="<@= record.email @>"
-                ><span class="fa fa-cog mr-2"></span><span class="js-cms-tuition-table-cell-name"><@= record.name @></span></a>
+                ><span class="fa fa-cog text-light mr-2"></span><span class="js-cms-tuition-table-cell-name"><@= record.name @></span></a>
               </td>
             </script>
 
@@ -431,6 +440,27 @@
               </div>
             </div>
           </div>
+
+          <div class="modal" id="js_cms_school_list_modal" tabindex="-1">
+            <div class="modal-dialog modal-sm" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Change School</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="list-group list-group-bordered">
+                    <a href="javascript:void(0);" class="list-group-item d-flex justify-content-between align-items-center px-3 list-group-item-action active"><span class="text-truncate d-inline-block mr-2">The Very Very Long School Name at some place</span> <span class="badge badge-light badge-pill"><span class="fa fa-check"></span></span></a>
+                    <a href="javascript:void(0);" class="list-group-item d-flex justify-content-between align-items-center px-3 list-group-item-action"><span class="text-truncate d-inline-block mr-2">School B</span> <span class="badge badge-light badge-pill"><span class="fa fa-arrow-right"></span></span></a>
+                    <a href="javascript:void(0);" class="list-group-item d-flex justify-content-between align-items-center px-3 list-group-item-action"><span class="text-truncate d-inline-block mr-2">School C</span> <span class="badge badge-light badge-pill"><span class="fa fa-arrow-right"></span></span></a>
+                    <a href="javascript:void(0);" class="list-group-item d-flex justify-content-between align-items-center px-3 list-group-item-action"><span class="text-truncate d-inline-block mr-2">School D</span> <span class="badge badge-light badge-pill"><span class="fa fa-arrow-right"></span></span></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </main>
       </div>
     </div>
@@ -501,6 +531,8 @@
             evaluate: /\<\@(.+?)\@\>/g
         };
 
+        $('[data-toggle="tooltip"]').tooltip();
+
         var $tuitionTable = $('#js_cms_tuition_table');
 
         function appendRowAction(elRow) {
@@ -517,6 +549,21 @@
           $elTrigger
             .attr('data-toggle', 'collapse')
             .collapse();
+        }
+
+        function generateTuitionRow(index, record, columns, cellWriter) {
+
+          function generateCell( templateIn, index, record ) {
+            var templateFn = _.template(templateIn.html());
+            var templateOut = templateFn({index: index, record: record});
+            return templateOut;
+          }
+
+          return '<tr>' +
+            generateCell( $('#js_tuition_cell_id_template'), index, record ) +
+            generateCell( $('#js_tuition_cell_name_template'), index, record ) +
+            generateCell( $('#js_tuition_cell_payments_template'), index, record ) +
+            '</tr>';
         }
 
         function generateFilterDatepicker() {
@@ -592,21 +639,6 @@
             placement: 'bottom',
             container: '#js_cms_tuition_form'
           });
-        }
-
-        function generateTuitionRow(index, record, columns, cellWriter) {
-
-          function generateCell( templateIn, index, record ) {
-            var templateFn = _.template(templateIn.html());
-            var templateOut = templateFn({index: index, record: record});
-            return templateOut;
-          }
-
-          return '<tr>' +
-            generateCell( $('#js_tuition_cell_id_template'), index, record ) +
-            generateCell( $('#js_tuition_cell_name_template'), index, record ) +
-            generateCell( $('#js_tuition_cell_payments_template'), index, record ) +
-            '</tr>';
         }
 
         generateFilterPopover();

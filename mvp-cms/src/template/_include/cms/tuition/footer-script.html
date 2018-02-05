@@ -64,6 +64,8 @@
             evaluate: /\<\@(.+?)\@\>/g
         };
 
+        $('[data-toggle="tooltip"]').tooltip();
+
         var $tuitionTable = $('#js_cms_tuition_table');
 
         function appendRowAction(elRow) {
@@ -80,6 +82,21 @@
           $elTrigger
             .attr('data-toggle', 'collapse')
             .collapse();
+        }
+
+        function generateTuitionRow(index, record, columns, cellWriter) {
+
+          function generateCell( templateIn, index, record ) {
+            var templateFn = _.template(templateIn.html());
+            var templateOut = templateFn({index: index, record: record});
+            return templateOut;
+          }
+
+          return '<tr>' +
+            generateCell( $('#js_tuition_cell_id_template'), index, record ) +
+            generateCell( $('#js_tuition_cell_name_template'), index, record ) +
+            generateCell( $('#js_tuition_cell_payments_template'), index, record ) +
+            '</tr>';
         }
 
         function generateFilterDatepicker() {
@@ -155,21 +172,6 @@
             placement: 'bottom',
             container: '#js_cms_tuition_form'
           });
-        }
-
-        function generateTuitionRow(index, record, columns, cellWriter) {
-
-          function generateCell( templateIn, index, record ) {
-            var templateFn = _.template(templateIn.html());
-            var templateOut = templateFn({index: index, record: record});
-            return templateOut;
-          }
-
-          return '<tr>' +
-            generateCell( $('#js_tuition_cell_id_template'), index, record ) +
-            generateCell( $('#js_tuition_cell_name_template'), index, record ) +
-            generateCell( $('#js_tuition_cell_payments_template'), index, record ) +
-            '</tr>';
         }
 
         generateFilterPopover();
