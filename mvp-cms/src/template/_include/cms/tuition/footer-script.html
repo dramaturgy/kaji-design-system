@@ -8,6 +8,8 @@
     <script src="../copy/vendor/bootstrap-select.min.js"></script>
     <script src="../copy/vendor/datepicker.min.js"></script>
     <script src="../copy/vendor/datepicker.en.js"></script>
+    <script src="../copy/vendor/Chart.min.js"></script>
+    <script src="../copy/sample/chart/util.js"></script>
 
     {# Feather Icons #}
     <script>
@@ -59,15 +61,19 @@
     <script>
       $(function () {
         
+        // Lodash template custom delimiter
         _.templateSettings = {
             interpolate: /\<\@\=(.+?)\@\>/g,
             evaluate: /\<\@(.+?)\@\>/g
         };
 
+        // Initial all tooltip elements
         $('[data-toggle="tooltip"]').tooltip();
 
+        // Cache Tuition table
         var $tuitionTable = $('#js_cms_tuition_table');
 
+        // Row Action generator
         function appendRowAction(elRow) {
           var $elTrigger = elRow.find('.js-cms-tuition-col-name')
           var templateFn = _.template($('#js_tuition_row_action_template').html());
@@ -84,6 +90,7 @@
             .collapse();
         }
 
+        // Row generator
         function generateTuitionRow(index, record, columns, cellWriter) {
 
           function generateCell( templateIn, index, record ) {
@@ -99,6 +106,7 @@
             '</tr>';
         }
 
+        // Filter Datepicker generator
         function generateFilterDatepicker() {
           $('.js-datepicker').datepicker({
             language: 'en',
@@ -122,6 +130,7 @@
           });
         }
 
+        // Filter Popover generator
         function generateFilterPopover() {
           var $elTrigger = $('#js_cms_tuition_filter_trigger')
           ,   $elForm = $elTrigger.closest('form');
@@ -176,6 +185,7 @@
 
         generateFilterPopover();
 
+        // Dynatable event handler
         $tuitionTable.bind('dynatable:afterUpdate', function(e, dynatable) {
           var $table = $(this);
           $table.find('tbody').find('tr').each(function(i) {
@@ -193,6 +203,7 @@
           });
         });
 
+        // Dynateble initiator
         $tuitionTable.dynatable({
           features: {
             paginate: false,
@@ -210,4 +221,61 @@
           }
         });
       });
+
+      // Chart test
+      function generateChartPerfomance() {
+        var _fakeData = {
+          months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+          grades: ['Grade 1', 'Grade 2', 'Grade 3']
+        };
+
+        var chart = new Chart(document.getElementById('js_tuition_chart_performance').getContext('2d'), {
+          type: 'horizontalBar',
+          data: {
+            labels: _fakeData.grades,
+            datasets: [{
+              label: "Payment Performance",
+              data: [65, 59, 80],
+              fill: false,
+              backgroundColor: 'hsla(275, 51%, 80%, 1)'
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            legend: {
+              display: false
+            },
+            scales: {
+              xAxes: [{
+                gridLines: {
+                  display: false
+                },
+                ticks: {
+                  beginAtZero: true,
+                  max: 100,
+                  fontSize: '10',
+                  fontColor: 'rgba(117, 102, 127, .8)'
+                }
+              }],
+              yAxes: [{
+                height: 60,
+                categoryPercentage: 1,
+                barPercentage: 1,
+                maxBarThickness: 16,
+                gridLines: {
+                  drawBorder: false,
+                },
+                ticks: {
+                  fontSize: '12',
+                  fontColor: 'rgba(68, 60, 74, .8)',
+                  fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif'
+                }
+              }]
+            }
+          }
+        });
+      }
+
+      generateChartPerfomance();
     </script>

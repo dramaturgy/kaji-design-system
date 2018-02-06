@@ -27,6 +27,8 @@
     "dynatable": "^0.3.1",
     "lodash": "^4.17.4",
     "bootstrap-select": "^1.12.4",
-    "air-datepicker": "^2.2.3"
+    "air-datepicker": "^2.2.3",
+    "chart.js": "^2.7.1",
+    "moment": "^2.20.1"
   }
 }

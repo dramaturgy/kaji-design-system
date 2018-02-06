@@ -157,13 +157,13 @@ h6,
   @include typography-title;
 }
 
-.subheading-black {
+.subsubheading-black {
   color: $headings-color;
   font-family: $headings-font-family;
   font-size: $font-size-caption;
   margin: 0;
   font-weight: $font-weight-bold;
-  letter-spacing: $letter-spacing-subheading;
+  letter-spacing: $letter-spacing-title;
   line-height: $line-height-subheading;
 }
 
