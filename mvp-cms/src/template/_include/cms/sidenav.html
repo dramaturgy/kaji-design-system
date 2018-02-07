@@ -5,42 +5,42 @@
       'id': 'index',
       'icon': 'layout',
       'path': '/cms',
-      'has-separator': false
+      'has_separator': false
     },
     {
       'name': 'Tuition Fee',
       'id': 'tuition',
       'icon': 'align-justify',
       'path': '/cms/tuition.html',
-      'has-separator': false
+      'has_separator': false
     },
     {
       'name': 'Entry Fee',
       'id': 'entry',
       'icon': 'monitor',
       'path': 'javascript:void(0);',
-      'has-separator': false
+      'has_separator': false
     },
     {
       'name': 'Scores',
       'id': 'score',
       'icon': 'award',
       'path': 'javascript:void(0);',
-      'has-separator': false
+      'has_separator': false
     },
     {
       'name': 'Programmes',
       'id': 'programme',
       'icon': 'book-open',
       'path': 'javascript:void(0);',
-      'has-separator': false
+      'has_separator': false
     },
     {
       'name': 'Posting',
       'id': 'posting',
       'icon': 'send',
       'path': 'javascript:void(0);',
-      'has-separator': true
+      'has_separator': true
     }
   ]
 %}
@@ -49,7 +49,7 @@
           <div class="cms-sidenav-sticky has-navbar-fixed">
             <ul class="nav flex-column">
               {% for item in menu_items %}
-              <li class="nav-item">
+              <li class="nav-item {% if item.has_separator == true %}faux-border-top{% endif %}">
                 <a class="nav-link py-3 {% if page_id == item.id %} active{% endif %}" href="{{ item.path }}">
                   <span class="d-inline-block align-bottom" data-feather="{{ item.icon }}"></span>
                   <span class="d-inline-block lh-lg align-bottom ml-3">{{ item.name }}</span></a>

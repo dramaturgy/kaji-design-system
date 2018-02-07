@@ -106,7 +106,7 @@
 
         // Filter Datepicker generator
         function generateFilterDatepicker() {
-          $('.js-datepicker').datepicker({
+          $('.js-filter-datepicker').datepicker({
             language: 'en',
             position: 'right center',
             view: 'months',
@@ -182,6 +182,18 @@
         }
 
         generateFilterPopover();
+
+        function initPeriodControl() {
+          $('#js_tuition_period_control').datepicker({
+            language: 'en',
+            position: 'bottom center',
+            dateFormat: 'd M yyyy',
+            range: true,
+            multipleDatesSeparator: ' ' + String.fromCharCode(0x2014) + ' '
+          });
+        }
+
+        initPeriodControl();
 
         // Dynatable event handler
         $tuitionTable.bind('dynatable:afterUpdate', function(e, dynatable) {
