@@ -72,30 +72,39 @@
     </nav>
     <div class="container-fluid px-0">
       <div class="row no-gutters">
+        
         <nav class="cms-sidenav col-3 col-md-2 d-none d-md-block bg-white">
           <div class="cms-sidenav-sticky has-navbar-fixed">
             <ul class="nav flex-column">
-              
               <li class="nav-item">
-                <a class="nav-link py-3" href="#"><span class="d-inline-block align-bottom" data-feather="layout"></span><span class="d-inline-block lh-lg align-bottom ml-3">Dashboard</span></a>
+                <a class="nav-link py-3 " href="/cms">
+                  <span class="d-inline-block align-bottom" data-feather="layout"></span>
+                  <span class="d-inline-block lh-lg align-bottom ml-3">Dashboard</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link py-3 active" href="#"><span class="d-inline-block align-bottom" data-feather="align-justify"></span><span class="d-inline-block lh-lg align-bottom ml-3">Tuition Fee</span></a>
+                <a class="nav-link py-3  active" href="/cms/tuition.html">
+                  <span class="d-inline-block align-bottom" data-feather="align-justify"></span>
+                  <span class="d-inline-block lh-lg align-bottom ml-3">Tuition Fee</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link py-3" href="#"><span class="d-inline-block align-bottom" data-feather="monitor"></span><span class="d-inline-block lh-lg align-bottom ml-3">Entry Fee</span></a>
+                <a class="nav-link py-3 " href="javascript:void(0);">
+                  <span class="d-inline-block align-bottom" data-feather="monitor"></span>
+                  <span class="d-inline-block lh-lg align-bottom ml-3">Entry Fee</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link py-3" href="#"><span class="d-inline-block align-bottom" data-feather="users"></span><span class="d-inline-block lh-lg align-bottom ml-3">Students</span></a>
+                <a class="nav-link py-3 " href="javascript:void(0);">
+                  <span class="d-inline-block align-bottom" data-feather="award"></span>
+                  <span class="d-inline-block lh-lg align-bottom ml-3">Scores</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link py-3" href="#"><span class="d-inline-block align-bottom" data-feather="award"></span><span class="d-inline-block lh-lg align-bottom ml-3">Scores</span></a>
+                <a class="nav-link py-3 " href="javascript:void(0);">
+                  <span class="d-inline-block align-bottom" data-feather="book-open"></span>
+                  <span class="d-inline-block lh-lg align-bottom ml-3">Programmes</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link py-3" href="#"><span class="d-inline-block align-bottom" data-feather="book-open"></span><span class="d-inline-block lh-lg align-bottom ml-3">Programmes</span></a>
-              </li>
-              <li class="nav-item faux-border-top">
-                <a class="nav-link py-3" href="#"><span class="d-inline-block align-bottom" data-feather="send"></span><span class="d-inline-block lh-lg align-bottom ml-3">Posting</span></a>
+                <a class="nav-link py-3 " href="javascript:void(0);">
+                  <span class="d-inline-block align-bottom" data-feather="send"></span>
+                  <span class="d-inline-block lh-lg align-bottom ml-3">Posting</span></a>
               </li>
             </ul>
           </div>
@@ -118,11 +127,17 @@
               <div class="col-12">
                 <div class="card border-black-divider-solid">
                   <div class="card-body px-3 pt-3 pb-2">
-                    <div class="row">
-                      <div class="col-9">
+                    <div class="row justify-content-center">
+                      <div class="col-8">
                         <p class="subsubheading-black text-dark">Performance per Grade</p>
-                        <div id="js_tuition_chart_performance_wrapper" class="w-100" style="height: 9rem;">
+                        <div id="js_tuition_chart_performance_wrapper" class="w-100 py-2" style="height: 9rem;">
                           <canvas id="js_tuition_chart_performance"></canvas>
+                        </div>
+                      </div>
+                      <div class="col-4">
+                        <p class="subsubheading-black text-dark">Overall Performance</p>
+                        <div id="js_tuition_chart_overall_wrapper" class="w-50 py-2" style="height: 9rem;">
+                          <canvas id="js_tuition_chart_overall"></canvas>
                         </div>
                       </div>
                     </div>
@@ -495,8 +510,6 @@
     <script src="../copy/vendor/bootstrap-select.min.js"></script>
     <script src="../copy/vendor/datepicker.min.js"></script>
     <script src="../copy/vendor/datepicker.en.js"></script>
-    <script src="../copy/vendor/Chart.min.js"></script>
-    <script src="../copy/sample/chart/util.js"></script>
 
     
     <script>
@@ -708,63 +721,9 @@
           }
         });
       });
-
-      // Chart test
-      function generateChartPerfomance() {
-        var _fakeData = {
-          months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-          grades: ['Grade 1', 'Grade 2', 'Grade 3']
-        };
-
-        var chart = new Chart(document.getElementById('js_tuition_chart_performance').getContext('2d'), {
-          type: 'horizontalBar',
-          data: {
-            labels: _fakeData.grades,
-            datasets: [{
-              label: "Payment Performance",
-              data: [65, 59, 80],
-              fill: false,
-              backgroundColor: 'hsla(275, 51%, 80%, 1)'
-            }]
-          },
-          options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            legend: {
-              display: false
-            },
-            scales: {
-              xAxes: [{
-                gridLines: {
-                  display: false
-                },
-                ticks: {
-                  beginAtZero: true,
-                  max: 100,
-                  fontSize: '10',
-                  fontColor: 'rgba(117, 102, 127, .8)'
-                }
-              }],
-              yAxes: [{
-                height: 60,
-                categoryPercentage: 1,
-                barPercentage: 1,
-                maxBarThickness: 16,
-                gridLines: {
-                  drawBorder: false,
-                },
-                ticks: {
-                  fontSize: '12',
-                  fontColor: 'rgba(68, 60, 74, .8)',
-                  fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif'
-                }
-              }]
-            }
-          }
-        });
-      }
-
-      generateChartPerfomance();
     </script>
+
+    <script src="../copy/vendor/Chart.min.js"></script>
+    <script src="../copy/sample/chart/test-tuition.js"></script>
   </body>
 </html>

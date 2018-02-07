@@ -1,5 +1,7 @@
 {% extends '_layout/cms/tuition.html' %}
 
+{% set page_id = 'tuition' %}
+
 {% block content %}
   {% include '_include/cms/navbar.html' %}
 
@@ -10,6 +12,8 @@
         <main role="main" class="dashboard-main col-12 col-md-10 bg-light-2 py-3" style="min-height: 100vh">
           <div class="container-fluid has-navbar-fixed">
             {% include '_include/cms/tuition/hero.html' %}
+
+            {% include '_include/cms/tuition/chart.html' %}
 
             {% include '_include/cms/tuition/filter-bar.html' %}
 
