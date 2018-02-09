@@ -1590,7 +1590,7 @@ hr {
     text-overflow: ellipsis;
     font-weight: 700; }
   .card-message .message-caption {
-    margin-bottom: 0;
+    margin-bottom: 0.5rem;
     display: block;
     max-height: 2rem;
     min-height: 2rem;
@@ -1599,7 +1599,7 @@ hr {
     font-size: 0.75rem;
     line-height: 1rem; }
   .card-message .message-meta {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

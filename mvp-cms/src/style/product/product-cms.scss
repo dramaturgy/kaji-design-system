@@ -42,7 +42,7 @@
   }
 
   .message-caption {
-    margin-bottom: 0;
+    margin-bottom: $spacer-sm;
     display: block;
     max-height: $spacer-xl;
     min-height: $spacer-xl;
@@ -53,7 +53,7 @@
   }
 
   .message-meta {
-    margin-bottom: $spacer-sm;
+    margin-bottom: 0;
     display: flex;
     justify-content: space-between;
   }

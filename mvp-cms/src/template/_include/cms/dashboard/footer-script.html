@@ -8,8 +8,59 @@
     <script src="../copy/vendor/bootstrap-select.min.js"></script>
     <script src="../copy/vendor/datepicker.min.js"></script>
     <script src="../copy/vendor/datepicker.en.js"></script>
+    <script src="../copy/vendor/interact.min.js"></script>
 
     {# Feather Icons #}
     <script>
       feather.replace();
+    </script>
+
+    {# Tuition UI Script #}
+    <script>
+      $(function () {
+
+        // Lodash template custom delimiter
+        _.templateSettings = {
+            interpolate: /\<\@\=(.+?)\@\>/g,
+            evaluate: /\<\@(.+?)\@\>/g
+        };
+
+        function resizemovehandler( e ) {
+          var target = e.target,
+              x = (parseFloat(target.getAttribute('data-x')) || 0),
+              y = (parseFloat(target.getAttribute('data-y')) || 0);
+
+          target.style.width  = e.rect.width + 'px';
+          target.style.height = e.rect.height + 'px';
+
+          x += e.deltaRect.left;
+          y += e.deltaRect.top;
+
+          target.style.webkitTransform =
+          target.style.transform = 'translate(' + x + 'px,' + y + 'px)';
+
+          target.setAttribute('data-x', x);
+          target.setAttribute('data-y', y);
+        }
+
+        function initResizeInteraction( el, ctx ) {
+          if ( !el.length && ctx.length ) return;
+          interact(el)
+            .resizable({
+              context: ctx,
+              edges: { left: true, right: true, bottom: true, top: true },
+              restrictEdges: {
+                outer: 'parent',
+                endOnly: false
+              },
+              restrictSize: {
+                min: { width: 16, height: 16 }
+              },
+              inertia: true
+            })
+            .on('resizemove', resizemovehandler);
+        }
+
+        initResizeInteraction( $('#js-test')[0], $('#js-test-wrapper')[0] );
+      });
     </script>

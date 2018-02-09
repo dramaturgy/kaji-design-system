@@ -16,7 +16,7 @@
       <div class="container-fluid px-0">
         <div class="row no-gutters">
           <div class="col-3 col-md-2">
-            <a class="navbar-brand w-100 border-right" href="#"><span class="d-block w-100 text-center text-primary">ʞ</span></a>
+            <a class="navbar-brand w-100 border-right" href="#"><span class="d-block w-100 text-center text-primary">$</span></a>
           </div>
 
           <div class="col-3 col-md-3 px-3">
@@ -90,6 +90,11 @@
                 <a class="nav-link py-3 " href="javascript:void(0);">
                   <span class="d-inline-block align-bottom" data-feather="monitor"></span>
                   <span class="d-inline-block lh-lg align-bottom ml-3">Entry Fee</span></a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link py-3 " href="javascript:void(0);">
+                  <span class="d-inline-block align-bottom" data-feather="users"></span>
+                  <span class="d-inline-block lh-lg align-bottom ml-3">Student</span></a>
               </li>
               <li class="nav-item ">
                 <a class="nav-link py-3 " href="javascript:void(0);">
@@ -585,7 +590,7 @@
             evaluate: /\<\@(.+?)\@\>/g
         };
 
-        // Initial all tooltip elements
+        // Initiate all tooltip elements
         $('[data-toggle="tooltip"]').tooltip();
 
         // Cache Tuition table
@@ -703,6 +708,7 @@
 
         generateFilterPopover();
 
+        // Init datepicker for Period Control
         function initPeriodControl() {
           $('#js_tuition_period_control').datepicker({
             language: 'en',

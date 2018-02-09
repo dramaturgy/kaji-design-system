@@ -65,7 +65,7 @@
             evaluate: /\<\@(.+?)\@\>/g
         };
 
-        // Initial all tooltip elements
+        // Initiate all tooltip elements
         $('[data-toggle="tooltip"]').tooltip();
 
         // Cache Tuition table
@@ -183,6 +183,7 @@
 
         generateFilterPopover();
 
+        // Init datepicker for Period Control
         function initPeriodControl() {
           $('#js_tuition_period_control').datepicker({
             language: 'en',
