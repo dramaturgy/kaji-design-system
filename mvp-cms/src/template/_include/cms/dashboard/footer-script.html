@@ -46,15 +46,16 @@
             target.setAttribute('data-y', y);
           }
 
+          // initiate interactjs
           interact(el)
             .resizable({
-              // context: ctx,
               edges: { left: false, right: false, bottom: false, top: true },
               restrictEdges: {
                 endOnly: false
               },
               restrictSize: {
-                min: { height: 64 }
+                min: { height: 64 },
+                max: { height: 480 }
               },
               inertia: true
             })
@@ -94,7 +95,8 @@
 
                 // Populate data
                 var _data = {
-                  id: $self.attr('data-message-id') || '0'
+                  id: $self.attr('data-message-id') || '0',
+                  title: $self.find('.js-message-title').text()
                 };
 
                 // Append message article into DOM, along it's data
@@ -130,7 +132,7 @@
             });
           });
 
-          // Swapping the z index
+          // Swapping Z
           $(document).on('click', '.js-message-article', function(e) {
             e.preventDefault();
             if ( !$('.js-message-article').length || $('.js-message-article').length < 1 ) return false;

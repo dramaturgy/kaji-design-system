@@ -81,4 +81,18 @@
   bottom: 0;
   right: 0;
   width: 24rem;
+  max-height: 30rem;
+
+  .marticle-card {
+    flex: 0 1 100%;
+    height: 100%;
+    max-height: 30rem;
+    overflow: scroll;
+  }
+
+  .marticle-title {
+    margin-bottom: $spacer-sm;
+    width: 100%;
+    font-weight: $font-weight-bold;
+  }
 }

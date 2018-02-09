@@ -144,7 +144,7 @@
                             <div class="message-label">
                               <span class="badge badge-primary text-white">new</span>
                             </div>
-                            <p class="message-title">Very long title shall get truncated with ellipsis</p>
+                            <p class="message-title js-message-title">Very long title shall get truncated with ellipsis</p>
                           </div>
                           <p class="message-caption">Lorem ipsum dolor sit amet cons, ectetur adipisicing elit.</p>
                           <div class="message-meta">
@@ -159,7 +159,7 @@
                             <div class="message-label">
                               <span class="badge badge-secondary text-white">some long label</span>
                             </div>
-                            <p class="message-title">This one is shorter</p>
+                            <p class="message-title js-message-title">This one is shorter</p>
                           </div>
                           <p class="message-caption">Lorem ipsum dolor sit amet cons, ectetur adipisicing elit.</p>
                           <div class="message-meta">
@@ -174,7 +174,7 @@
                             <div class="message-label">
                               <span class="badge badge-info text-white">old</span>
                             </div>
-                            <p class="message-title">How about this</p>
+                            <p class="message-title js-message-title">How about this</p>
                           </div>
                           <p class="message-caption">Lorem ipsum dolor sit amet cons, ectetur adipisicing elit.</p>
                           <div class="message-meta">
@@ -189,7 +189,7 @@
                             <div class="message-label">
                               <span class="badge badge-warning text-white">inbox</span>
                             </div>
-                            <p class="message-title">This should overflowing the boundary</p>
+                            <p class="message-title js-message-title">This should overflowing the boundary</p>
                           </div>
                           <p class="message-caption">Lorem ipsum dolor sit amet cons, ectetur adipisicing elit.</p>
                           <div class="message-meta">
@@ -204,7 +204,7 @@
                             <div class="message-label">
                               <span class="badge badge-danger text-white">some taxonomy</span>
                             </div>
-                            <p class="message-title">Asking you!</p>
+                            <p class="message-title js-message-title">Asking you!</p>
                           </div>
                           <p class="message-caption">Lorem ipsum dolor sit amet cons, ectetur adipisicing elit.</p>
                           <div class="message-meta">
@@ -221,14 +221,24 @@
 
             
             <script id="js_dashboard_message_article_template" type="text/x-lodash-template">
-              <div
+              <article
                 class="card border-black-divider-solid message-article js-message-article"
                 id="js_message_article_<@= id @>"
               >
-                <div class="card-body">
-                  <p class="m-0">message test <@= id @></p>
+                <div class="card-body py-4 px-3 marticle-card">
+                  <div class="marticle-inner">
+                    <p class="marticle-title"><@= title @></p>
+                    <div class="marticle-body">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, culpa. Deleniti sed vitae expedita fugiat, tenetur facere dolorum sit, officiis laboriosam dolore dolores dicta aliquam voluptatum facilis. Earum, nostrum, porro!</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, culpa. Deleniti sed vitae expedita fugiat, tenetur facere dolorum sit, officiis laboriosam dolore dolores dicta aliquam voluptatum facilis. Earum, nostrum, porro!</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, culpa. Deleniti sed vitae expedita fugiat, tenetur facere dolorum sit, officiis laboriosam dolore dolores dicta aliquam voluptatum facilis. Earum, nostrum, porro!</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, culpa. Deleniti sed vitae expedita fugiat, tenetur facere dolorum sit, officiis laboriosam dolore dolores dicta aliquam voluptatum facilis. Earum, nostrum, porro!</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, culpa. Deleniti sed vitae expedita fugiat, tenetur facere dolorum sit, officiis laboriosam dolore dolores dicta aliquam voluptatum facilis. Earum, nostrum, porro!</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, culpa. Deleniti sed vitae expedita fugiat, tenetur facere dolorum sit, officiis laboriosam dolore dolores dicta aliquam voluptatum facilis. Earum, nostrum, porro!</p>
+                    </div>
+                  </div>
                 </div>
-              </div>
+              </article>
             </script>          </div>
         </main>
       </div>
@@ -282,15 +292,16 @@
             target.setAttribute('data-y', y);
           }
 
+          // initiate interactjs
           interact(el)
             .resizable({
-              // context: ctx,
               edges: { left: false, right: false, bottom: false, top: true },
               restrictEdges: {
                 endOnly: false
               },
               restrictSize: {
-                min: { height: 64 }
+                min: { height: 64 },
+                max: { height: 480 }
               },
               inertia: true
             })
@@ -330,7 +341,8 @@
 
                 // Populate data
                 var _data = {
-                  id: $self.attr('data-message-id') || '0'
+                  id: $self.attr('data-message-id') || '0',
+                  title: $self.find('.js-message-title').text()
                 };
 
                 // Append message article into DOM, along it's data
@@ -366,7 +378,7 @@
             });
           });
 
-          // Swapping the z index
+          // Swapping Z
           $(document).on('click', '.js-message-article', function(e) {
             e.preventDefault();
             if ( !$('.js-message-article').length || $('.js-message-article').length < 1 ) return false;

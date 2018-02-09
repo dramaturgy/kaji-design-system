@@ -22,7 +22,7 @@
                             <div class="message-label">
                               <span class="badge badge-{{ item.label_type }} text-white">{{ item.label_text }}</span>
                             </div>
-                            <p class="message-title">{{ item.title }}</p>
+                            <p class="message-title js-message-title">{{ item.title }}</p>
                           </div>
                           <p class="message-caption">Lorem ipsum dolor sit amet cons, ectetur adipisicing elit.</p>
                           <div class="message-meta">
@@ -40,12 +40,22 @@
 
             {# Message Article Template #}
             <script id="js_dashboard_message_article_template" type="text/x-lodash-template">
-              <div
+              <article
                 class="card border-black-divider-solid message-article js-message-article"
                 id="js_message_article_<@= id @>"
               >
-                <div class="card-body">
-                  <p class="m-0">message test <@= id @></p>
+                <div class="card-body py-4 px-3 marticle-card">
+                  <div class="marticle-inner">
+                    <p class="marticle-title"><@= title @></p>
+                    <div class="marticle-body">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, culpa. Deleniti sed vitae expedita fugiat, tenetur facere dolorum sit, officiis laboriosam dolore dolores dicta aliquam voluptatum facilis. Earum, nostrum, porro!</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, culpa. Deleniti sed vitae expedita fugiat, tenetur facere dolorum sit, officiis laboriosam dolore dolores dicta aliquam voluptatum facilis. Earum, nostrum, porro!</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, culpa. Deleniti sed vitae expedita fugiat, tenetur facere dolorum sit, officiis laboriosam dolore dolores dicta aliquam voluptatum facilis. Earum, nostrum, porro!</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, culpa. Deleniti sed vitae expedita fugiat, tenetur facere dolorum sit, officiis laboriosam dolore dolores dicta aliquam voluptatum facilis. Earum, nostrum, porro!</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, culpa. Deleniti sed vitae expedita fugiat, tenetur facere dolorum sit, officiis laboriosam dolore dolores dicta aliquam voluptatum facilis. Earum, nostrum, porro!</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, culpa. Deleniti sed vitae expedita fugiat, tenetur facere dolorum sit, officiis laboriosam dolore dolores dicta aliquam voluptatum facilis. Earum, nostrum, porro!</p>
+                    </div>
+                  </div>
                 </div>
-              </div>
+              </article>
             </script>
