@@ -1631,4 +1631,16 @@ hr {
     width: 100%;
     font-size: 0.75rem; }
 
+.message-article-wrapper {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 200; }
+
+.message-article {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 24rem; }
+
 /*# sourceMappingURL=../maps/product-cms.css.map */

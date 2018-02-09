@@ -1,0 +1,84 @@
+.card-message-wrapper {
+  max-width: 100%;
+  overflow-x: scroll;
+}
+
+.card-message {
+  flex: 0 0 16rem;
+  height: 9rem;
+  overflow: hidden;
+
+  & + & {
+    margin-left: 1rem;
+  }
+
+  .card-body {
+    @include border-radius(3px);
+  }
+
+  .message-title {
+    margin-bottom: $spacer-sm;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: $font-weight-bold;
+  }
+
+  .message-caption {
+    margin-bottom: $spacer-sm;
+    display: block;
+    max-height: $spacer-xl;
+    min-height: $spacer-xl;
+    height: $spacer-xl;
+    overflow: hidden;
+    font-size: 0.75rem;
+    line-height: $spacer;
+  }
+
+  .message-meta {
+    margin-bottom: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .message-sender {
+    margin: 0;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex: 0 1 auto;
+  }
+
+  .message-timeago {
+    margin: 0;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex: 1 0 auto;
+    text-align: right;
+  }
+
+  .message-label {
+    margin-bottom: $spacer-sm;
+    display: block;
+    width: 100%;
+    font-size: 0.75rem;
+  }
+}
+
+.message-article-wrapper {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 200;
+}
+
+.message-article {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 24rem;
+}

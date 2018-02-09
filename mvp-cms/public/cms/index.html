@@ -114,7 +114,7 @@
             </ul>
           </div>
         </nav>
-        <main role="main" class="dashboard-main col-12 col-md-10 bg-light-2 py-3" style="min-height: 100vh">
+        <main role="main" class="dashboard-main col-12 col-md-10 bg-light-2 py-3" id="js_dashboard_main" style="min-height: 100vh">
           <div class="container-fluid has-navbar-fixed">
             <section class="row align-items-stretch">
               <div class="col">
@@ -138,7 +138,7 @@
                     <div class="d-flex flex-nowrap card-message-wrapper">
 
 
-                      <a href="javacript:void(0);" class="card card-message no-elevation text-dark">
+                      <a href="javacript:void(0);" class="card card-message no-elevation text-dark js-card-message" data-message-id="1">
                         <div class="card-body border-black-divider-solid bg-white py-3">
                           <div class="message-head">
                             <div class="message-label">
@@ -148,12 +148,12 @@
                           </div>
                           <p class="message-caption">Lorem ipsum dolor sit amet cons, ectetur adipisicing elit.</p>
                           <div class="message-meta">
-                            <p class="message-sender text-primary"><span class="fa fa-user-o mr-2 text-muted"></span>Jean Beaudrillard</p>
+                            <p class="message-sender text-primary"><span class="fa fa-user-o mr-2 text-muted"></span>Jean Baudrillard</p>
                             <p class="message-timeago text-muted"><span class="fa fa-calendar-o mr-2"></span>Now</p>
                           </div>
                         </div>
                       </a>
-                      <a href="javacript:void(0);" class="card card-message no-elevation text-dark">
+                      <a href="javacript:void(0);" class="card card-message no-elevation text-dark js-card-message" data-message-id="2">
                         <div class="card-body border-black-divider-solid bg-white py-3">
                           <div class="message-head">
                             <div class="message-label">
@@ -163,12 +163,12 @@
                           </div>
                           <p class="message-caption">Lorem ipsum dolor sit amet cons, ectetur adipisicing elit.</p>
                           <div class="message-meta">
-                            <p class="message-sender text-primary"><span class="fa fa-user-o mr-2 text-muted"></span>Jean Beaudrillard</p>
+                            <p class="message-sender text-primary"><span class="fa fa-user-o mr-2 text-muted"></span>Jean Baudrillard</p>
                             <p class="message-timeago text-muted"><span class="fa fa-calendar-o mr-2"></span>2 days ago</p>
                           </div>
                         </div>
                       </a>
-                      <a href="javacript:void(0);" class="card card-message no-elevation text-dark">
+                      <a href="javacript:void(0);" class="card card-message no-elevation text-dark js-card-message" data-message-id="3">
                         <div class="card-body border-black-divider-solid bg-white py-3">
                           <div class="message-head">
                             <div class="message-label">
@@ -178,12 +178,12 @@
                           </div>
                           <p class="message-caption">Lorem ipsum dolor sit amet cons, ectetur adipisicing elit.</p>
                           <div class="message-meta">
-                            <p class="message-sender text-primary"><span class="fa fa-user-o mr-2 text-muted"></span>Jean Beaudrillard</p>
+                            <p class="message-sender text-primary"><span class="fa fa-user-o mr-2 text-muted"></span>Jean Baudrillard</p>
                             <p class="message-timeago text-muted"><span class="fa fa-calendar-o mr-2"></span>Yesterday</p>
                           </div>
                         </div>
                       </a>
-                      <a href="javacript:void(0);" class="card card-message no-elevation text-dark">
+                      <a href="javacript:void(0);" class="card card-message no-elevation text-dark js-card-message" data-message-id="4">
                         <div class="card-body border-black-divider-solid bg-white py-3">
                           <div class="message-head">
                             <div class="message-label">
@@ -193,12 +193,12 @@
                           </div>
                           <p class="message-caption">Lorem ipsum dolor sit amet cons, ectetur adipisicing elit.</p>
                           <div class="message-meta">
-                            <p class="message-sender text-primary"><span class="fa fa-user-o mr-2 text-muted"></span>Jean Beaudrillard</p>
+                            <p class="message-sender text-primary"><span class="fa fa-user-o mr-2 text-muted"></span>Jean Baudrillard</p>
                             <p class="message-timeago text-muted"><span class="fa fa-calendar-o mr-2"></span>Dec 7, 2017</p>
                           </div>
                         </div>
                       </a>
-                      <a href="javacript:void(0);" class="card card-message no-elevation text-dark">
+                      <a href="javacript:void(0);" class="card card-message no-elevation text-dark js-card-message" data-message-id="5">
                         <div class="card-body border-black-divider-solid bg-white py-3">
                           <div class="message-head">
                             <div class="message-label">
@@ -208,7 +208,7 @@
                           </div>
                           <p class="message-caption">Lorem ipsum dolor sit amet cons, ectetur adipisicing elit.</p>
                           <div class="message-meta">
-                            <p class="message-sender text-primary"><span class="fa fa-user-o mr-2 text-muted"></span>Jean Beaudrillard</p>
+                            <p class="message-sender text-primary"><span class="fa fa-user-o mr-2 text-muted"></span>Jean Baudrillard</p>
                             <p class="message-timeago text-muted"><span class="fa fa-calendar-o mr-2"></span>Dec 9, 2018</p>
                           </div>
                         </div>
@@ -218,7 +218,18 @@
                 </div>
               </div>
             </section>
-          </div>
+
+            
+            <script id="js_dashboard_message_article_template" type="text/x-lodash-template">
+              <div
+                class="card border-black-divider-solid message-article js-message-article"
+                id="js_message_article_<@= id @>"
+              >
+                <div class="card-body">
+                  <p class="m-0">message test <@= id @></p>
+                </div>
+              </div>
+            </script>          </div>
         </main>
       </div>
     </div>
@@ -250,43 +261,127 @@
             evaluate: /\<\@(.+?)\@\>/g
         };
 
-        function resizemovehandler( e ) {
-          var target = e.target,
-              x = (parseFloat(target.getAttribute('data-x')) || 0),
-              y = (parseFloat(target.getAttribute('data-y')) || 0);
-
-          target.style.width  = e.rect.width + 'px';
-          target.style.height = e.rect.height + 'px';
-
-          x += e.deltaRect.left;
-          y += e.deltaRect.top;
-
-          target.style.webkitTransform =
-          target.style.transform = 'translate(' + x + 'px,' + y + 'px)';
-
-          target.setAttribute('data-x', x);
-          target.setAttribute('data-y', y);
-        }
+        // Cache elements
+        var $msgCards = $('.js-card-message');
 
         function initResizeInteraction( el, ctx ) {
           if ( !el.length && ctx.length ) return;
+
+          function resizemovehandler( e ) {
+            var target = e.target,
+                x = (parseFloat(target.getAttribute('data-x')) || 0),
+                y = (parseFloat(target.getAttribute('data-y')) || 0);
+
+            target.style.width  = e.rect.width + 'px';
+            target.style.height = e.rect.height + 'px';
+
+            target.style.webkitTransform =
+            target.style.transform = 'translate(' + x + 'px,' + y + 'px)';
+
+            target.setAttribute('data-x', x);
+            target.setAttribute('data-y', y);
+          }
+
           interact(el)
             .resizable({
-              context: ctx,
-              edges: { left: true, right: true, bottom: true, top: true },
+              // context: ctx,
+              edges: { left: false, right: false, bottom: false, top: true },
               restrictEdges: {
-                outer: 'parent',
                 endOnly: false
               },
               restrictSize: {
-                min: { width: 16, height: 16 }
+                min: { height: 64 }
               },
               inertia: true
             })
             .on('resizemove', resizemovehandler);
         }
 
-        initResizeInteraction( $('#js-test')[0], $('#js-test-wrapper')[0] );
+        function initMessageCards( el ) {
+          if ( !el.length ) return;
+
+          function generateMessageArticle( templateIn, data ) {
+            var templateFn = _.template(templateIn.html());
+            var templateOut = templateFn(data);
+            return templateOut;
+          }
+
+          var $root = $('#js_dashboard_main')
+          ,   $msgArticleWrapper = $('<div>')
+              .attr({
+                'id': 'js_dashboard_message_article_wrapper',
+                'class': 'message-article-wrapper',
+                'data-message-opened': '0'
+              });
+
+          $root.append( $msgArticleWrapper );
+          $msgArticleWrapper = $root.find('#js_dashboard_message_article_wrapper');
+
+          // Loop the message cards
+          el.each( function(i) {
+            var $self = $(this);
+            
+            // Initiate click event
+            $self.on('click', function(e) {
+              e.preventDefault();
+
+              // Check if message not already open
+              if ( !$self[0].hasAttribute( 'data-message-open' ) ) {
+
+                // Populate data
+                var _data = {
+                  id: $self.attr('data-message-id') || '0'
+                };
+
+                // Append message article into DOM, along it's data
+                $msgArticleWrapper
+                  .append( generateMessageArticle( $('#js_dashboard_message_article_template'), _data ) );
+
+                // Add the message opened counter
+                var msgOpenCounter = parseInt( $msgArticleWrapper.attr('data-message-opened') );
+                msgOpenCounter++;
+                $msgArticleWrapper.attr('data-message-opened', msgOpenCounter);
+                
+                // Cache the newly appended message article
+                var $msgArticle = $msgArticleWrapper.find( '#js_message_article_' + _data.id );
+
+                // Cache message order
+                var msgOrder = $msgArticleWrapper.attr('data-message-opened');
+
+                // Set attr with message order
+                $msgArticle.attr('data-message-order', msgOrder );
+
+                // Set message article default layout & z-index
+                $msgArticle.css({
+                  'right': 96 * ( parseInt( msgOrder ) - 1 ),
+                  'z-index': msgOrder
+                });
+
+                // Init resize
+                initResizeInteraction( $msgArticle[0], $msgArticleWrapper[0] );
+
+                // Toggle message open flag
+                $self.attr('data-message-open', '');
+              }
+            });
+          });
+
+          // Swapping the z index
+          $(document).on('click', '.js-message-article', function(e) {
+            e.preventDefault();
+            if ( !$('.js-message-article').length || $('.js-message-article').length < 1 ) return false;
+            var $self = $(this);
+
+            var zIndexes = _.map( $('.js-message-article'), function(el) { return parseInt( $(el).css('z-index') ) })
+            ,   maxZ = _.max( zIndexes )
+            ,   currentZ = parseInt( $self.css('z-index') );
+            console.log( zIndexes, maxZ, currentZ );
+
+            if ( currentZ < maxZ ) $self.css('z-index', maxZ + 1);
+          })
+        }
+
+        initMessageCards( $msgCards );
       });
     </script>
   </body>
