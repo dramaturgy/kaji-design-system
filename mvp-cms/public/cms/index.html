@@ -225,16 +225,34 @@
                 class="card border-black-divider-solid message-article js-message-article"
                 id="js_message_article_<@= id @>"
               >
-                <div class="card-body py-4 px-3 marticle-card">
-                  <div class="marticle-inner">
-                    <p class="marticle-title"><@= title @></p>
-                    <div class="marticle-body">
+                <div class="card-body marticle-card">
+                  <div class="marticle-head">
+                    <div class="marticle-action-wrapper ml-auto">
+                      <a class="marticle-action" href="javacript:void(0);"><span data-feather="star"></span></a>
+                      <a class="marticle-action" href="javacript:void(0);"><span data-feather="trash"></span></a>
+                      <a class="marticle-action" href="javacript:void(0);"><span data-feather="x"></span></a>
+                    </div>
+                  </div>
+                  <div class="marticle-body">
+                    <div class="marticle-body-scroll">
+                      <p class="marticle-title mb-2"><@= title @></p>
+                      <p class="marticle-sender m-0 text-muted text-sm" style="font-size: .75rem; line-height: 1rem;"><span class="fa fa-user-o" style="display: inline-block; width: 1rem;"></span> <span>Jean Baudrillard</span></p>
+                      <p class="marticle-sender text-muted text-sm" style="font-size: .75rem; line-height: 1rem;"><span class="fa fa-calendar" style="display: inline-block; width: 1rem;"></span> <span>Yesterday</span></p>
                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, culpa. Deleniti sed vitae expedita fugiat, tenetur facere dolorum sit, officiis laboriosam dolore dolores dicta aliquam voluptatum facilis. Earum, nostrum, porro!</p>
                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, culpa. Deleniti sed vitae expedita fugiat, tenetur facere dolorum sit, officiis laboriosam dolore dolores dicta aliquam voluptatum facilis. Earum, nostrum, porro!</p>
                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, culpa. Deleniti sed vitae expedita fugiat, tenetur facere dolorum sit, officiis laboriosam dolore dolores dicta aliquam voluptatum facilis. Earum, nostrum, porro!</p>
                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, culpa. Deleniti sed vitae expedita fugiat, tenetur facere dolorum sit, officiis laboriosam dolore dolores dicta aliquam voluptatum facilis. Earum, nostrum, porro!</p>
                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, culpa. Deleniti sed vitae expedita fugiat, tenetur facere dolorum sit, officiis laboriosam dolore dolores dicta aliquam voluptatum facilis. Earum, nostrum, porro!</p>
                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, culpa. Deleniti sed vitae expedita fugiat, tenetur facere dolorum sit, officiis laboriosam dolore dolores dicta aliquam voluptatum facilis. Earum, nostrum, porro!</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, culpa. Deleniti sed vitae expedita fugiat, tenetur facere dolorum sit, officiis laboriosam dolore dolores dicta aliquam voluptatum facilis. Earum, nostrum, porro!</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, culpa. Deleniti sed vitae expedita fugiat, tenetur facere dolorum sit, officiis laboriosam dolore dolores dicta aliquam voluptatum facilis. Earum, nostrum, porro!</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, culpa. Deleniti sed vitae expedita fugiat, tenetur facere dolorum sit, officiis laboriosam dolore dolores dicta aliquam voluptatum facilis. Earum, nostrum, porro!</p>
+                    </div>
+                  </div>
+                  <div class="marticle-foot">
+                    <div class="marticle-action-wrapper w-100" style="justify-content: center;">
+                      <a class="marticle-action text-white bg-dark rounded" href="javacript:void(0);"><span data-feather="chevron-right"></span><span class="px-2" style="line-height: 1rem;">Reply</span></a>
+                      <a class="marticle-action text-white bg-dark rounded" href="javacript:void(0);"><span data-feather="chevrons-right"></span><span class="px-2" style="line-height: 1rem;">Reply All</span></a>
                     </div>
                   </div>
                 </div>
@@ -257,9 +275,7 @@
     <script src="../copy/vendor/interact.min.js"></script>
 
     
-    <script>
-      feather.replace();
-    </script>
+    <script>feather.replace();</script>
 
     
     <script>
@@ -363,7 +379,7 @@
                 // Set attr with message order
                 $msgArticle.attr('data-message-order', msgOrder );
 
-                // Set message article default layout & z-index
+                // Set message article initial layout & z-index
                 $msgArticle.css({
                   'right': 96 * ( parseInt( msgOrder ) - 1 ),
                   'z-index': msgOrder
@@ -371,6 +387,19 @@
 
                 // Init resize
                 initResizeInteraction( $msgArticle[0], $msgArticleWrapper[0] );
+
+                // Feather icons. This looks unnecessarily ugly -___-
+                $msgArticle.find('[data-feather]').each(function() {
+                  var $self = $(this);
+                  if ( $self.attr('data-feather').length )
+                    $self.parent().prepend(
+                      feather.icons[$self.attr('data-feather')]
+                      .toSvg({
+                        width: '16',
+                        height: '16'
+                      })
+                    );
+                });
 
                 // Toggle message open flag
                 $self.attr('data-message-open', '');

@@ -11,9 +11,7 @@
     <script src="../copy/vendor/interact.min.js"></script>
 
     {# Feather Icons #}
-    <script>
-      feather.replace();
-    </script>
+    <script>feather.replace();</script>
 
     {# Dashboard UI Script #}
     <script>
@@ -117,7 +115,7 @@
                 // Set attr with message order
                 $msgArticle.attr('data-message-order', msgOrder );
 
-                // Set message article default layout & z-index
+                // Set message article initial layout & z-index
                 $msgArticle.css({
                   'right': 96 * ( parseInt( msgOrder ) - 1 ),
                   'z-index': msgOrder
@@ -125,6 +123,19 @@
 
                 // Init resize
                 initResizeInteraction( $msgArticle[0], $msgArticleWrapper[0] );
+
+                // Feather icons. This looks unnecessarily ugly -___-
+                $msgArticle.find('[data-feather]').each(function() {
+                  var $self = $(this);
+                  if ( $self.attr('data-feather').length )
+                    $self.parent().prepend(
+                      feather.icons[$self.attr('data-feather')]
+                      .toSvg({
+                        width: '16',
+                        height: '16'
+                      })
+                    );
+                });
 
                 // Toggle message open flag
                 $self.attr('data-message-open', '');
