@@ -5148,7 +5148,10 @@ hr {
   .message-trigger + .message-trigger {
     margin-left: 0.5rem; }
   .message-trigger .card-body {
-    border-radius: 3px; }
+    border-radius: 3px;
+    border: 1px solid #e3dfe6; }
+  .message-trigger:hover .card-body {
+    border: 1px solid #c6a3e0; }
   .message-trigger .message-title {
     margin-bottom: 0.5rem;
     width: 100%;
