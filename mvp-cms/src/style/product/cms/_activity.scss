@@ -1,0 +1,38 @@
+.cms-event-calendar {
+  width: 100%;
+  border: 1px solid $black-divider-solid !important;
+  border-radius: 3px;
+}
+
+.cms-eventlist {
+  width: 100%;
+  display: flex;
+  padding: $spacer 0;
+  @include faux-border-bottom;
+}
+
+.cms-eventlist-meta {
+  flex: 0 0 3.5rem;
+  padding: 0 1rem 0 1rem;
+  text-align: right;
+}
+
+.cms-eventlist-month {
+  margin: 0;
+  color: map-get(theme-color('primary'), color);
+}
+
+.cms-eventlist-date {
+  margin: 0;
+  font-weight: $font-weight-bold;
+}
+
+.cms-eventlist-title {
+  margin-bottom: $spacer-xs;
+}
+
+.cms-eventlist-location {
+  margin: 0;
+  font-size: $font-size-caption;
+  color: map-get(theme-color('dark'), lighter);
+}

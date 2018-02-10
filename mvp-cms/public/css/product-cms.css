@@ -5281,4 +5281,41 @@ hr {
     width: 100%;
     font-weight: 700; }
 
+.cms-event-calendar {
+  width: 100%;
+  border: 1px solid #e3dfe6 !important;
+  border-radius: 3px; }
+
+.cms-eventlist {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 1rem 0;
+  -webkit-box-shadow: inset 0px -1px 0px 0px #e3dfe6;
+          box-shadow: inset 0px -1px 0px 0px #e3dfe6; }
+
+.cms-eventlist-meta {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 3.5rem;
+          flex: 0 0 3.5rem;
+  padding: 0 1rem 0 1rem;
+  text-align: right; }
+
+.cms-eventlist-month {
+  margin: 0;
+  color: #934ec5; }
+
+.cms-eventlist-date {
+  margin: 0;
+  font-weight: 700; }
+
+.cms-eventlist-title {
+  margin-bottom: 0.25rem; }
+
+.cms-eventlist-location {
+  margin: 0;
+  font-size: 0.75rem;
+  color: #a89bb1; }
+
 /*# sourceMappingURL=../maps/product-cms.css.map */
