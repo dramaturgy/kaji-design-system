@@ -3600,6 +3600,8 @@ body {
   [dir='rtl'] body {
     text-align: right;
     text-align: start; }
+  body.no-scroll {
+    overflow: hidden; }
 
 html {
   -webkit-box-sizing: border-box;
@@ -5283,8 +5285,7 @@ hr {
 
 .cms-event-calendar {
   width: 100%;
-  border: 1px solid #e3dfe6 !important;
-  border-radius: 3px; }
+  border: none !important; }
 
 .cms-eventlist {
   width: 100%;
@@ -5292,8 +5293,8 @@ hr {
   display: -ms-flexbox;
   display: flex;
   padding: 1rem 0;
-  -webkit-box-shadow: inset 0px -1px 0px 0px #e3dfe6;
-          box-shadow: inset 0px -1px 0px 0px #e3dfe6; }
+  -webkit-box-shadow: inset 0px 1px 0px 0px #e3dfe6;
+          box-shadow: inset 0px 1px 0px 0px #e3dfe6; }
 
 .cms-eventlist-meta {
   -webkit-box-flex: 0;
@@ -5317,5 +5318,37 @@ hr {
   margin: 0;
   font-size: 0.75rem;
   color: #a89bb1; }
+
+.overview-items-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.overview-item {
+  margin: 0;
+  padding: 0 .5rem;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 33.333%;
+          flex: 0 0 33.333%; }
+
+.oi-label {
+  margin: 0;
+  font-size: 0.75rem;
+  line-height: 1.5rem; }
+
+.oi-figure-1 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.33333;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .oi-figure-1 .figure {
+    padding: 0 0.5rem; }
 
 /*# sourceMappingURL=../maps/product-cms.css.map */

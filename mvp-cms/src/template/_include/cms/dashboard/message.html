@@ -3,15 +3,15 @@
                 <div class="card border-black-divider-solid mb-3">
                   <div class="card-body px-3 pt-3 pb-0">
 
-                    <p class="subsubheading-black text-dark mb-2">MESSAGES</p>
+                    <p class="subsubheading-black text-dark mb-3">MESSAGES</p>
 
                     <div class="d-flex flex-nowrap message-triggers-wrapper">
 
                       {% set message_items = [
                         { title: "Very long title shall get truncated with ellipsis", id: 1, label_type: 'primary', label_text: 'news', post_timeago: 'Now' },
                         { title: "This one is shorter", id: 2, label_type: 'secondary', label_text: 'some long label', post_timeago: '2 days ago' },
-                        { title: "How about this", id: 3, label_type: 'info', label_text: 'old', post_timeago: 'Yesterday' },
-                        { title: "This should overflowing the boundary", id: 4, label_type: 'warning', label_text: 'inbox', post_timeago: 'Dec 7, 2017' },
+                        { title: "How about this", id: 3, label_type: 'info', label_text: 'archived', post_timeago: 'Yesterday' },
+                        { title: "This should overflowing the boundary", id: 4, label_type: 'warning', label_text: 'private', post_timeago: 'Dec 7, 2017' },
                         { title: "Asking you!", id: 5, label_type: 'danger', label_text: 'some taxonomy', post_timeago: 'Dec 9, 2018' }
                       ] %}
 

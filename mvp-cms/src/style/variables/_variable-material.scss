@@ -292,14 +292,14 @@ $picker-weekday-color:      $black-hint !default;
 // Progress (Bootstrap progress bar)
 // Based on https://material.google.com/components/progress-activity.html#progress-activity-types-of-indicators
 
-$progress-bar-bg:                      $material-color-indigo-500 !default;
+$progress-bar-bg:                      map-get(theme-color(primary), color) !default;
 $progress-bar-border-radius:           .25rem !default;
 $progress-bar-height:                  .25rem !default;
-$progress-bg:                          $material-color-indigo-100 !default;
+$progress-bg:                          map-get(theme-color(primary), lighter) !default;
 
 // Circular
 $progress-circular-animation-duration: 5.332s !default;
-$progress-circular-bg:                 $material-color-indigo-500 !default;
+$progress-circular-bg:                 map-get(theme-color(primary), color) !default;
 $progress-circular-height:             2.5rem !default;
 $progress-circular-spinner-width:      .25rem !default;
 

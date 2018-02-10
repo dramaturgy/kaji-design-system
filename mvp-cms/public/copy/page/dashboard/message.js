@@ -121,6 +121,10 @@ $(function() {
               );
           });
 
+          $msgArticle.find('.marticle-body-scroll')
+            .on('mouseover', function(e) { if( !$('body').hasClass('no-scroll') ) $('body').addClass('no-scroll'); })
+            .on('mouseout', function(e) { if( $('body').hasClass('no-scroll') ) $('body').removeClass('no-scroll'); })
+
           // Update message meta
           $msgArticle.find('.js-marticle-sender').text( _data.sender );
           $msgArticle.find('.js-marticle-timeago').text( _data.timeago );
