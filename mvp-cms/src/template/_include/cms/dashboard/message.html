@@ -5,7 +5,7 @@
 
                     <p class="subsubheading-black text-dark mb-2">MESSAGES</p>
 
-                    <div class="d-flex flex-nowrap card-message-wrapper">
+                    <div class="d-flex flex-nowrap message-triggers-wrapper">
 
                       {% set message_items = [
                         { title: "Very long title shall get truncated with ellipsis", id: 1, label_type: 'primary', label_text: 'new', post_timeago: 'Now' },
@@ -16,18 +16,18 @@
                       ] %}
 
                       {% for item in message_items %}
-                      <a href="javacript:void(0);" class="card card-message no-elevation text-dark js-card-message" data-message-id="{{ item.id }}">
+                      <a href="javacript:void(0);" class="card message-trigger no-elevation text-dark js-message-trigger" data-message-id="{{ item.id }}">
                         <div class="card-body border-black-divider-solid bg-white py-3">
                           <div class="message-head">
-                            <div class="message-label">
-                              <span class="badge badge-{{ item.label_type }} text-white">{{ item.label_text }}</span>
+                            <div class="message-label js-message-label">
+                              <span class="badge badge-{{ item.label_type }} text-white mb-2">{{ item.label_text }}</span>
                             </div>
                             <p class="message-title js-message-title">{{ item.title }}</p>
                           </div>
                           <p class="message-caption">Lorem ipsum dolor sit amet cons, ectetur adipisicing elit.</p>
                           <div class="message-meta">
-                            <p class="message-sender text-primary"><span class="fa fa-user-o mr-2 text-muted"></span>Jean Baudrillard</p>
-                            <p class="message-timeago text-muted"><span class="fa fa-calendar-o mr-2"></span>{{ item.post_timeago }}</p>
+                            <p class="message-sender text-primary"><span class="fa fa-user-o mr-2 text-muted"></span><span class="js-message-sender">Jean Baudrillard</span></p>
+                            <p class="message-timeago text-muted"><span class="fa fa-calendar-o mr-2"></span><span class="js-message-timeago">{{ item.post_timeago }}</span></p>
                           </div>
                         </div>
                       </a>
@@ -49,14 +49,15 @@
                     <div class="marticle-action-wrapper ml-auto">
                       <a class="marticle-action" href="javacript:void(0);"><span data-feather="star"></span></a>
                       <a class="marticle-action" href="javacript:void(0);"><span data-feather="trash"></span></a>
-                      <a class="marticle-action" href="javacript:void(0);"><span data-feather="x"></span></a>
+                      <a class="marticle-action js-marticle-action-close" href="javacript:void(0);"><span data-feather="x"></span></a>
                     </div>
                   </div>
                   <div class="marticle-body">
                     <div class="marticle-body-scroll">
+                      <div class="marticle-label js-marticle-label w-100"></div>
                       <p class="marticle-title mb-2"><@= title @></p>
-                      <p class="marticle-sender m-0 text-muted text-sm" style="font-size: .75rem; line-height: 1rem;"><span class="fa fa-user-o" style="display: inline-block; width: 1rem;"></span> <span>Jean Baudrillard</span></p>
-                      <p class="marticle-sender text-muted text-sm" style="font-size: .75rem; line-height: 1rem;"><span class="fa fa-calendar" style="display: inline-block; width: 1rem;"></span> <span>Yesterday</span></p>
+                      <p class="marticle-sender m-0 text-muted text-sm" style="font-size: .75rem; line-height: 1rem;"><span class="fa fa-user-o" style="display: inline-block; width: 1rem;"></span> <span class="js-marticle-sender"></span></p>
+                      <p class="marticle-timeago text-muted text-sm" style="font-size: .75rem; line-height: 1rem;"><span class="fa fa-calendar" style="display: inline-block; width: 1rem;"></span> <span class="js-marticle-timeago"></span></p>
                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, culpa. Deleniti sed vitae expedita fugiat, tenetur facere dolorum sit, officiis laboriosam dolore dolores dicta aliquam voluptatum facilis. Earum, nostrum, porro!</p>
                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, culpa. Deleniti sed vitae expedita fugiat, tenetur facere dolorum sit, officiis laboriosam dolore dolores dicta aliquam voluptatum facilis. Earum, nostrum, porro!</p>
                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, culpa. Deleniti sed vitae expedita fugiat, tenetur facere dolorum sit, officiis laboriosam dolore dolores dicta aliquam voluptatum facilis. Earum, nostrum, porro!</p>

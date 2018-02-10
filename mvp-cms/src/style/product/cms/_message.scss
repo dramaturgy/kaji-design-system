@@ -1,9 +1,9 @@
-.card-message-wrapper {
+.message-triggers-wrapper {
   max-width: 100%;
   overflow-x: scroll;
 }
 
-.card-message {
+.message-trigger {
   flex: 0 0 16rem;
   height: 9rem;
   overflow: hidden;
@@ -62,7 +62,6 @@
   }
 
   .message-label {
-    margin-bottom: $spacer-sm;
     display: block;
     width: 100%;
     font-size: 0.75rem;

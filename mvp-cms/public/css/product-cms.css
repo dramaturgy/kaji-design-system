@@ -5135,28 +5135,28 @@ hr {
   position: absolute;
   top: 0; }
 
-.card-message-wrapper {
+.message-triggers-wrapper {
   max-width: 100%;
   overflow-x: scroll; }
 
-.card-message {
+.message-trigger {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 16rem;
           flex: 0 0 16rem;
   height: 9rem;
   overflow: hidden; }
-  .card-message + .card-message {
+  .message-trigger + .message-trigger {
     margin-left: 0.5rem; }
-  .card-message .card-body {
+  .message-trigger .card-body {
     border-radius: 3px; }
-  .card-message .message-title {
+  .message-trigger .message-title {
     margin-bottom: 0.5rem;
     width: 100%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     font-weight: 700; }
-  .card-message .message-caption {
+  .message-trigger .message-caption {
     margin-bottom: 0.5rem;
     display: block;
     max-height: 2rem;
@@ -5165,7 +5165,7 @@ hr {
     overflow: hidden;
     font-size: 0.75rem;
     line-height: 1rem; }
-  .card-message .message-meta {
+  .message-trigger .message-meta {
     margin-bottom: 0;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -5173,7 +5173,7 @@ hr {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between; }
-  .card-message .message-sender {
+  .message-trigger .message-sender {
     margin: 0;
     font-size: 0.75rem;
     white-space: nowrap;
@@ -5182,7 +5182,7 @@ hr {
     -webkit-box-flex: 0;
         -ms-flex: 0 1 auto;
             flex: 0 1 auto; }
-  .card-message .message-timeago {
+  .message-trigger .message-timeago {
     margin: 0;
     font-size: 0.75rem;
     white-space: nowrap;
@@ -5192,8 +5192,7 @@ hr {
         -ms-flex: 1 0 auto;
             flex: 1 0 auto;
     text-align: right; }
-  .card-message .message-label {
-    margin-bottom: 0.5rem;
+  .message-trigger .message-label {
     display: block;
     width: 100%;
     font-size: 0.75rem; }
