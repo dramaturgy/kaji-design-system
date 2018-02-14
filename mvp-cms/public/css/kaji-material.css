@@ -4341,7 +4341,7 @@ fieldset[disabled] a.btn {
 .dropup {
   position: relative; }
 
-.dropdown-menu {
+.dropdown-menu, span.twitter-typeahead .tt-menu {
   border-bottom-right-radius: 2px;
   border-bottom-left-radius: 2px;
   text-align: left;
@@ -4358,10 +4358,10 @@ fieldset[disabled] a.btn {
   padding: 0.5rem 0;
   position: absolute;
   z-index: 80; }
-  [dir='rtl'] .dropdown-menu {
+  [dir='rtl'] .dropdown-menu, [dir='rtl'] span.twitter-typeahead .tt-menu, span.twitter-typeahead [dir='rtl'] .tt-menu {
     text-align: right;
     text-align: start; }
-  .dropdown-menu:not(.inner)::before {
+  .dropdown-menu:not(.inner)::before, span.twitter-typeahead .tt-menu:not(.inner)::before {
     border-bottom-right-radius: 2px;
     border-bottom-left-radius: 2px;
     background-clip: padding-box;
@@ -4379,43 +4379,43 @@ fieldset[disabled] a.btn {
     -webkit-transform-origin: 0 0;
             transform-origin: 0 0;
     z-index: -1; }
-  .dropdown-menu.show {
+  .dropdown-menu.show, span.twitter-typeahead .show.tt-menu {
     display: block; }
-    .dropdown-menu.show::before,
-    .dropdown-menu.show > * {
+    .dropdown-menu.show::before, span.twitter-typeahead .show.tt-menu::before,
+    .dropdown-menu.show > *, span.twitter-typeahead .show.tt-menu > * {
       -webkit-animation-duration: 0.3s;
               animation-duration: 0.3s;
       -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
               animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
       @media (min-width: 600px) {
-        .dropdown-menu.show::before,
-        .dropdown-menu.show > * {
+        .dropdown-menu.show::before, span.twitter-typeahead .show.tt-menu::before,
+        .dropdown-menu.show > *, span.twitter-typeahead .show.tt-menu > * {
           -webkit-animation-duration: 0.39s;
                   animation-duration: 0.39s; } }
       @media (min-width: 1280px) {
-        .dropdown-menu.show::before,
-        .dropdown-menu.show > * {
+        .dropdown-menu.show::before, span.twitter-typeahead .show.tt-menu::before,
+        .dropdown-menu.show > *, span.twitter-typeahead .show.tt-menu > * {
           -webkit-animation-duration: 0.2s;
                   animation-duration: 0.2s; } }
-    .dropdown-menu.show::before {
+    .dropdown-menu.show::before, span.twitter-typeahead .show.tt-menu::before {
       -webkit-animation-name: dropdown-menu-show;
               animation-name: dropdown-menu-show; }
-    .dropdown-menu.show > * {
+    .dropdown-menu.show > *, span.twitter-typeahead .show.tt-menu > * {
       -webkit-animation-name: dropdown-item-show;
               animation-name: dropdown-item-show; }
-    .dropdown-menu.show > :nth-child(1) {
+    .dropdown-menu.show > :nth-child(1), span.twitter-typeahead .show.tt-menu > :nth-child(1) {
       -webkit-animation-name: dropdown-item-show-1;
               animation-name: dropdown-item-show-1; }
-    .dropdown-menu.show > :nth-child(2) {
+    .dropdown-menu.show > :nth-child(2), span.twitter-typeahead .show.tt-menu > :nth-child(2) {
       -webkit-animation-name: dropdown-item-show-2;
               animation-name: dropdown-item-show-2; }
-    .dropdown-menu.show > :nth-child(3) {
+    .dropdown-menu.show > :nth-child(3), span.twitter-typeahead .show.tt-menu > :nth-child(3) {
       -webkit-animation-name: dropdown-item-show-3;
               animation-name: dropdown-item-show-3; }
-  .nav:not(.flex-column):not(.flex-column-reverse) .dropdown-menu {
+  .nav:not(.flex-column):not(.flex-column-reverse) .dropdown-menu, .nav:not(.flex-column):not(.flex-column-reverse) span.twitter-typeahead .tt-menu, span.twitter-typeahead .nav:not(.flex-column):not(.flex-column-reverse) .tt-menu {
     min-width: 100%; }
 
-.show > .dropdown-menu {
+.show > .dropdown-menu, span.twitter-typeahead .show > .tt-menu {
   display: block; }
 
 .menu {
@@ -4545,47 +4545,49 @@ fieldset[disabled] a.btn {
   100% {
     margin-top: 0; } }
 
-.dropdown-menu[x-placement='bottom-end']::before {
+.dropdown-menu[x-placement='bottom-end']::before, span.twitter-typeahead [x-placement='bottom-end'].tt-menu::before {
   -webkit-transform-origin: 100% 0;
           transform-origin: 100% 0; }
 
-.dropdown-menu[x-placement='top-end'], .dropdown-menu[x-placement='top-end']::before,
+.dropdown-menu[x-placement='top-end'], span.twitter-typeahead [x-placement='top-end'].tt-menu, .dropdown-menu[x-placement='top-end']::before, span.twitter-typeahead [x-placement='top-end'].tt-menu::before,
 .dropdown-menu[x-placement='top-start'],
-.dropdown-menu[x-placement='top-start']::before {
+span.twitter-typeahead [x-placement='top-start'].tt-menu,
+.dropdown-menu[x-placement='top-start']::before,
+span.twitter-typeahead [x-placement='top-start'].tt-menu::before {
   border-top-left-radius: 2px;
   border-top-right-radius: 2px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0; }
 
-.dropdown-menu[x-placement='top-end'].show > :nth-child(1),
-.dropdown-menu[x-placement='top-end'].show > :nth-child(2),
-.dropdown-menu[x-placement='top-end'].show > :nth-child(3),
-.dropdown-menu[x-placement='top-start'].show > :nth-child(1),
-.dropdown-menu[x-placement='top-start'].show > :nth-child(2),
-.dropdown-menu[x-placement='top-start'].show > :nth-child(3) {
+.dropdown-menu[x-placement='top-end'].show > :nth-child(1), span.twitter-typeahead [x-placement='top-end'].show.tt-menu > :nth-child(1),
+.dropdown-menu[x-placement='top-end'].show > :nth-child(2), span.twitter-typeahead [x-placement='top-end'].show.tt-menu > :nth-child(2),
+.dropdown-menu[x-placement='top-end'].show > :nth-child(3), span.twitter-typeahead [x-placement='top-end'].show.tt-menu > :nth-child(3),
+.dropdown-menu[x-placement='top-start'].show > :nth-child(1), span.twitter-typeahead [x-placement='top-start'].show.tt-menu > :nth-child(1),
+.dropdown-menu[x-placement='top-start'].show > :nth-child(2), span.twitter-typeahead [x-placement='top-start'].show.tt-menu > :nth-child(2),
+.dropdown-menu[x-placement='top-start'].show > :nth-child(3), span.twitter-typeahead [x-placement='top-start'].show.tt-menu > :nth-child(3) {
   -webkit-animation-name: dropdown-item-show;
           animation-name: dropdown-item-show; }
 
-.dropdown-menu[x-placement='top-end'].show > :nth-last-child(1),
-.dropdown-menu[x-placement='top-start'].show > :nth-last-child(1) {
+.dropdown-menu[x-placement='top-end'].show > :nth-last-child(1), span.twitter-typeahead [x-placement='top-end'].show.tt-menu > :nth-last-child(1),
+.dropdown-menu[x-placement='top-start'].show > :nth-last-child(1), span.twitter-typeahead [x-placement='top-start'].show.tt-menu > :nth-last-child(1) {
   -webkit-animation-name: dropdown-item-show-1;
           animation-name: dropdown-item-show-1; }
 
-.dropdown-menu[x-placement='top-end'].show > :nth-last-child(2),
-.dropdown-menu[x-placement='top-start'].show > :nth-last-child(2) {
+.dropdown-menu[x-placement='top-end'].show > :nth-last-child(2), span.twitter-typeahead [x-placement='top-end'].show.tt-menu > :nth-last-child(2),
+.dropdown-menu[x-placement='top-start'].show > :nth-last-child(2), span.twitter-typeahead [x-placement='top-start'].show.tt-menu > :nth-last-child(2) {
   -webkit-animation-name: dropdown-item-show-2;
           animation-name: dropdown-item-show-2; }
 
-.dropdown-menu[x-placement='top-end'].show > :nth-last-child(3),
-.dropdown-menu[x-placement='top-start'].show > :nth-last-child(3) {
+.dropdown-menu[x-placement='top-end'].show > :nth-last-child(3), span.twitter-typeahead [x-placement='top-end'].show.tt-menu > :nth-last-child(3),
+.dropdown-menu[x-placement='top-start'].show > :nth-last-child(3), span.twitter-typeahead [x-placement='top-start'].show.tt-menu > :nth-last-child(3) {
   -webkit-animation-name: dropdown-item-show-3;
           animation-name: dropdown-item-show-3; }
 
-.dropdown-menu[x-placement='top-end']::before {
+.dropdown-menu[x-placement='top-end']::before, span.twitter-typeahead [x-placement='top-end'].tt-menu::before {
   -webkit-transform-origin: 100% 100%;
           transform-origin: 100% 100%; }
 
-.dropdown-menu[x-placement='top-start']::before {
+.dropdown-menu[x-placement='top-start']::before, span.twitter-typeahead [x-placement='top-start'].tt-menu::before {
   -webkit-transform-origin: 0 100%;
           transform-origin: 0 100%; }
 
@@ -4629,7 +4631,7 @@ fieldset[disabled] a.btn {
     -webkit-transform-origin: 0 calc(100% - 2rem);
             transform-origin: 0 calc(100% - 2rem); }
 
-.dropdown-item {
+.dropdown-item, span.twitter-typeahead .tt-suggestion {
   -webkit-transition-duration: 0.3s;
           transition-duration: 0.3s;
   -webkit-transition-property: background-color, color;
@@ -4650,29 +4652,31 @@ fieldset[disabled] a.btn {
   white-space: nowrap;
   width: 100%; }
   @media (min-width: 600px) {
-    .dropdown-item {
+    .dropdown-item, span.twitter-typeahead .tt-suggestion {
       -webkit-transition-duration: 0.39s;
               transition-duration: 0.39s; } }
   @media (min-width: 1280px) {
-    .dropdown-item {
+    .dropdown-item, span.twitter-typeahead .tt-suggestion {
       -webkit-transition-duration: 0.2s;
               transition-duration: 0.2s; } }
-  .dropdown-item:active, .dropdown-item:focus, .dropdown-item:hover {
+  .dropdown-item:active, span.twitter-typeahead .tt-suggestion:active, .dropdown-item:focus, span.twitter-typeahead .tt-suggestion:focus, .dropdown-item:hover, span.twitter-typeahead .tt-suggestion:hover {
     background-color: #eeecf0;
     color: rgba(68, 60, 74, 0.87);
     text-decoration: none; }
-  .dropdown-item.active {
+  .dropdown-item.active, span.twitter-typeahead .active.tt-suggestion, span.twitter-typeahead .tt-suggestion.tt-cursor {
     background-color: #eeecf0; }
-  .dropdown-item:disabled, .dropdown-item.disabled {
+  .dropdown-item:disabled, span.twitter-typeahead .tt-suggestion:disabled, .dropdown-item.disabled, span.twitter-typeahead .disabled.tt-suggestion {
     background-color: transparent;
     color: rgba(68, 60, 74, 0.54);
     pointer-events: none; }
-  .dropdown-menu-sm .dropdown-item,
-  .menu-cascading .dropdown-item {
+  .dropdown-menu-sm .dropdown-item, .dropdown-menu-sm span.twitter-typeahead .tt-suggestion, span.twitter-typeahead .dropdown-menu-sm .tt-suggestion,
+  .menu-cascading .dropdown-item,
+  .menu-cascading span.twitter-typeahead .tt-suggestion, span.twitter-typeahead
+  .menu-cascading .tt-suggestion {
     padding: 0.25rem 1.5rem; }
 
 .dropdown-divider,
-.dropdown-menu .divider {
+.dropdown-menu .divider, span.twitter-typeahead .tt-menu .divider {
   background-color: rgba(68, 60, 74, 0.12);
   height: 1px;
   margin: 0.5rem 0;
@@ -11190,7 +11194,7 @@ select.selectpicker {
   position: absolute;
   height: 0 !important;
   padding: 0 !important; }
-  .bootstrap-select.btn-group.bs-container .dropdown-menu {
+  .bootstrap-select.btn-group.bs-container .dropdown-menu, .bootstrap-select.btn-group.bs-container span.twitter-typeahead .tt-menu, span.twitter-typeahead .bootstrap-select.btn-group.bs-container .tt-menu {
     z-index: 1060; }
 
 .bootstrap-select.btn-group .dropdown-toggle .filter-option {
@@ -11209,11 +11213,11 @@ select.selectpicker {
 .bootstrap-select.btn-group[class*="col-"] .dropdown-toggle {
   width: 100%; }
 
-.bootstrap-select.btn-group .dropdown-menu {
+.bootstrap-select.btn-group .dropdown-menu, .bootstrap-select.btn-group span.twitter-typeahead .tt-menu, span.twitter-typeahead .bootstrap-select.btn-group .tt-menu {
   min-width: 100%;
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
-  .bootstrap-select.btn-group .dropdown-menu.inner {
+  .bootstrap-select.btn-group .dropdown-menu.inner, .bootstrap-select.btn-group span.twitter-typeahead .inner.tt-menu, span.twitter-typeahead .bootstrap-select.btn-group .inner.tt-menu {
     position: static;
     float: none;
     border: 0;
@@ -11222,17 +11226,17 @@ select.selectpicker {
     border-radius: 0;
     -webkit-box-shadow: none;
             box-shadow: none; }
-  .bootstrap-select.btn-group .dropdown-menu li {
+  .bootstrap-select.btn-group .dropdown-menu li, .bootstrap-select.btn-group span.twitter-typeahead .tt-menu li, span.twitter-typeahead .bootstrap-select.btn-group .tt-menu li {
     position: relative; }
-    .bootstrap-select.btn-group .dropdown-menu li.active small {
+    .bootstrap-select.btn-group .dropdown-menu li.active small, .bootstrap-select.btn-group span.twitter-typeahead .tt-menu li.active small, span.twitter-typeahead .bootstrap-select.btn-group .tt-menu li.active small {
       color: #fff; }
-    .bootstrap-select.btn-group .dropdown-menu li.disabled a {
+    .bootstrap-select.btn-group .dropdown-menu li.disabled a, .bootstrap-select.btn-group span.twitter-typeahead .tt-menu li.disabled a, span.twitter-typeahead .bootstrap-select.btn-group .tt-menu li.disabled a {
       cursor: not-allowed; }
-    .bootstrap-select.btn-group .dropdown-menu li:active, .bootstrap-select.btn-group .dropdown-menu li:focus, .bootstrap-select.btn-group .dropdown-menu li:hover {
+    .bootstrap-select.btn-group .dropdown-menu li:active, .bootstrap-select.btn-group span.twitter-typeahead .tt-menu li:active, span.twitter-typeahead .bootstrap-select.btn-group .tt-menu li:active, .bootstrap-select.btn-group .dropdown-menu li:focus, .bootstrap-select.btn-group span.twitter-typeahead .tt-menu li:focus, span.twitter-typeahead .bootstrap-select.btn-group .tt-menu li:focus, .bootstrap-select.btn-group .dropdown-menu li:hover, .bootstrap-select.btn-group span.twitter-typeahead .tt-menu li:hover, span.twitter-typeahead .bootstrap-select.btn-group .tt-menu li:hover {
       background-color: #eeecf0;
       color: rgba(68, 60, 74, 0.87);
       text-decoration: none; }
-    .bootstrap-select.btn-group .dropdown-menu li a {
+    .bootstrap-select.btn-group .dropdown-menu li a, .bootstrap-select.btn-group span.twitter-typeahead .tt-menu li a, span.twitter-typeahead .bootstrap-select.btn-group .tt-menu li a {
       cursor: pointer;
       -webkit-user-select: none;
          -moz-user-select: none;
@@ -11246,16 +11250,16 @@ select.selectpicker {
       line-height: 1.5rem;
       color: rgba(68, 60, 74, 0.87);
       white-space: nowrap; }
-      .bootstrap-select.btn-group .dropdown-menu li a.opt {
+      .bootstrap-select.btn-group .dropdown-menu li a.opt, .bootstrap-select.btn-group span.twitter-typeahead .tt-menu li a.opt, span.twitter-typeahead .bootstrap-select.btn-group .tt-menu li a.opt {
         position: relative;
         padding-left: 2.25em; }
-      .bootstrap-select.btn-group .dropdown-menu li a span.check-mark {
+      .bootstrap-select.btn-group .dropdown-menu li a span.check-mark, .bootstrap-select.btn-group span.twitter-typeahead .tt-menu li a span.check-mark, span.twitter-typeahead .bootstrap-select.btn-group .tt-menu li a span.check-mark {
         display: none; }
-      .bootstrap-select.btn-group .dropdown-menu li a span.text {
+      .bootstrap-select.btn-group .dropdown-menu li a span.text, .bootstrap-select.btn-group span.twitter-typeahead .tt-menu li a span.text, span.twitter-typeahead .bootstrap-select.btn-group .tt-menu li a span.text {
         display: inline-block; }
-    .bootstrap-select.btn-group .dropdown-menu li small {
+    .bootstrap-select.btn-group .dropdown-menu li small, .bootstrap-select.btn-group span.twitter-typeahead .tt-menu li small, span.twitter-typeahead .bootstrap-select.btn-group .tt-menu li small {
       padding-left: 0.5em; }
-  .bootstrap-select.btn-group .dropdown-menu .notify {
+  .bootstrap-select.btn-group .dropdown-menu .notify, .bootstrap-select.btn-group span.twitter-typeahead .tt-menu .notify, span.twitter-typeahead .bootstrap-select.btn-group .tt-menu .notify {
     position: absolute;
     bottom: 5px;
     width: 96%;
@@ -11285,13 +11289,13 @@ select.selectpicker {
   top: auto;
   margin-top: -1px; }
 
-.bootstrap-select.btn-group.show-tick .dropdown-menu li.selected a span.check-mark {
+.bootstrap-select.btn-group.show-tick .dropdown-menu li.selected a span.check-mark, .bootstrap-select.btn-group.show-tick span.twitter-typeahead .tt-menu li.selected a span.check-mark, span.twitter-typeahead .bootstrap-select.btn-group.show-tick .tt-menu li.selected a span.check-mark {
   position: absolute;
   display: inline-block;
   right: 15px;
   margin-top: 5px; }
 
-.bootstrap-select.btn-group.show-tick .dropdown-menu li a span.text {
+.bootstrap-select.btn-group.show-tick .dropdown-menu li a span.text, .bootstrap-select.btn-group.show-tick span.twitter-typeahead .tt-menu li a span.text, span.twitter-typeahead .bootstrap-select.btn-group.show-tick .tt-menu li a span.text {
   margin-right: 34px; }
 
 .bootstrap-select.show-menu-arrow.open > .dropdown-toggle {
@@ -11979,6 +11983,23 @@ select.selectpicker {
   width: 25%;
   height: 33.33%; }
 
+span.twitter-typeahead {
+  width: 100%; }
+  .input-group span.twitter-typeahead {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: relative;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+    width: 1%; }
+    .input-group span.twitter-typeahead .tt-menu, .input-group span.twitter-typeahead .tt-hint, .input-group span.twitter-typeahead .tt-input {
+      width: 100%; }
+
 @media print {
   *,
   *::after,
@@ -12012,7 +12033,7 @@ select.selectpicker {
     page-break-inside: avoid; }
   .card {
     border: 1px solid #e3dfe6; }
-  .dropdown-menu {
+  .dropdown-menu, span.twitter-typeahead .tt-menu {
     border: 1px solid #e3dfe6; }
   .list-group-item {
     border: 1px solid #e3dfe6;

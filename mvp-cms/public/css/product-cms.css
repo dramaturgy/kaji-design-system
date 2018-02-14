@@ -5286,6 +5286,8 @@ hr {
 .cms-event-calendar {
   width: 100%;
   border: none !important; }
+  .cms-event-calendar .datepicker--content {
+    padding-bottom: 1rem; }
 
 .cms-eventlist {
   width: 100%;

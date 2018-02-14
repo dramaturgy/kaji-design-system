@@ -258,17 +258,7 @@
                 </div>
               </div>
 
-              <div class="col-2 ml-auto">
-                <div class="card my-3" id="js_cms_tuition_filter_bar_container">
-                  <div class="card-body p-2">
-                    <button
-                      class="btn btn-success btn-block font-weight-normal"
-                      data-toggle="modal"
-                      data-target="#js_tuition_new_row_modal"
-                    ><span class="fa fa-plus mr-2"></span><span>New row</span></button>
-                  </div>
-                </div>
-              </div>
+              
             </section>
             <section class="row">
               <div class="col-12">
@@ -463,7 +453,13 @@
             </script>
           </div>
 
-          
+          <button
+            class="btn btn-float waves-attach waves-circle btn-primary position-fixed"
+            type="button"
+            data-toggle="modal"
+            data-target="#js_tuition_new_row_modal"
+            style="right: 2rem; bottom: 2rem;"
+          ><span class="fa fa-plus"></span></button>
 
           <div class="modal fade" id="js_tuition_new_row_modal" tabindex="-1">
             <div class="modal-dialog" role="document">
@@ -475,23 +471,68 @@
                   </button>
                 </div>
                 <div class="modal-body">
-                  <form>
+                  <form id="js_tuition_new">
+                    <div class="form-group">
+                      <label for="js_tuition_new_grade" class="form-control-label">Grade</label>
+                      <select class="selectpicker w-100 mt-2 no-elevation" id="js_tuition_new_grade" data-style="btn-light" title="Select Grade">
+                        <option>All</option>
+                        <option data-divider="true"></option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="js_tuition_new_class" class="form-control-label">Class</label>
+                      <select class="selectpicker w-100 mt-2 no-elevation" id="js_tuition_new_class" data-style="btn-light" title="Select Class">
+                        <option>All</option>
+                        <option data-divider="true"></option>
+                        <option>A</option>
+                        <option>B</option>
+                        <option>C</option>
+                        <option>D</option>
+                      </select>
+                    </div>
                     <div class="form-group">
                       <label for="js_tuition_new_name">Name</label>
-                      <input type="text" class="form-control" id="js_tuition_new_name" placeholder="Enter Name">
+                      <input type="text" class="form-control typeahead w-100" id="js_tuition_new_name" placeholder="Insert Name">
                     </div>
                     <div class="form-group">
-                      <label for="js_tuition_new_id">NIS</label>
-                      <input type="text" class="form-control" id="js_tuition_new_name" placeholder="Enter ID">
+                      <label for="js_tuition_new_paid_for">Paid for</label>
+                      <input type="text" class="form-control w-100" id="js_tuition_new_paid_for" placeholder="Select Month">
+                      <input type="text" class="d-none" id="js_tuition_new_paid_for_hidden" readonly>
                     </div>
                     <div class="form-group">
-                      <label for="js_tuition_new_id">Email</label>
-                      <input type="email" class="form-control" id="js_tuition_new_email" placeholder="Enter Email">
+                      <label for="js_tuition_new_paid_at">Paid At</label>
+                      <input type="text" class="form-control w-100" id="js_tuition_new_paid_at" placeholder="Select Date">
+                      <input type="text" class="d-none" id="js_tuition_new_paid_at_hidden" readonly>
                     </div>
                     <div class="form-group">
-                      <label for="js_tuition_new_id">Phone Number</label>
-                      <input type="email" class="form-control" id="js_tuition_new_phone_number" placeholder="Enter Phone Number">
+                      <label for="js_tuition_new_bill">Bill</label>
+                      <input type="number" class="form-control w-100" id="js_tuition_new_bill" readonly="true">
                     </div>
+                    <div class="form-group">
+                      <label for="js_tuition_new_payment">Payment</label>
+                      <input type="number" class="form-control w-100" id="js_tuition_new_payment" placeholder="Insert Payment Amount">
+                    </div>
+                    <div class="form-group">
+                      <label for="js_tuition_new_status" class="form-control-label">Status</label>
+                      <select class="selectpicker w-100 mt-2 no-elevation" id="js_tuition_new_status" data-style="btn-light" title="Select Payment Status">
+                        <option>Complete</option>
+                        <option>Incomplete</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="js_tuition_new_discount">Discount</label>
+                      <input type="number" class="form-control w-100" id="js_tuition_new_discount" placeholder="Insert Discount Amount">
+                    </div>
+                    <div class="form-group">
+                      <label for="js_tuition_new_remark">Remarks</label>
+                      <input type="text" class="form-control w-100" id="js_tuition_new_remark" placeholder="Insert Remarks">
+                    </div>
+
                     <button type="submit" class="btn btn-primary">Submit</button>
                   </form>
                 </div>
@@ -533,6 +574,7 @@
     <script src="../copy/vendor/bootstrap-select.min.js"></script>
     <script src="../copy/vendor/datepicker.min.js"></script>
     <script src="../copy/vendor/datepicker.en.js"></script>
+    <script src="../copy/vendor/typeahead.jquery.min.js"></script>
 
     
     <script>
@@ -590,6 +632,14 @@
             evaluate: /\<\@(.+?)\@\>/g
         };
 
+        // Global datepicker options
+        var datepickerOptions = {
+          language: 'en',
+          view: 'months',
+          minView: 'months',
+          dateFormat: 'MM yyyy'
+        };
+
         // Initiate all tooltip elements
         $('[data-toggle="tooltip"]').tooltip();
 
@@ -629,30 +679,6 @@
             '</tr>';
         }
 
-        // Filter Datepicker generator
-        function generateFilterDatepicker() {
-          $('.js-filter-datepicker').datepicker({
-            language: 'en',
-            position: 'right center',
-            view: 'months',
-            minView: 'months',
-            dateFormat: 'MM yyyy',
-            onSelect: function( format, date, inst ) {
-              var _dateFormat = {  
-                  weekday: 'long',
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric',
-                  hour: '2-digit',
-                  minute: '2-digit'
-                };
-              var _localeDates = date.toLocaleString('en-us', _dateFormat).split(',');
-              var _value = _localeDates[1].replace(/[^a-z]/gi, '') + ' ' + _localeDates[2].replace(/[^0-9]/g, ''); // April 2017
-              $('#' + inst.$el.attr('id') + '_hidden').val( _value );
-            }
-          });
-        }
-
         // Filter Popover generator
         function generateFilterPopover() {
           var $elTrigger = $('#js_cms_tuition_filter_trigger')
@@ -669,16 +695,37 @@
               var selector = $(this).attr('id');
               $(this).selectpicker('val',  $('#' + selector + '_hidden').val() || '' );
             });
-            $('.js-datepicker').each(function(i) {
+            $('.js-filter-datepicker').each(function(i) {
               var selector = $(this).attr('id');
               $(this).val( $('#' + selector + '_hidden').val() || '' );
             });
 
-            generateFilterDatepicker();
+            function handleDatepickerOnSelect( format, date, inst ) {
+              var _dateFormat = {  
+                  weekday: 'long',
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric',
+                  hour: '2-digit',
+                  minute: '2-digit'
+                };
+              var _localeDates = date.toLocaleString('en-us', _dateFormat).split(',');
+              var _value = _localeDates[1].replace(/[^a-z]/gi, '') + ' ' + _localeDates[2].replace(/[^0-9]/g, ''); // April 2017
+              $('#' + inst.$el.attr('id') + '_hidden').val( _value );
+            }
+
+            var _datepickerExtensions = {
+              position: 'right center',
+              view: 'months',
+              minView: 'months',
+              onSelect: handleDatepickerOnSelect
+            }
+
+            $('.js-filter-datepicker').datepicker( _.extend( datepickerOptions, _datepickerExtensions ) );
           });
 
           $elTrigger.on('hide.bs.popover', function(e) {
-            $('.js-datepicker').each(function(i) {
+            $('.js-filter-datepicker').each(function(i) {
               var $elDp = $(this)
               ,   $dpData = $elDp.datepicker().data('datepicker').$datepicker;
               if (typeof $dpData === 'object') $dpData.remove();
@@ -687,7 +734,7 @@
 
           function populateHiddenFilter( selectors ) {
             _.forEach( selectors, function( selector ) {
-              if ( !$(selector).hasClass('js-datepicker') ) {
+              if ( !$(selector).hasClass('js-filter-datepicker') ) {
                 $(document).on('change', selector, function(e) {
                   $(selector + '_hidden').val( $(selector).val() );
                 });
@@ -707,6 +754,78 @@
         }
 
         generateFilterPopover();
+
+        // New Tuition Modal
+        function initNewTuitionModal() {
+
+          function initNameField() {
+            function substringMatcher(strs) {
+              return function findMatches(q, cb) {
+                var matches, substringRegex;
+
+                // an array that will be populated with substring matches
+                matches = [];
+
+                // regex used to determine if a string contains the substring `q`
+                substrRegex = new RegExp(q, 'i');
+
+                // iterate through the pool of strings and for any string that
+                // contains the substring `q`, add it to the `matches` array
+                _.each(strs, function(v, k) {
+                  if (substrRegex.test(v)) matches.push(v);
+                });
+
+                cb(matches);
+              };
+            };
+
+            var _namesPool = ['Albert Camus', 'Franz Kafka', 'George Orwell'];
+
+            $('#js_tuition_new_name.typeahead').typeahead(
+              {
+                hint: true,
+                highlight: true,
+                minLength: 1
+              },
+              {
+                name: 'names',
+                source: substringMatcher( _namesPool )
+              }
+            );
+          }
+
+          function initDatepickers( el ) {
+
+            function handleDatepickerOnSelect( format, date, inst ) {
+              var _dateFormat = {  
+                  weekday: 'long',
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric',
+                  hour: '2-digit',
+                  minute: '2-digit'
+                };
+              var _localeDates = date.toLocaleString('en-us', _dateFormat).split(',');
+              var _value = _localeDates[1].replace(/[^a-z]/gi, '') + ' ' + _localeDates[2].replace(/[^0-9]/g, ''); // April 2017
+              $('#' + inst.$el.attr('id') + '_hidden').val( _value );
+            }
+
+            var _datepickerExtensions = {
+              position: 'right center',
+              view: 'months',
+              minView: 'months',
+              onSelect: handleDatepickerOnSelect
+            }
+
+            el.datepicker( _.extend( datepickerOptions, _datepickerExtensions ) );
+          }
+
+          initNameField();
+          initDatepickers( $('#js_tuition_new_paid_for') );
+          initDatepickers( $('#js_tuition_new_paid_at') );
+        }
+
+        initNewTuitionModal();
 
         // Init datepicker for Period Control
         function initPeriodControl() {

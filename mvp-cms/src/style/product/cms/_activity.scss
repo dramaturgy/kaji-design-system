@@ -1,6 +1,10 @@
 .cms-event-calendar {
   width: 100%;
   border: none !important;
+  
+  .datepicker--content {
+    padding-bottom: $spacer;
+  }
 }
 
 .cms-eventlist {

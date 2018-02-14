@@ -1,10 +1,10 @@
-          {# <button
+          <button
             class="btn btn-float waves-attach waves-circle btn-primary position-fixed"
             type="button"
             data-toggle="modal"
             data-target="#js_tuition_new_row_modal"
             style="right: 2rem; bottom: 2rem;"
-          ><span class="fa fa-plus"></span></button> #}
+          ><span class="fa fa-plus"></span></button>
 
           <div class="modal fade" id="js_tuition_new_row_modal" tabindex="-1">
             <div class="modal-dialog" role="document">
@@ -16,23 +16,68 @@
                   </button>
                 </div>
                 <div class="modal-body">
-                  <form>
+                  <form id="js_tuition_new">
+                    <div class="form-group">
+                      <label for="js_tuition_new_grade" class="form-control-label">Grade</label>
+                      <select class="selectpicker w-100 mt-2 no-elevation" id="js_tuition_new_grade" data-style="btn-light" title="Select Grade">
+                        <option>All</option>
+                        <option data-divider="true"></option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="js_tuition_new_class" class="form-control-label">Class</label>
+                      <select class="selectpicker w-100 mt-2 no-elevation" id="js_tuition_new_class" data-style="btn-light" title="Select Class">
+                        <option>All</option>
+                        <option data-divider="true"></option>
+                        <option>A</option>
+                        <option>B</option>
+                        <option>C</option>
+                        <option>D</option>
+                      </select>
+                    </div>
                     <div class="form-group">
                       <label for="js_tuition_new_name">Name</label>
-                      <input type="text" class="form-control" id="js_tuition_new_name" placeholder="Enter Name">
+                      <input type="text" class="form-control typeahead w-100" id="js_tuition_new_name" placeholder="Insert Name">
                     </div>
                     <div class="form-group">
-                      <label for="js_tuition_new_id">NIS</label>
-                      <input type="text" class="form-control" id="js_tuition_new_name" placeholder="Enter ID">
+                      <label for="js_tuition_new_paid_for">Paid for</label>
+                      <input type="text" class="form-control w-100" id="js_tuition_new_paid_for" placeholder="Select Month">
+                      <input type="text" class="d-none" id="js_tuition_new_paid_for_hidden" readonly>
                     </div>
                     <div class="form-group">
-                      <label for="js_tuition_new_id">Email</label>
-                      <input type="email" class="form-control" id="js_tuition_new_email" placeholder="Enter Email">
+                      <label for="js_tuition_new_paid_at">Paid At</label>
+                      <input type="text" class="form-control w-100" id="js_tuition_new_paid_at" placeholder="Select Date">
+                      <input type="text" class="d-none" id="js_tuition_new_paid_at_hidden" readonly>
                     </div>
                     <div class="form-group">
-                      <label for="js_tuition_new_id">Phone Number</label>
-                      <input type="email" class="form-control" id="js_tuition_new_phone_number" placeholder="Enter Phone Number">
+                      <label for="js_tuition_new_bill">Bill</label>
+                      <input type="number" class="form-control w-100" id="js_tuition_new_bill" readonly="true">
                     </div>
+                    <div class="form-group">
+                      <label for="js_tuition_new_payment">Payment</label>
+                      <input type="number" class="form-control w-100" id="js_tuition_new_payment" placeholder="Insert Payment Amount">
+                    </div>
+                    <div class="form-group">
+                      <label for="js_tuition_new_status" class="form-control-label">Status</label>
+                      <select class="selectpicker w-100 mt-2 no-elevation" id="js_tuition_new_status" data-style="btn-light" title="Select Payment Status">
+                        <option>Complete</option>
+                        <option>Incomplete</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="js_tuition_new_discount">Discount</label>
+                      <input type="number" class="form-control w-100" id="js_tuition_new_discount" placeholder="Insert Discount Amount">
+                    </div>
+                    <div class="form-group">
+                      <label for="js_tuition_new_remark">Remarks</label>
+                      <input type="text" class="form-control w-100" id="js_tuition_new_remark" placeholder="Insert Remarks">
+                    </div>
+
                     <button type="submit" class="btn btn-primary">Submit</button>
                   </form>
                 </div>
