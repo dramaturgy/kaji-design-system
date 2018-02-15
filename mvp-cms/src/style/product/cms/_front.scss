@@ -1,0 +1,17 @@
+.front-main {
+  height: 100vh;
+}
+
+.front-bg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  background: transparent url('../copy/image/shattered_violet@2X.png') center repeat;
+  background-size: 720px;
+}
+.front-bg + * {
+  z-index: 2;
+}
