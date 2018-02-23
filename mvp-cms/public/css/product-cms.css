@@ -5090,35 +5090,67 @@ hr {
 .has-navbar-fixed {
   padding-top: 3.5rem; }
 
-.cms-sidenav:after {
-  content: " ";
-  display: block;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  width: 1px;
-  background-color: #e3dfe6; }
-
-.cms-sidenav .nav-link {
-  position: relative;
-  color: #a89bb1; }
-  .cms-sidenav .nav-link.active {
-    color: #934ec5; }
-    .cms-sidenav .nav-link.active:after {
-      content: " ";
-      display: block;
-      position: absolute;
+.cms-sidenav {
+  z-index: 39; }
+  .cms-sidenav:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 1px;
+    background-color: #e3dfe6; }
+  @media (max-width: 1279.98px) {
+    .cms-sidenav {
+      position: fixed;
       top: 0;
+      left: 0;
       bottom: 0;
-      right: 0;
-      width: 4px;
-      background-color: #934ec5; }
-    .cms-sidenav .nav-link.active:hover {
-      cursor: default; }
-  .cms-sidenav .nav-link:hover:not(.active) {
-    background-color: #e3dfe6;
-    color: #75667f; }
+      -webkit-transform: translate(-100%, 0);
+              transform: translate(-100%, 0);
+      -webkit-transition: all .3s ease-out;
+      transition: all .3s ease-out; } }
+  .cms-sidenav.sm-open {
+    -webkit-transform: translate(0%, 0);
+            transform: translate(0%, 0);
+    -webkit-transition: all .3s ease-out;
+    transition: all .3s ease-out; }
+  .cms-sidenav .nav-link {
+    position: relative;
+    color: #a89bb1; }
+    .cms-sidenav .nav-link.active {
+      color: #934ec5; }
+      .cms-sidenav .nav-link.active:after {
+        content: " ";
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: 4px;
+        background-color: #934ec5; }
+      .cms-sidenav .nav-link.active:hover {
+        cursor: default; }
+    .cms-sidenav .nav-link:hover:not(.active) {
+      background-color: #e3dfe6;
+      color: #75667f; }
+
+.cms-sidenav-sticky {
+  background-color: #f9f9fa;
+  height: 100%; }
+
+body.has-sidenav-open {
+  overflow: hidden; }
+  body.has-sidenav-open .dashboard-main:after {
+    content: " ";
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5); }
 
 .kaji-table-wrapper {
   width: 100%;

@@ -16,7 +16,7 @@
       <div class="container-fluid px-0">
         <div class="row no-gutters">
           <div class="cms-navbar-toggle">
-            <a class="cms-navbar-toggle-btn align-items-center justify-content-center" href="javascript:void(0);"><span data-feather="menu"></span></a>
+            <a class="cms-navbar-toggle-btn align-items-center justify-content-center" id="js_cms_navbar_toggle_btn" href="javascript:void(0);"><span class="js-cms-navbar-toggle-icon" data-feather="menu"></span><span class="js-cms-navbar-toggle-icon d-none" data-feather="x"></span></a>
           </div>
           <div class="col-4 col-sm-2">
             <a class="cms-navbar-brand navbar-brand w-100" href="#"><span class="cms-navbar-brand-text d-block w-100 text-primary">Edukaji</span></a>
@@ -76,7 +76,7 @@
     <div class="container-fluid px-0">
       <div class="row no-gutters">
         
-        <nav class="cms-sidenav col-3 col-md-2 d-none d-md-block bg-white">
+        <nav class="cms-sidenav col-10 col-md-2 bg-white" id="js_cms_sidenav">
           <div class="cms-sidenav-sticky has-navbar-fixed">
             <ul class="nav flex-column">
               <li class="nav-item ">
@@ -881,6 +881,7 @@
       });
     </script>
 
+    <script src="../copy/page/sidenav.js"></script>
     <script src="../copy/vendor/Chart.min.js"></script>
     <script src="../copy/sample/chart/test-tuition.js"></script>
   </body>

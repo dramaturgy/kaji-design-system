@@ -3,6 +3,9 @@
 }
 
 .cms-sidenav {
+
+  z-index: 39;
+
   &:after {
     content: " ";
     display: block;
@@ -12,6 +15,20 @@
     right: 0;
     width: 1px;
     background-color: $border-color-solid;
+  }
+
+  @include media-breakpoint-down(md) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    transform: translate(-100%, 0);
+    transition: all .3s ease-out;
+  }
+
+  &.sm-open {
+    transform: translate(0%, 0);
+    transition: all .3s ease-out;
   }
 
   .nav-link {
@@ -40,6 +57,28 @@
     &:hover:not(.active) {
       background-color: $theme-gray-2;
       color: $theme-gray-8;
+    }
+  }
+}
+
+.cms-sidenav-sticky {
+  background-color: $white;
+  height: 100%;
+}
+
+body.has-sidenav-open {
+  overflow: hidden;
+
+  .dashboard-main {
+    &:after {
+      content: " ";
+      display: block;
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, .5);
     }
   }
 }
