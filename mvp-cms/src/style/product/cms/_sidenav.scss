@@ -17,7 +17,10 @@
     background-color: $border-color-solid;
   }
 
-  @include media-breakpoint-down(md) {
+  position: relative;
+  transform: translate(0%, 0);
+
+  @include media-breakpoint-down(sm) {
     position: fixed;
     top: 0;
     left: 0;

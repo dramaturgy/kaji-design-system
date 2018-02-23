@@ -5091,7 +5091,10 @@ hr {
   padding-top: 3.5rem; }
 
 .cms-sidenav {
-  z-index: 39; }
+  z-index: 39;
+  position: relative;
+  -webkit-transform: translate(0%, 0);
+          transform: translate(0%, 0); }
   .cms-sidenav:after {
     content: " ";
     display: block;
@@ -5101,7 +5104,7 @@ hr {
     right: 0;
     width: 1px;
     background-color: #e3dfe6; }
-  @media (max-width: 1279.98px) {
+  @media (max-width: 959.98px) {
     .cms-sidenav {
       position: fixed;
       top: 0;
