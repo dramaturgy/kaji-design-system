@@ -5060,6 +5060,34 @@ hr {
   list-style: none;
   padding-left: 0; }
 
+.cms-navbar-brand .cms-navbar-brand-text {
+  text-align: left;
+  padding-left: 1rem; }
+  @media (min-width: 600px) {
+    .cms-navbar-brand .cms-navbar-brand-text {
+      text-align: center; } }
+
+.cms-navbar-toggle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 2rem;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 2rem;
+          flex: 0 0 2rem; }
+  @media (min-width: 600px) {
+    .cms-navbar-toggle {
+      display: none; } }
+  .cms-navbar-toggle .cms-navbar-toggle-btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center; }
+
 .has-navbar-fixed {
   padding-top: 3.5rem; }
 

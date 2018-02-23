@@ -1,0 +1,28 @@
+.cms-navbar-brand {
+  .cms-navbar-brand-text {
+    text-align: left;
+    padding-left: $spacer;
+    @include media-breakpoint-up(sm) {
+      text-align: center;
+    }    
+  }
+}
+
+.cms-navbar-toggle {
+  display: flex;
+  width: 2rem;
+  flex: 0 0 2rem;
+
+  @include media-breakpoint-up(sm) {
+    display: none;
+  }
+
+  .cms-navbar-toggle-btn {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+}
