@@ -4853,7 +4853,7 @@ sup {
   font-size: 1.25rem;
   font-weight: 500;
   letter-spacing: 0.02em;
-  line-height: 1.4;
+  line-height: 2rem;
   border-left: 0.3125rem solid #934ec5;
   margin-bottom: 1rem;
   padding: 0 1rem; }
@@ -4918,7 +4918,7 @@ small,
   font-size: 1.25rem;
   font-weight: 500;
   letter-spacing: 0.02em;
-  line-height: 1.4; }
+  line-height: 2rem; }
 
 .typography-subheading {
   font-size: 1rem;
@@ -4986,7 +4986,7 @@ h4,
   font-size: 1.25rem;
   font-weight: 500;
   letter-spacing: 0.02em;
-  line-height: 1.4; }
+  line-height: 2rem; }
 
 h5,
 .h5 {
@@ -5030,7 +5030,7 @@ h6,
   font-size: 1.25rem;
   font-weight: 500;
   letter-spacing: 0.02em;
-  line-height: 1.4; }
+  line-height: 2rem; }
 
 .subsubheading-black {
   color: inherit;
