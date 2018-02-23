@@ -14,6 +14,15 @@ $(function() {
 
   }
 
+  // SHOULD NOT INCLUDED IN PRODUCTION!
+  function sidenavDevHack() {
+    if ( !!!window.location.port )
+      $('#js_cms_sidenav').find('.nav-link[href^="/cms"]').each( function() {
+        $(this).attr( 'href', '/kaji-design-system/mvp-cms/public' +  $(this).attr('href') );
+      });
+  }
+
   initSidenavToggle();
+  sidenavDevHack();
 
 });
