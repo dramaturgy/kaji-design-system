@@ -1,7 +1,7 @@
 .cms-navbar-brand {
   .cms-navbar-brand-text {
     text-align: left;
-    padding-left: $spacer;
+    padding-left: $spacer-sm;
     @include media-breakpoint-up(sm) {
       text-align: center;
     }    
@@ -10,8 +10,7 @@
 
 .cms-navbar-toggle {
   display: flex;
-  width: 2rem;
-  flex: 0 0 2rem;
+  flex: 0 0 3rem;
 
   @include media-breakpoint-up(sm) {
     display: none;

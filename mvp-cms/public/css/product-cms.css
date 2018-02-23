@@ -5062,7 +5062,7 @@ hr {
 
 .cms-navbar-brand .cms-navbar-brand-text {
   text-align: left;
-  padding-left: 1rem; }
+  padding-left: 0.5rem; }
   @media (min-width: 600px) {
     .cms-navbar-brand .cms-navbar-brand-text {
       text-align: center; } }
@@ -5071,10 +5071,9 @@ hr {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 2rem;
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 2rem;
-          flex: 0 0 2rem; }
+      -ms-flex: 0 0 3rem;
+          flex: 0 0 3rem; }
   @media (min-width: 600px) {
     .cms-navbar-toggle {
       display: none; } }
