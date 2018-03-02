@@ -84,8 +84,13 @@
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 24rem;
-  height: 30rem;
+  width: 100vw;
+  height: 100vh;
+
+  @include media-breakpoint-up(sm) {
+    width: 24rem;
+    height: 30rem;
+  }
 
   .marticle-card {
     padding: 0;

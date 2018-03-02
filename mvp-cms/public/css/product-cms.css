@@ -5274,8 +5274,12 @@ body.has-sidenav-open {
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 24rem;
-  height: 30rem; }
+  width: 100vw;
+  height: 100vh; }
+  @media (min-width: 600px) {
+    .message-article {
+      width: 24rem;
+      height: 30rem; } }
   .message-article .marticle-card {
     padding: 0; }
   .message-article .marticle-head {
