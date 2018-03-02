@@ -1,19 +1,21 @@
 $(function () {
   function generateChartOverall() {
-    var _fakeLabels = {
-      months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-      grades: ['Grade 1', 'Grade 2', 'Grade 3'] }
-    ,   _fakeData = [66, 34];
+    var _fakeData = {
+      paid: 46,
+      incomplete: 20,
+      unpaid: 27,
+      discount: 7
+    };
 
     var chart = new Chart(document.getElementById('js_tuition_chart_overall').getContext('2d'), {
       type: 'pie',
       data: {
-        labels: ['Paid', 'Unpaid'],
+        labels: _.map( _.keys(_fakeData), function(k) { return k.charAt(0).toUpperCase() + k.slice(1) }),
         datasets: [{
           label: 'Overall Payments',
-          data: _fakeData,
+          data: _.values(_fakeData),
           borderWidth: 0,
-          backgroundColor: ['hsla(275, 51%, 80%, 1)', 'hsla(275, 51%, 95%, 1)']
+          backgroundColor: ['hsla(275, 51%, 54%, 1)', 'hsla(36, 100%, 50%, 1)', 'hsla(4, 62%, 54%, 1)', 'hsla(207, 90%, 54%, 1)']
         }]
       },
       options: {
