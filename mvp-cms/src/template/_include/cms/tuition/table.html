@@ -32,7 +32,7 @@
 
             <script id="js_tuition_cell_name_template" type="text/x-lodash-template">
               <td class="d-block col-w-m overflow-ellipsis">
-                <a class="text-dark d-block js-cms-tuition-col-name"
+                <a class="text-dark d-block js-cms-tuition-col-name text-truncate"
                   href="#js_cms_tuition_student_collapse_content_<@= index @>"
                   data-row-index="<@= index @>"
                   data-record-name="<@= record.name @>"
@@ -44,9 +44,9 @@
 
             <script id="js_tuition_cell_payments_template" type="text/x-lodash-template">
               <@ for( var d = 0; d < record.payments.length; d ++ ) { @>
-              <td>
-                <div class="dropdown">
-                  <a class="js-cms-tuition-col-payment text-dark"
+              <td class="tuition-payment-col">
+                <div class="tuition-payment dropdown">
+                  <a class="js-tuition-payment-text tuition-payment-text"
                     href="javascript:void(0);"
                     data-toggle="tooltip"
                     data-placement="bottom"

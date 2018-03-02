@@ -1,3 +1,6 @@
+/**
+ *  product-cms.css v0.0.4
+*/
 .align-top {
   vertical-align: top !important; }
 
@@ -5167,12 +5170,40 @@ body.has-sidenav-open {
   table-layout: fixed;
   width: 100%; }
 
-.kaji-table td {
+.kaji-table tbody td {
   position: relative; }
-  .kaji-table td.overflow-ellipsis {
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden; }
+
+.kaji-table tbody td.tuition-payment-col {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem; }
+
+.kaji-table .tuition-payment {
+  padding: 0.25rem;
+  background-color: #f9f9fa;
+  color: #75667f;
+  border-radius: 2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
+  .kaji-table .tuition-payment.unpaid {
+    background-color: #f5d7d5;
+    color: #a53b33; }
+  .kaji-table .tuition-payment.uncomplete {
+    background-color: #ffe0b2;
+    color: #f57c00; }
+  .kaji-table .tuition-payment.discount {
+    background-color: #bbdefb;
+    color: #1976d2; }
+
+.kaji-table .tuition-payment-text {
+  color: inherit;
+  display: block;
+  line-height: 1rem; }
+
+.kaji-table.overflow-ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden; }
 
 .kaji-table .col-w-xs {
   width: 2rem; }
