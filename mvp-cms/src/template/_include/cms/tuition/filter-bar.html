@@ -31,6 +31,7 @@
                       </div>
 
                       <div id="js_cms_tuition_filter_hidden_fields" class="d-none">
+                        <input type="text" id="js_cms_tuition_filter_status_hidden">
                         <input type="text" id="js_cms_tuition_filter_grade_hidden">
                         <input type="text" id="js_cms_tuition_filter_class_hidden">
                         <input type="text" id="js_cms_tuition_filter_start_period_hidden">
@@ -41,6 +42,17 @@
                     <div class="d-none" id="js_cms_tuition_filter_popover">
                       <div class="card border-light">
                         <div class="card-body p-3">
+                          <div class="form-group row no-gutters">
+                            <label for="js_cms_tuition_filter_status" class="form-control-label text-dark col-4" style="padding: 0 0.5rem;font-size: 0.875rem;line-height: 2rem;">Status</label>
+                            <select class="selectpicker col-8 p-0 no-elevation" id="js_cms_tuition_filter_status" data-style="btn-light" title="Select">
+                              <option>All</option>
+                              <option data-divider="true"></option>
+                              <option>Paid</option>
+                              <option>Incomplete</option>
+                              <option>Unpaid</option>
+                              <option>Discount</option>
+                            </select>
+                          </div>
                           <div class="form-group row no-gutters">
                             <label for="js_cms_tuition_filter_grade" class="form-control-label text-dark col-4" style="padding: 0 0.5rem;font-size: 0.875rem;line-height: 2rem;">Grade</label>
                             <select class="selectpicker col-8 p-0 no-elevation" id="js_cms_tuition_filter_grade" data-style="btn-light" title="Select">
