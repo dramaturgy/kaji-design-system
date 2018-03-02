@@ -80,6 +80,11 @@ $(function() {
           $msgArticleWrapper
             .append( generateMessageArticle( $('#js_dashboard_message_article_template'), _data ) );
 
+          // Feather Icons
+          feather.icons['star'].toSvg();
+          feather.icons['trash'].toSvg();
+          feather.icons['x'].toSvg();
+
           // Add the message opened counter
           var msgOpenCounter = parseInt( $msgArticleWrapper.attr('data-message-opened') );
           msgOpenCounter++;

@@ -117,7 +117,7 @@
             </ul>
           </div>
         </nav>
-        <main role="main" class="dashboard-main col-12 col-md-9 col-lg-10 bg-light-2 py-3" style="min-height: 100vh">
+        <main role="main" class="dashboard-main col-12 col-md-9 col-lg-10 bg-light-2 py-3" id="js_dashboard_main" style="min-height: 100vh">
           <div class="container-fluid has-navbar-fixed">
             <section class="row align-items-stretch">
               <div class="col">
@@ -152,13 +152,142 @@
                 <div class="card border-black-divider-solid">
                   <div class="card-body px-3 pt-3 pb-2">
                     <p class="subsubheading-black text-dark">OVERALL PERFORMANCE</p>
-                    <div id="js_tuition_chart_overall_wrapper" class="w-100 py-2" style="height: 9rem;">
+                    <div id="js_tuition_chart_overall_wrapper" class="w-100 py-2" style="height: 10.5rem;">
                       <canvas id="js_tuition_chart_overall"></canvas>
                     </div>
                   </div>
                 </div>
               </div>
+              <div class="col-12 col-sm-8">
+                <div class="card border-black-divider-solid mb-3">
+                  <div class="card-body px-3 pt-3 pb-0">
+
+                    <p class="subsubheading-black text-dark mb-3">MESSAGES</p>
+
+                    <div class="d-flex flex-nowrap message-triggers-wrapper">
+
+
+                      <a href="javacript:void(0);" class="card message-trigger no-elevation mb-3 text-dark js-message-trigger" data-message-id="1">
+                        <div class="card-body border-black-divider-solid bg-white py-3">
+                          <div class="message-head">
+                            <div class="message-label js-message-label">
+                              <span class="badge badge-primary text-white mb-2">news</span>
+                            </div>
+                            <p class="message-title js-message-title">Very long title shall get truncated with ellipsis</p>
+                          </div>
+                          <p class="message-caption">Lorem ipsum dolor sit amet cons, ectetur adipisicing elit.</p>
+                          <div class="message-meta">
+                            <p class="message-sender text-primary"><span class="fa fa-user-o mr-2 text-muted"></span><span class="js-message-sender">Jean Baudrillard</span></p>
+                            <p class="message-timeago text-muted"><span class="fa fa-calendar-o mr-2"></span><span class="js-message-timeago">Now</span></p>
+                          </div>
+                        </div>
+                      </a>
+                      <a href="javacript:void(0);" class="card message-trigger no-elevation mb-3 text-dark js-message-trigger" data-message-id="2">
+                        <div class="card-body border-black-divider-solid bg-white py-3">
+                          <div class="message-head">
+                            <div class="message-label js-message-label">
+                              <span class="badge badge-secondary text-white mb-2">some long label</span>
+                            </div>
+                            <p class="message-title js-message-title">This one is shorter</p>
+                          </div>
+                          <p class="message-caption">Lorem ipsum dolor sit amet cons, ectetur adipisicing elit.</p>
+                          <div class="message-meta">
+                            <p class="message-sender text-primary"><span class="fa fa-user-o mr-2 text-muted"></span><span class="js-message-sender">Jean Baudrillard</span></p>
+                            <p class="message-timeago text-muted"><span class="fa fa-calendar-o mr-2"></span><span class="js-message-timeago">2 days ago</span></p>
+                          </div>
+                        </div>
+                      </a>
+                      <a href="javacript:void(0);" class="card message-trigger no-elevation mb-3 text-dark js-message-trigger" data-message-id="3">
+                        <div class="card-body border-black-divider-solid bg-white py-3">
+                          <div class="message-head">
+                            <div class="message-label js-message-label">
+                              <span class="badge badge-info text-white mb-2">archived</span>
+                            </div>
+                            <p class="message-title js-message-title">How about this</p>
+                          </div>
+                          <p class="message-caption">Lorem ipsum dolor sit amet cons, ectetur adipisicing elit.</p>
+                          <div class="message-meta">
+                            <p class="message-sender text-primary"><span class="fa fa-user-o mr-2 text-muted"></span><span class="js-message-sender">Jean Baudrillard</span></p>
+                            <p class="message-timeago text-muted"><span class="fa fa-calendar-o mr-2"></span><span class="js-message-timeago">Yesterday</span></p>
+                          </div>
+                        </div>
+                      </a>
+                      <a href="javacript:void(0);" class="card message-trigger no-elevation mb-3 text-dark js-message-trigger" data-message-id="4">
+                        <div class="card-body border-black-divider-solid bg-white py-3">
+                          <div class="message-head">
+                            <div class="message-label js-message-label">
+                              <span class="badge badge-warning text-white mb-2">private</span>
+                            </div>
+                            <p class="message-title js-message-title">This should overflowing the boundary</p>
+                          </div>
+                          <p class="message-caption">Lorem ipsum dolor sit amet cons, ectetur adipisicing elit.</p>
+                          <div class="message-meta">
+                            <p class="message-sender text-primary"><span class="fa fa-user-o mr-2 text-muted"></span><span class="js-message-sender">Jean Baudrillard</span></p>
+                            <p class="message-timeago text-muted"><span class="fa fa-calendar-o mr-2"></span><span class="js-message-timeago">Dec 7, 2017</span></p>
+                          </div>
+                        </div>
+                      </a>
+                      <a href="javacript:void(0);" class="card message-trigger no-elevation mb-3 text-dark js-message-trigger" data-message-id="5">
+                        <div class="card-body border-black-divider-solid bg-white py-3">
+                          <div class="message-head">
+                            <div class="message-label js-message-label">
+                              <span class="badge badge-danger text-white mb-2">some taxonomy</span>
+                            </div>
+                            <p class="message-title js-message-title">Asking you!</p>
+                          </div>
+                          <p class="message-caption">Lorem ipsum dolor sit amet cons, ectetur adipisicing elit.</p>
+                          <div class="message-meta">
+                            <p class="message-sender text-primary"><span class="fa fa-user-o mr-2 text-muted"></span><span class="js-message-sender">Jean Baudrillard</span></p>
+                            <p class="message-timeago text-muted"><span class="fa fa-calendar-o mr-2"></span><span class="js-message-timeago">Dec 9, 2018</span></p>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </section>
+
+            
+            <script id="js_dashboard_message_article_template" type="text/x-lodash-template">
+              <article
+                class="card border-black-divider-solid message-article js-message-article"
+                id="js_message_article_<@= id @>"
+              >
+                <div class="card-body marticle-card">
+                  <div class="marticle-head">
+                    <div class="marticle-action-wrapper ml-auto">
+                      <a class="marticle-action" href="javacript:void(0);"><span data-feather="star"></span></a>
+                      <a class="marticle-action" href="javacript:void(0);"><span data-feather="trash"></span></a>
+                      <a class="marticle-action js-marticle-action-close" href="javacript:void(0);"><span data-feather="x"></span></a>
+                    </div>
+                  </div>
+                  <div class="marticle-body">
+                    <div class="marticle-body-scroll">
+                      <div class="marticle-label js-marticle-label w-100"></div>
+                      <p class="marticle-title mb-2"><@= title @></p>
+                      <p class="marticle-sender m-0 text-muted text-sm" style="font-size: .75rem; line-height: 1rem;"><span class="fa fa-user-o" style="display: inline-block; width: 1rem;"></span> <span class="js-marticle-sender"></span></p>
+                      <p class="marticle-timeago text-muted text-sm" style="font-size: .75rem; line-height: 1rem;"><span class="fa fa-calendar" style="display: inline-block; width: 1rem;"></span> <span class="js-marticle-timeago"></span></p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, culpa. Deleniti sed vitae expedita fugiat, tenetur facere dolorum sit, officiis laboriosam dolore dolores dicta aliquam voluptatum facilis. Earum, nostrum, porro!</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, culpa. Deleniti sed vitae expedita fugiat, tenetur facere dolorum sit, officiis laboriosam dolore dolores dicta aliquam voluptatum facilis. Earum, nostrum, porro!</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, culpa. Deleniti sed vitae expedita fugiat, tenetur facere dolorum sit, officiis laboriosam dolore dolores dicta aliquam voluptatum facilis. Earum, nostrum, porro!</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, culpa. Deleniti sed vitae expedita fugiat, tenetur facere dolorum sit, officiis laboriosam dolore dolores dicta aliquam voluptatum facilis. Earum, nostrum, porro!</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, culpa. Deleniti sed vitae expedita fugiat, tenetur facere dolorum sit, officiis laboriosam dolore dolores dicta aliquam voluptatum facilis. Earum, nostrum, porro!</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, culpa. Deleniti sed vitae expedita fugiat, tenetur facere dolorum sit, officiis laboriosam dolore dolores dicta aliquam voluptatum facilis. Earum, nostrum, porro!</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, culpa. Deleniti sed vitae expedita fugiat, tenetur facere dolorum sit, officiis laboriosam dolore dolores dicta aliquam voluptatum facilis. Earum, nostrum, porro!</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, culpa. Deleniti sed vitae expedita fugiat, tenetur facere dolorum sit, officiis laboriosam dolore dolores dicta aliquam voluptatum facilis. Earum, nostrum, porro!</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, culpa. Deleniti sed vitae expedita fugiat, tenetur facere dolorum sit, officiis laboriosam dolore dolores dicta aliquam voluptatum facilis. Earum, nostrum, porro!</p>
+                    </div>
+                  </div>
+                  <div class="marticle-foot">
+                    <div class="marticle-action-wrapper w-100" style="justify-content: center;">
+                      <a class="marticle-action text-white bg-dark rounded" href="javacript:void(0);"><span data-feather="chevron-right"></span><span class="px-2" style="line-height: 1rem;">Reply</span></a>
+                      <a class="marticle-action text-white bg-dark rounded" href="javacript:void(0);"><span data-feather="chevrons-right"></span><span class="px-2" style="line-height: 1rem;">Reply All</span></a>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </script>
             <section class="row" id="js_cms_tuition_filter_bar">
               <div class="col-12 col-sm-8 col-lg-6">
                 <div class="card my-3" id="js_cms_tuition_filter_bar_container">
@@ -578,6 +707,7 @@
     <script src="../copy/vendor/datepicker.min.js"></script>
     <script src="../copy/vendor/datepicker.en.js"></script>
     <script src="../copy/vendor/typeahead.jquery.min.js"></script>
+    <script src="../copy/vendor/interact.min.js"></script>
 
     
     <script>
@@ -884,5 +1014,6 @@
     <script src="../copy/page/sidenav.js"></script>
     <script src="../copy/vendor/Chart.min.js"></script>
     <script src="../copy/sample/chart/test-tuition.js"></script>
+    <script src="../copy/page/dashboard/message.js"></script>
   </body>
 </html>
