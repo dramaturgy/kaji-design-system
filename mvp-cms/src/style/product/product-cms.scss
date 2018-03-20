@@ -21,3 +21,13 @@
 @import 'cms/message';
 @import 'cms/activity';
 @import 'cms/front';
+
+
+.kv-pair {
+  font-size: $table-tbody-font-size;
+  line-height: $spacer-lg;
+}
+
+.kv-left, .kv-right {
+  flex: 0 0 50%;
+}

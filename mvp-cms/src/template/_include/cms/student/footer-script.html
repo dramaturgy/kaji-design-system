@@ -149,3 +149,17 @@
 
       });
     </script>
+
+    <script>
+      // SHOULD NOT INCLUDED IN PRODUCTION!
+      $(function() {
+        function urlDevHack() {
+          if ( !!!window.location.port )
+            $('#js_cms_student_table').find('a[href^="/cms"]').each( function() {
+              $(this).attr( 'href', '/kaji-design-system/mvp-cms/public' +  $(this).attr('href') );
+            });
+        }
+
+        urlDevHack();
+      });
+    </script>

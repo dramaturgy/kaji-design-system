@@ -460,6 +460,11 @@ a.bg-light:active, a.bg-light:focus, a.bg-light:hover {
       -ms-flex-direction: row-reverse !important;
           flex-direction: row-reverse !important; }
 
+.flex-fill {
+  -webkit-box-flex: 1 !important;
+      -ms-flex: 1 1 auto !important;
+          flex: 1 1 auto !important; }
+
 .flex-nowrap {
   -ms-flex-wrap: nowrap !important;
       flex-wrap: nowrap !important; }
@@ -588,6 +593,10 @@ a.bg-light:active, a.bg-light:focus, a.bg-light:hover {
     -webkit-box-direction: reverse !important;
         -ms-flex-direction: row-reverse !important;
             flex-direction: row-reverse !important; }
+  .flex-sm-fill {
+    -webkit-box-flex: 1 !important;
+        -ms-flex: 1 1 auto !important;
+            flex: 1 1 auto !important; }
   .flex-sm-nowrap {
     -ms-flex-wrap: nowrap !important;
         flex-wrap: nowrap !important; }
@@ -706,6 +715,10 @@ a.bg-light:active, a.bg-light:focus, a.bg-light:hover {
     -webkit-box-direction: reverse !important;
         -ms-flex-direction: row-reverse !important;
             flex-direction: row-reverse !important; }
+  .flex-md-fill {
+    -webkit-box-flex: 1 !important;
+        -ms-flex: 1 1 auto !important;
+            flex: 1 1 auto !important; }
   .flex-md-nowrap {
     -ms-flex-wrap: nowrap !important;
         flex-wrap: nowrap !important; }
@@ -824,6 +837,10 @@ a.bg-light:active, a.bg-light:focus, a.bg-light:hover {
     -webkit-box-direction: reverse !important;
         -ms-flex-direction: row-reverse !important;
             flex-direction: row-reverse !important; }
+  .flex-lg-fill {
+    -webkit-box-flex: 1 !important;
+        -ms-flex: 1 1 auto !important;
+            flex: 1 1 auto !important; }
   .flex-lg-nowrap {
     -ms-flex-wrap: nowrap !important;
         flex-wrap: nowrap !important; }
@@ -942,6 +959,10 @@ a.bg-light:active, a.bg-light:focus, a.bg-light:hover {
     -webkit-box-direction: reverse !important;
         -ms-flex-direction: row-reverse !important;
             flex-direction: row-reverse !important; }
+  .flex-xl-fill {
+    -webkit-box-flex: 1 !important;
+        -ms-flex: 1 1 auto !important;
+            flex: 1 1 auto !important; }
   .flex-xl-nowrap {
     -ms-flex-wrap: nowrap !important;
         flex-wrap: nowrap !important; }
@@ -5465,5 +5486,14 @@ body.has-sidenav-open {
 
 .front-bg + * {
   z-index: 2; }
+
+.kv-pair {
+  font-size: 0.8125rem;
+  line-height: 1.5rem; }
+
+.kv-left, .kv-right {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+          flex: 0 0 50%; }
 
 /*# sourceMappingURL=../maps/product-cms.css.map */

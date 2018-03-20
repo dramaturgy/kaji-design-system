@@ -231,7 +231,7 @@
             <script id="js_student_cell_row_template" type="text/x-lodash-template">
               <td>
                 <a class="text-dark d-block text-truncate"
-                  href="javascript:void(0);">
+                  href="/cms/student-detail.html">
                     <span class="student-table-name" style="text-decoration: underline;"><@= record.name @></span>
                 </a>
               </td>
@@ -393,6 +393,20 @@
           }
         });
 
+      });
+    </script>
+
+    <script>
+      // SHOULD NOT INCLUDED IN PRODUCTION!
+      $(function() {
+        function urlDevHack() {
+          if ( !!!window.location.port )
+            $('#js_cms_student_table').find('a[href^="/cms"]').each( function() {
+              $(this).attr( 'href', '/kaji-design-system/mvp-cms/public' +  $(this).attr('href') );
+            });
+        }
+
+        urlDevHack();
       });
     </script>  </body>
 </html>
