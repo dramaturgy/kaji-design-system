@@ -1,0 +1,104 @@
+    <script src="../copy/vendor/jquery.min.js"></script>
+    <script src="../copy/vendor/popper.min.js"></script>
+    <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+    <script src="../copy/vendor/bootstrap.min.js"></script>
+    <script src="../copy/vendor/material.min.js"></script>
+    <script src="../copy/vendor/lodash.min.js"></script>
+    <script src="../copy/vendor/jquery.dynatable.js"></script>
+    <script src="../copy/vendor/bootstrap-select.min.js"></script>
+    <script src="../copy/vendor/datepicker.min.js"></script>
+    <script src="../copy/vendor/datepicker.en.js"></script>
+    <script src="../copy/vendor/typeahead.jquery.min.js"></script>
+    <script src="../copy/vendor/interact.min.js"></script>
+
+    {# Feather Icons #}
+    <script>
+      feather.replace();
+    </script>
+
+    {# Babel Standalone #}
+    <script src="../copy/vendor/babel.min.js"></script>
+
+    {# Faker #}
+    <script src="../copy/vendor/faker.min.js"></script>
+
+    {# Fake Student Data #}
+    <script type="text/babel">
+      faker.locale = "en_IND";
+      const generateFakeStudent = () => {
+        return [
+          'Albert Camus',
+          'Franz Kafka',
+          'George Orwell',
+          'Jean-Paul Sartre',
+          'Paulo Coelho'
+        ].map((studentName, i) => ({
+          'name': studentName,
+          'nis': faker.random.number().toString() + faker.random.number().toString(),
+          'grade': 10,
+          'class': 'X.AK1',
+          'gender': 'F'
+        }));
+      };
+
+      const fakeStudent = generateFakeStudent();
+    </script>
+
+    {# Student UI Script #}
+    <script>
+      $(function() {
+
+        // Lodash template custom delimiter
+        _.templateSettings = {
+            interpolate: /\<\@\=(.+?)\@\>/g,
+            evaluate: /\<\@(.+?)\@\>/g
+        };
+
+        // Global datepicker options
+        var datepickerOptions = {
+          language: 'en',
+          view: 'months',
+          minView: 'months',
+          dateFormat: 'MM yyyy'
+        };
+
+        // Initiate all tooltip elements
+        $('[data-toggle="tooltip"]').tooltip();
+
+        // Cache Student table
+        var $studentTable = $('#js_cms_student_table');
+
+        // Row generator
+        function generateStudentRow(index, record, columns, cellWriter) {
+
+          function generateRow( templateIn, index, record ) {
+            var templateFn = _.template(templateIn.html());
+            var templateOut = templateFn({index: index, record: record});
+            return templateOut;
+          }
+
+          return '<tr>' +
+            generateRow( $('#js_student_cell_row_template'), index, record )
+            '</tr>';
+        }
+
+        // Dynatable initiator
+        $studentTable.dynatable({
+          features: {
+            paginate: false,
+            sort: false,
+            pushState: false,
+            search: false,
+            recordCount: false,
+            perPageSelect: false
+          },
+          dataset: {
+            records: fakeStudent
+          },
+          writers: {
+            _rowWriter: generateStudentRow
+          }
+        });
+
+      });
+    </script>
