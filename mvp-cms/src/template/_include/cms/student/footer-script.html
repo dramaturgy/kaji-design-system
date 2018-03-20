@@ -65,6 +65,53 @@
         // Initiate all tooltip elements
         $('[data-toggle="tooltip"]').tooltip();
 
+        // Filter Popover generator
+        function generateFilterPopover() {
+          var $elTrigger = $('#js_student_filter_trigger')
+          ,   $elForm = $elTrigger.closest('form');
+
+          $elTrigger.on('inserted.bs.popover', function(e) {
+            $elForm.find('.popover')
+              .addClass('mx-0')
+              .css('width', '16rem');
+            
+            $('.selectpicker').selectpicker('show');
+
+            $('.selectpicker').each(function(i) {
+              var selector = $(this).attr('id');
+              $(this).selectpicker('val',  $('#' + selector + '_hidden').val() || '' );
+            });
+          });
+
+          $elTrigger.on('hide.bs.popover', function(e) {
+            $('.js-filter-datepicker').each(function(i) {
+              var $elDp = $(this)
+              ,   $dpData = $elDp.datepicker().data('datepicker').$datepicker;
+              if (typeof $dpData === 'object') $dpData.remove();
+            });
+          });
+
+          function populateHiddenFilter( selectors ) {
+            _.forEach( selectors, function( selector ) {
+              $(document).on('change', selector, function(e) {
+                $(selector + '_hidden').val( $(selector).val() );
+              });
+            });
+          }
+
+          populateHiddenFilter( ['#js_student_filter_grade', '#js_student_filter_class'] );
+
+          $elTrigger.popover({
+            title: '',
+            content: $('#js_student_filter_popover').html(),
+            html: true,
+            placement: 'bottom',
+            container: '#js_student_filter_form'
+          });
+        }
+
+        generateFilterPopover();
+        
         // Cache Student table
         var $studentTable = $('#js_cms_student_table');
 
