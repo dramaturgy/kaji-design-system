@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta content="initial-scale=1, shrink-to-fit=no, width=device-width" name="viewport">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/kaji-material.css">
+    <link rel="stylesheet" href="../css/product-cms.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://use.fontawesome.com/ebb6ee31d7.js"></script>
+    <!-- Add Material CSS, replace Bootstrap CSS -->
+  </head>
+  <body>
+    <nav class="cms-navbar navbar navbar-expand-lg fixed-top navbar-light bg-white faux-border-bottom p-0">
+      <div class="container-fluid px-0">
+        <div class="row no-gutters">
+          <div class="cms-navbar-toggle">
+            <a class="cms-navbar-toggle-btn align-items-center justify-content-center" id="js_cms_navbar_toggle_btn" href="javascript:void(0);"><span class="js-cms-navbar-toggle-icon" data-feather="menu"></span><span class="js-cms-navbar-toggle-icon d-none" data-feather="x"></span></a>
+          </div>
+          <div class="col-4 col-sm-2">
+            <a class="cms-navbar-brand navbar-brand w-100" href="#"><span class="cms-navbar-brand-text d-block w-100 text-primary">Edukaji</span></a>
+          </div>
+
+          <div class="col-sm-3 px-3 d-none d-sm-block border-left">
+            <div class="h-100 d-flex flex-row">
+              <span class="align-center h-100 text-primary mr-2" data-feather="home"></span>
+                <a class="h5 m-0 p-0 text-bold text-dark h-100 lh-5" href="javascript:void(0);"
+                  title="The Very Long School Name at some place"
+                  data-toggle="modal"
+                  data-target="#js_cms_school_list_modal"
+                  style="
+                    max-width: 100%;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;">
+                  <h6 class="d-inline-block m-0 font-weight-normal">The Very Very Long School Name at some place</h6>
+                </a>
+                <span class="fa fa-caret-down ml-auto px-2 align-self-center text-primary"></span>
+            </div>
+            <div class="navbar-ornament-a"
+              style="
+                position: absolute;
+                display: block;
+                bottom: -0.75rem;
+                left: 1rem;
+                right: 1rem;
+                background-color: rgba(147, 78, 197, 1);
+                height: 1px;"></div>
+          </div>
+          
+          <ul class="navbar-nav ml-md-auto border-left px-sm-3 ml-auto">
+            <li class="nav-item px-3 px-sm-0">
+              <a class="nav-link py-1 px-2 dropdown-toggle"
+                data-toggle="dropdown"
+                id="js_cms_navbar_user_dropdown"
+                href="javascript:void(0);"><span
+                  class="d-inline-block align-bottom lh-4">My Name</span><span
+                    class="d-inline-block align-bottom ml-1" data-feather="chevron-down"></span></a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Action 1</a>
+                <a class="dropdown-item" href="#">Action 2</a>
+                <a class="dropdown-item" href="#">Settings</a>
+                <a class="dropdown-item" href="#">Logout</a>
+              </div>
+            </li>
+            <li class="nav-item d-sm-block d-none">
+              <a class="nav-link p-0 mx-2"
+                style="border-radius: 50%; overflow: hidden; opacity: 1;" 
+                href="javascript:void(0);"><img height="32" src="../copy/sample/avatar/admin.png" alt=""></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container-fluid px-0">
+      <div class="row no-gutters">
+        
+        <nav class="cms-sidenav col-10 col-md-3 col-lg-2 bg-white" id="js_cms_sidenav">
+          <div class="cms-sidenav-sticky has-navbar-fixed">
+            <ul class="nav flex-column">
+              <li class="nav-item ">
+                <a class="nav-link py-3 " href="/cms">
+                  <span class="d-inline-block align-bottom" data-feather="layout"></span>
+                  <span class="d-inline-block lh-lg align-bottom ml-3">Dashboard</span></a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link py-3 " href="/cms/tuition.html">
+                  <span class="d-inline-block align-bottom" data-feather="align-justify"></span>
+                  <span class="d-inline-block lh-lg align-bottom ml-3">Tuition Payment</span></a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link py-3 " href="javascript:void(0);">
+                  <span class="d-inline-block align-bottom" data-feather="monitor"></span>
+                  <span class="d-inline-block lh-lg align-bottom ml-3">Entry Payment</span></a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link py-3  active" href="/cms/student.html">
+                  <span class="d-inline-block align-bottom" data-feather="users"></span>
+                  <span class="d-inline-block lh-lg align-bottom ml-3">Student</span></a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link py-3 " href="javascript:void(0);">
+                  <span class="d-inline-block align-bottom" data-feather="award"></span>
+                  <span class="d-inline-block lh-lg align-bottom ml-3">Scores</span></a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link py-3 " href="javascript:void(0);">
+                  <span class="d-inline-block align-bottom" data-feather="book-open"></span>
+                  <span class="d-inline-block lh-lg align-bottom ml-3">Programmes</span></a>
+              </li>
+              <li class="nav-item faux-border-top">
+                <a class="nav-link py-3 " href="javascript:void(0);">
+                  <span class="d-inline-block align-bottom" data-feather="send"></span>
+                  <span class="d-inline-block lh-lg align-bottom ml-3">Posting</span></a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <main role="main" class="dashboard-main col-12 col-md-9 col-lg-10 bg-light-2 py-3" id="js_dashboard_main" style="min-height: 100vh">
+          <div class="container-fluid has-navbar-fixed">
+            <section class="row align-items-stretch">
+              <div class="col">
+                <div class="card border-black-divider-solid mb-3">
+                  <div class="card-body px-0 py-2 px-sm-2 py-sm-3">
+                    <div class="d-flex align-items-center">
+                      <h4 class="align-self-center m-0 px-3 px-sm-4 text-dark">Albert</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <form action="">
+              <section class="row">
+            <div class="col-12 col-md-4">
+              <div class="card border-black-divider-solid mb-3">
+                <div class="card-body px-0 py-2 px-sm-2 py-sm-3">
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item d-flex flex-row py-2 align-items-start justify-content-between kv-pair border-0">
+                      <div class="px-1 kv-left"><p class="m-0 text-dark">NIS</p></div>
+                      <div class="px-1 kv-right">
+                        <div class="input-group m-0">
+                          <div class="input-group-prepend"><span class="input-group-text fa fa-pencil text-primary mr-2"></span></div>
+                          <input type="text" class="form-control">
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-group-item d-flex flex-row py-2 align-items-start justify-content-between kv-pair border-0">
+                      <div class="px-1 kv-left"><p class="m-0 text-dark">Nama Lengkap</p></div>
+                      <div class="px-1 kv-right">
+                        <div class="input-group m-0">
+                          <div class="input-group-prepend"><span class="input-group-text fa fa-pencil text-primary mr-2"></span></div>
+                          <input type="text" class="form-control">
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-group-item d-flex flex-row py-2 align-items-start justify-content-between kv-pair border-0">
+                      <div class="px-1 kv-left"><p class="m-0 text-dark">Nama Panggilan</p></div>
+                      <div class="px-1 kv-right">
+                        <div class="input-group m-0">
+                          <div class="input-group-prepend"><span class="input-group-text fa fa-pencil text-primary mr-2"></span></div>
+                          <input type="text" class="form-control">
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-group-item d-flex flex-row py-2 align-items-start justify-content-between kv-pair border-0">
+                      <div class="px-1 kv-left"><p class="m-0 text-dark">Jenis Kelamin</p></div>
+                      <div class="px-1 kv-right">
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="field_student_edit_gender_option" id="field_student_edit_gender_option_1" value="L">
+                          <label class="form-check-label" for="field_student_edit_gender_option_1">Laki-laki</label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="field_student_edit_gender_option" id="field_student_edit_gender_option_2" value="P">
+                          <label class="form-check-label" for="field_student_edit_gender_option_2">Perempuan</label>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-group-item d-flex flex-row py-2 align-items-start justify-content-between kv-pair">
+                      <div class="px-1 kv-left"><p class="m-0 text-dark">Tanggal Lahir</p></div>
+                      <div class="px-1 kv-right">
+                        <div class="input-group m-0">
+                          <div class="input-group-prepend"><span class="input-group-text fa fa-calendar text-primary mr-2"></span></div>
+                          <input type="date" class="form-control">
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-group-item d-flex flex-row py-2 align-items-start justify-content-between kv-pair border-0">
+                      <div class="px-1 kv-left"><p class="m-0 text-dark">Tempat Lahir</p></div>
+                      <div class="px-1 kv-right">
+                        <div class="input-group m-0">
+                          <div class="input-group-prepend"><span class="input-group-text fa fa-pencil text-primary mr-2"></span></div>
+                          <input type="text" class="form-control">
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-group-item d-flex flex-row py-2 align-items-start justify-content-between kv-pair">
+                      <div class="px-1 kv-left"><p class="m-0 text-dark">Tingkat</p></div>
+                      <div class="px-1 kv-right">
+                        <div class="input-group m-0">
+                          <div class="input-group-prepend"><span class="input-group-text fa fa-bars text-primary mr-2"></span></div>
+                          <select class="form-control" id="field_student_edit_grade_select">
+                            <option value="10">10</option>
+                            <option value="9">9</option>
+                            <option value="8">8</option>
+                            <option value="7">7</option>
+                          </select>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-group-item d-flex flex-row py-2 align-items-start justify-content-between kv-pair border-0">
+                      <div class="px-1 kv-left"><p class="m-0 text-dark">Kelas</p></div>
+                      <div class="px-1 kv-right">
+                        <div class="input-group m-0">
+                          <div class="input-group-prepend"><span class="input-group-text fa fa-bars text-primary mr-2"></span></div>
+                          <select class="form-control" id="field_student_edit_class_select">
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                            <option value="C">C</option>
+                            <option value="D">D</option>
+                          </select>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-group-item d-flex flex-row py-2 align-items-start justify-content-between kv-pair border-0">
+                      <div class="px-1 kv-left"><p class="m-0 text-dark">Didaftarkan Pada</p></div>
+                      <div class="px-1 kv-right">
+                        <div class="input-group m-0">
+                          <div class="input-group-prepend"><span class="input-group-text fa fa-calendar text-primary mr-2"></span></div>
+                          <input type="date" class="form-control">
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>                
+            <div class="col-12 col-md-4">
+              <div class="card border-black-divider-solid mb-3">
+                <div class="card-body px-0 py-2 px-sm-2 py-sm-3">
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item d-flex flex-row py-2 align-items-start justify-content-between kv-pair">
+                      <div class="px-1 kv-left"><p class="m-0 text-dark">Email</p></div>
+                      <div class="px-1 kv-right">
+                        <div class="input-group m-0">
+                          <div class="input-group-prepend"><span class="input-group-text fa fa-envelope text-primary mr-2"></span></div>
+                          <input type="email" class="form-control">
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-group-item d-flex flex-row py-2 align-items-start justify-content-between kv-pair border-0">
+                      <div class="px-1 kv-left"><p class="m-0 text-dark">No. Telfon</p></div>
+                      <div class="px-1 kv-right">
+                        <div class="input-group m-0">
+                          <div class="input-group-prepend"><span class="input-group-text fa fa-phone text-primary mr-2"></span></div>
+                          <input type="phone" class="form-control">
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-group-item d-flex flex-row py-2 align-items-start justify-content-between kv-pair">
+                      <div class="px-1 kv-left"><p class="m-0 text-dark">Alamat</p></div>
+                      <div class="px-1 kv-right">
+                        <textarea class="form-control" rows="4"></textarea>
+                      </div>
+                    </li>
+                    <li class="list-group-item d-flex flex-row py-2 align-items-start justify-content-between kv-pair border-0">
+                      <div class="px-1 kv-left"><p class="m-0 text-dark">Jarak dari Rumah</p></div>
+                      <div class="px-1 kv-right">
+                        <div class="input-group m-0">
+                          <div class="input-group-prepend"><span class="input-group-text fa fa-bars text-primary mr-2"></span></div>
+                          <select class="form-control" id="field_student_edit_address_distance_select">
+                            <option value="1">Kurang dari 1Km</option>
+                            <option value="2">Lebih dari 1Km</option>
+                            <option value="3">Lebih dari 10Km</option>
+                          </select>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-group-item d-flex flex-row py-2 align-items-start justify-content-between kv-pair">
+                      <div class="px-1 kv-left"><p class="m-0 text-dark">Bahasa</p></div>
+                      <div class="px-1 kv-right">
+                        <div class="input-group m-0">
+                          <div class="input-group-prepend"><span class="input-group-text fa fa-bars text-primary mr-2"></span></div>
+                          <select class="form-control" id="field_student_edit_language_select">
+                            <option value="indonesia">Indonesia</option>
+                            <option value="inggris">Inggris</option>
+                            <option value="others">Lainnya</option>
+                          </select>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-group-item d-flex flex-row py-2 align-items-start justify-content-between kv-pair border-0">
+                      <div class="px-1 kv-left"><p class="m-0 text-dark">Kewarganegaraan</p></div>
+                      <div class="px-1 kv-right">
+                        <div class="input-group m-0">
+                          <div class="input-group-prepend"><span class="input-group-text fa fa-bars text-primary mr-2"></span></div>
+                          <select class="form-control" id="field_student_edit_nationality_select">
+                            <option value="indonesia">Indonesia</option>
+                            <option value="foreign">Asing</option>
+                          </select>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-group-item d-flex flex-row py-2 align-items-start justify-content-between kv-pair border-0">
+                      <div class="px-1 kv-left"><p class="m-0 text-dark">Golongan Darah</p></div>
+                      <div class="px-1 kv-right">
+                        <div class="input-group m-0">
+                          <div class="input-group-prepend"><span class="input-group-text fa fa-bars text-primary mr-2"></span></div>
+                          <select class="form-control" id="field_student_edit_blood_type_select">
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                            <option value="AB">AB</option>
+                            <option value="O">O</option>
+                          </select>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-group-item d-flex flex-row py-2 align-items-start justify-content-between kv-pair border-0">
+                      <div class="px-1 kv-left"><p class="m-0 text-dark">Tipe Rumah</p></div>
+                      <div class="px-1 kv-right">
+                        <div class="input-group m-0">
+                          <div class="input-group-prepend"><span class="input-group-text fa fa-phone text-primary mr-2"></span></div>
+                          <input type="text" class="form-control">
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-group-item d-flex flex-row py-2 align-items-start justify-content-between kv-pair border-0">
+                      <div class="px-1 kv-left"><p class="m-0 text-dark">Riwayat Penyakit</p></div>
+                      <div class="px-1 kv-right">
+                        <textarea class="form-control" rows="4"></textarea>
+                      </div>
+                    </li>
+                    <li class="list-group-item d-flex flex-row py-2 align-items-start justify-content-between kv-pair border-0">
+                      <div class="px-1 kv-left"><p class="m-0 text-dark">Kelainan Fisik</p></div>
+                      <div class="px-1 kv-right">
+                        <textarea class="form-control" rows="4"></textarea>
+                      </div>
+                    </li>
+                    <li class="list-group-item d-flex flex-row py-2 align-items-start justify-content-between kv-pair border-0">
+                      <div class="px-1 kv-left"><p class="m-0 text-dark">Tinggi (cm)</p></div>
+                      <div class="px-1 kv-right">
+                        <div class="input-group m-0">
+                          <div class="input-group-prepend"><span class="input-group-text fa fa-sort text-primary mr-2"></span></div>
+                          <input type="number" class="form-control">
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-group-item d-flex flex-row py-2 align-items-start justify-content-between kv-pair border-0">
+                      <div class="px-1 kv-left"><p class="m-0 text-dark">Berat (kg)</p></div>
+                      <div class="px-1 kv-right">
+                        <div class="input-group m-0">
+                          <div class="input-group-prepend"><span class="input-group-text fa fa-sort text-primary mr-2"></span></div>
+                          <input type="number" class="form-control">
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-group-item d-flex flex-row py-2 align-items-start justify-content-between kv-pair border-0">
+                      <div class="px-1 kv-left"><p class="m-0 text-dark">Sekolah Asal</p></div>
+                      <div class="px-1 kv-right">
+                        <div class="input-group m-0">
+                          <div class="input-group-prepend"><span class="input-group-text fa fa-pencil text-primary mr-2"></span></div>
+                          <input type="text" class="form-control">
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>                
+            <div class="col-12 col-md-4">
+              <div class="card border-black-divider-solid mb-3">
+                <div class="card-body px-0 py-2 px-sm-2 py-sm-3">
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item d-flex flex-row py-2 align-items-start justify-content-between kv-pair border-0">
+                      <div class="px-1 kv-left"><p class="m-0 text-dark">Nama Ibu</p></div>
+                      <div class="px-1 kv-right">
+                        <div class="input-group m-0">
+                          <div class="input-group-prepend"><span class="input-group-text fa fa-pencil text-primary mr-2"></span></div>
+                          <input type="text" class="form-control">
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-group-item d-flex flex-row py-2 align-items-start justify-content-between kv-pair border-0">
+                      <div class="px-1 kv-left"><p class="m-0 text-dark">Nama Bapak</p></div>
+                      <div class="px-1 kv-right">
+                        <div class="input-group m-0">
+                          <div class="input-group-prepend"><span class="input-group-text fa fa-pencil text-primary mr-2"></span></div>
+                          <input type="text" class="form-control">
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-group-item d-flex flex-row py-2 align-items-start justify-content-between kv-pair border-0">
+                      <div class="px-1 kv-left"><p class="m-0 text-dark">Pekerjaan Bapak</p></div>
+                      <div class="px-1 kv-right">
+                        <div class="input-group m-0">
+                          <div class="input-group-prepend"><span class="input-group-text fa fa-pencil text-primary mr-2"></span></div>
+                          <input type="text" class="form-control">
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>              </section>
+
+            <button
+                class="btn btn-float waves-attach waves-circle btn-primary position-fixed"
+                type="submit"
+                style="right: 2rem; bottom: 2rem;"
+              ><span class="fa fa-check"></span>
+            </button>
+          </form>          </div>
+        </main>
+      </div>
+    </div>
+
+    <script src="../copy/vendor/jquery.min.js"></script>
+    <script src="../copy/vendor/popper.min.js"></script>
+    <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+    <script src="../copy/vendor/bootstrap.min.js"></script>
+    <script src="../copy/vendor/material.min.js"></script>
+    <script src="../copy/vendor/lodash.min.js"></script>
+    <script src="../copy/vendor/jquery.dynatable.js"></script>
+    <script src="../copy/vendor/bootstrap-select.min.js"></script>
+    <script src="../copy/vendor/datepicker.min.js"></script>
+    <script src="../copy/vendor/datepicker.en.js"></script>
+    <script src="../copy/vendor/typeahead.jquery.min.js"></script>
+    <script src="../copy/vendor/interact.min.js"></script>
+
+    
+    <script>
+      feather.replace();
+    </script>  </body>
+</html>

@@ -2056,8 +2056,7 @@ pre {
   -ms-flex-negative: 0;
       flex-shrink: 0;
   margin-right: 0.25rem;
-  position: relative;
-  top: 0.25rem; }
+  position: relative; }
 
 .form-check-label {
   -webkit-box-align: start;

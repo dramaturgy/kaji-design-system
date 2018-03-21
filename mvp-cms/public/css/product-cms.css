@@ -5194,11 +5194,13 @@ body.has-sidenav-open {
 .kaji-table tbody td {
   position: relative; }
 
-.kaji-table tbody td.tuition-payment-col {
+.kaji-table tbody td.tuition-payment-col,
+.kaji-table tbody td.student-payment-col,
+.kaji-table tbody td.enrollment-payment-col {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem; }
 
-.kaji-table .tuition-payment {
+.kaji-table .tuition-payment, .kaji-table .student-payment, .kaji-table .enrollment-payment {
   padding: 0.25rem;
   background-color: #f9f9fa;
   color: #75667f;
@@ -5206,17 +5208,17 @@ body.has-sidenav-open {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap; }
-  .kaji-table .tuition-payment.unpaid {
+  .kaji-table .tuition-payment.unpaid, .kaji-table .student-payment.unpaid, .kaji-table .enrollment-payment.unpaid {
     background-color: #f5d7d5;
     color: #a53b33; }
-  .kaji-table .tuition-payment.uncomplete {
+  .kaji-table .tuition-payment.uncomplete, .kaji-table .student-payment.uncomplete, .kaji-table .enrollment-payment.uncomplete {
     background-color: #ffe0b2;
     color: #f57c00; }
-  .kaji-table .tuition-payment.discount {
+  .kaji-table .tuition-payment.discount, .kaji-table .student-payment.discount, .kaji-table .enrollment-payment.discount {
     background-color: #bbdefb;
     color: #1976d2; }
 
-.kaji-table .tuition-payment-text {
+.kaji-table .tuition-payment-text, .kaji-table .student-payment-text, .kaji-table .enrollment-payment-text {
   color: inherit;
   display: block;
   line-height: 1rem; }

@@ -20,13 +20,15 @@
       position: relative;
     }
 
-    td.tuition-payment-col {
+    td.tuition-payment-col,
+    td.student-payment-col,
+    td.enrollment-payment-col {
       padding-top: $spacer-lg / 2;
       padding-bottom: $spacer-lg / 2;
     }
   }
 
-  .tuition-payment {
+  .tuition-payment, .student-payment, .enrollment-payment {
     padding: $spacer-xs;
     background-color: $white;
     color: map-get(theme-color(dark), color);
@@ -49,7 +51,7 @@
     }
   }
 
-  .tuition-payment-text {
+  .tuition-payment-text, .student-payment-text, .enrollment-payment-text {
     color: inherit;
     display: block;
     line-height: $spacer;
