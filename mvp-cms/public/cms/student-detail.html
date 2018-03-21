@@ -259,6 +259,7 @@
 
           <a
             class="btn btn-float waves-attach waves-circle btn-primary position-fixed"
+            id="js_btn_goto_student_edit"
             href="/cms/student-edit.html"
             style="right: 2rem; bottom: 2rem;"
           ><span class="fa fa-pencil"></span></a>          </div>
@@ -282,6 +283,21 @@
     
     <script>
       feather.replace();
+    </script>
+
+    <script>
+      // SHOULD NOT INCLUDED IN PRODUCTION!
+      $(function() {
+        function urlDevHack() {
+          if ( !!!window.location.port )
+            var $btn = $('#js_btn_goto_student_edit')
+            ,   _href = $btn.attr('href');
+
+            $btn.attr( 'href', '/kaji-design-system/mvp-cms/public' +  _href );
+        }
+
+        urlDevHack();
+      });
     </script>
 
     <script src="../copy/page/sidenav.js"></script>  </body>
