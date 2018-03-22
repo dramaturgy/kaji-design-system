@@ -133,6 +133,19 @@
             <form action="">
               <section class="row">
             <div class="col-12 col-md-4">
+
+              <div class="card border-black-divider-solid mb-3">
+                <div class="card-body px-0 py-2 px-sm-2 py-sm-3">
+                  <div class="field-avatar">
+                    <div class="field-avatar-preview" id="js_student_avatar_preview"></div>
+                    <div class="field-avatar-input-group mt-3">
+                      <input type="file" id="js_student_avatar_file_input">
+                      <input class="btn btn-primary" type="button" value="Upload" id="js_student_avatar_upload_btn" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               <div class="card border-black-divider-solid mb-3">
                 <div class="card-body px-0 py-2 px-sm-2 py-sm-3">
                   <ul class="list-group list-group-flush">
@@ -432,20 +445,29 @@
       feather.replace();
     </script>
 
+    <script src="../copy/page/sidenav.js"></script>
+
     <script>
-      // SHOULD NOT INCLUDED IN PRODUCTION!
-      $(function() {
-        function urlDevHack() {
-          if ( !!!window.location.port )
-            var $btn = $('#js_btn_goto_student_edit')
-            ,   _href = $btn.attr('href');
+        $( function() {
+            var $avatarBtn = $('#js_student_avatar_upload_btn')
+            ,   $avatarField = $('#js_student_avatar_file_input')
+            ,   $avatarPreview = $('#js_student_avatar_preview');
 
-            $btn.attr( 'href', '/kaji-design-system/mvp-cms/public' +  _href );
-        }
+            $avatarField.hide();
 
-        urlDevHack();
-      });
-    </script>
+            $avatarBtn.on('click', function(e) {
+              $avatarField.click();
+            });
 
-    <script src="../copy/page/sidenav.js"></script>  </body>
+            $avatarField.on('change', function (e) {
+              console.log(this.files);
+              var file = this.files[0];
+              var reader = new FileReader();
+              reader.onloadend = function () {
+                $avatarPreview.css('background-image', 'url("' + reader.result + '")');
+              }
+              if (file) reader.readAsDataURL(file);
+            });
+        });
+    </script>  </body>
 </html>

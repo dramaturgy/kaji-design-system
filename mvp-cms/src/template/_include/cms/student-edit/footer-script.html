@@ -17,3 +17,27 @@
     </script>
 
     <script src="../copy/page/sidenav.js"></script>
+
+    <script>
+        $( function() {
+            var $avatarBtn = $('#js_student_avatar_upload_btn')
+            ,   $avatarField = $('#js_student_avatar_file_input')
+            ,   $avatarPreview = $('#js_student_avatar_preview');
+
+            $avatarField.hide();
+
+            $avatarBtn.on('click', function(e) {
+              $avatarField.click();
+            });
+
+            $avatarField.on('change', function (e) {
+              console.log(this.files);
+              var file = this.files[0];
+              var reader = new FileReader();
+              reader.onloadend = function () {
+                $avatarPreview.css('background-image', 'url("' + reader.result + '")');
+              }
+              if (file) reader.readAsDataURL(file);
+            });
+        });
+    </script>

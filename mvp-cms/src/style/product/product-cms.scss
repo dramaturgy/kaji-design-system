@@ -31,3 +31,19 @@
 .kv-left, .kv-right {
   flex: 0 0 50%;
 }
+
+.field-avatar {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.field-avatar-preview {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  background-color: #EAEAEA;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
