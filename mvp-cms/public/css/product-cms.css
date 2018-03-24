@@ -5483,8 +5483,13 @@ body.has-sidenav-open {
   bottom: 0;
   left: 0;
   z-index: -1;
-  background: transparent url("../copy/image/shattered_violet@2X.png") center repeat;
-  background-size: 720px; }
+  /*background: transparent url("background/shattered_violet@2X.png") center repeat;*/
+  background-color: transparent;
+  /* background-image: url("background/github-codelines.svg"); */
+  background-image: url("../copy/image/github-codelines.svg");
+  background-position: center 10%;
+  background-repeat: no-repeat;
+  background-size: cover; }
 
 .front-bg + * {
   z-index: 2; }
